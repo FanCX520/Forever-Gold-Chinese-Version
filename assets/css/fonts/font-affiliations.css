@@ -1,0 +1,63 @@
+/* TRI KINGDOM */
+
+.icon-tri-kingdom .path1:before {
+  content: "\e90a";
+  color: var(--alertY);
+}
+.icon-tri-kingdom .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: var(--alertR);
+}
+.icon-tri-kingdom .path3:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: var(--alertG);
+}
+
+.icon-m-k:before,tag-middle:before {
+  content: "\e9f7";
+    color:var(--alertY);
+}
+.icon-m-k2:before,tag-middle2:before {
+  content: "\e9f8";
+  color:var(--alertY);
+}
+
+.icon-south-kingdom:before,tag-south:before {
+  content: "\e9e9";
+    color: var(--alertR);
+}
+
+.icon-north-kingdom:before,tag-north:before {
+  content: "\e9f9";
+    color: var(--alertG);
+}
+
+/* NN */
+
+.icon-new-north:before,tag-nn:before {
+  content: "\e988";
+  color:var(--red);
+}
+
+/* INDIE */
+.icon-indie .path1:before {
+  content: "\e90d";
+  color: var(--alertR);
+}
+.icon-indie .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: var(--alertG);
+}
+
+/* ORDER */
+.icon-order:before {
+  content: "\e90e";
+}
+
+/* CHURCH */
+.icon-cerostian:before {
+  content: "\e9fa";
+}

@@ -1,0 +1,31 @@
+@import url('root.css');
+@import url('main.css');
+@import url('text-commands.css');
+@import url('macros.css');
+@import url('common.css');
+@import url('ui-menu.css');
+@import url('ui-dialog.css');
+@import url('menu.css');
+
+@import url('new-charpage.css');
+@import url('map.css');
+@import url('MAP-MODS.css');
+@import url('map-travel.css');
+@import url('menu-codex.css');
+@import url('tree.css');
+
+@import url('menu-inventory.css');
+@import url('menu-codex-page.css');
+@import url('menu-travellog.css');
+@import url('start-menu.css');
+
+@import url('storytell.css');
+@import url('shop.css');
+@import url('minigames.css');
+
+@import url('save-menu.css');
+@import url('systems.css');
+@import url('debate.css');
+@import url('party-events.css');
+@import url('themes.css');
+@import url('animations.css');

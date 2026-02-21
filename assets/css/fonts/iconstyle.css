@@ -1,0 +1,157 @@
+@import url('font-utility.css');
+@import url('font-affiliations.css');
+@import url('font-traits.css');
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot');
+  src:  url('icomoon.eot') format('embedded-opentype'),
+    url('icomoon.ttf') format('truetype'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"],#menu-item-saves a::before,#menu-item-settings a::before,#menu-item-restart a::before,.icomoon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.codex-mininav li:not(:last-child)::after,#custom-ui-bar-toggle2 .toggle-icon:before,.person-subtitle:before,.person-subtitle:after,.ilText::before,.ilText::after,.updateLabel:before,.updateLabel:after,.written .macro-cycle:after,.debate-checklist-item.checked .icon:after,.action-label:before,.action-label:after,.replace .macro-link:after,.thin .control-r:after,.thin .control-l:after{
+    font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right:0.2em;
+}
+
+
+
+
+
+/* MEUR ICONS */
+
+.icon-meur-green:before,tag-green:before {
+  content: "\e9fb";
+    color: var(--green);
+}
+.icon-meur-red:before,tag-red:before {
+  content: "\ea01";
+  color: var(--red);
+}
+.icon-meur-blue:before,tag-blue:before {
+  content: "\ea05";
+  color: var(--blue);
+}
+.icon-meur-black:before,tag-black:before {
+  content: "\ea06";
+  color: var(--black);
+}
+
+.icon-meur-white:before,tag-white:before {
+  content: "\ea08";
+  color: var(--white);
+}
+.icon-meur-yellow:before,tag-yellow:before {
+  content: "\ea0f";
+  color: var(--yellow);
+}
+
+
+.icon-meur-all .path1:before {
+  content: "\e916";
+  color: var(--white);
+
+}
+.icon-meur-all .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: var(--white);
+
+}
+.icon-meur-all .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: var(--blue);
+
+}
+.icon-meur-all .path4:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: var(--green);
+
+}
+.icon-meur-all .path5:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: var(--blue);
+
+}
+.icon-meur-all .path6:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: var(--green);
+
+}
+.icon-meur-all .path7:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: var(--yellow);
+
+}
+.icon-meur-all .path8:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: var(--red);
+
+}
+.icon-meur-all .path9:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: var(--black);
+}
+.icon-meur-all .path10:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: var(--yellow);
+
+}
+.icon-meur-all .path11:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: var(--red);
+
+}
+.icon-meur-all .path12:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: var(--black);
+
+}
+
+
+
+
+
+
+
+

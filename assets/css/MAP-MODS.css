@@ -1,0 +1,22 @@
+.map-alter{
+ position:absolute;
+ top:0;
+ left:0;
+ background-image:var(--modImg);
+height:100%;
+ width:100%;
+ background-size:contain;
+ background-repeat:no-repeat;
+ background-position:top left;
+}
+
+
+
+.map-alter.naktoga{
+ --modImg:url('../gui/map/act1/mods/naktoga.png');
+ mix-blend-mode:multiply;
+ height: 3%;
+   width: 3%;
+   left: 46.7%;
+   top: 35.9%;
+}

@@ -1,0 +1,128 @@
+.map-containment-nav{
+width:100%;
+
+  margin:auto;
+  aspect-ratio:1/1;
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%) !important;
+}
+
+.map-small-nav .link-containers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.map-small-nav .link-grid{
+  grid-template-columns:100%;
+  margin:0;
+}
+
+.map-small-nav .link-item-bg-holder{
+  width:3em;
+}
+
+.map-small-nav .link-item-text{
+  grid-template-columns: 3em calc(100% - 3em);
+}
+
+.map-small-nav .passage-item.loc-links{
+  margin:0;
+  margin-top:1em;
+  width:100%;
+}
+
+.map-small-nav{
+  display:grid;
+  grid-template-columns:35% calc(65% - 1em);
+    column-gap:1em;
+  width:100%;
+}
+
+.map-containment-nav{
+  max-width:100%;
+  width:100%;
+}
+
+@media screen and (min-width:750px){
+
+  .map-small-nav .passage-item.loc-links{
+    margin:0;}
+
+    .map-small-nav .link-item-bg-holder{
+      width:5em;
+    }
+
+    .map-small-nav .link-item-text{
+      grid-template-columns: 5em calc(100% - 6em);
+    }
+
+.map-small-nav{
+  grid-template-columns:calc(40% - 1em) 60%;
+}
+
+}
+
+.map-containment-nav .map-buffer.isZoomed {
+  width: var(--zoom);
+}
+
+.map-containment-nav .map-buffer.isZoomed .map-img {
+  position: relative;
+  left: var(--left);
+  top: var(--top);
+}
+
+.loc-east .loc-point button,.loc-west .loc-point button,.loc-north .loc-point button,.loc-south .loc-point button,.loc-northwest .loc-point button,.loc-southwest .loc-point button,.loc-northeast .loc-point button,.loc-southeast .loc-point button{
+clip-path: polygon(0 30%, 40% 35%, 40% 0, 100% 50%, 40% 100%, 40% 65%, 0 70%);
+}
+
+.loc-west .loc-point button{
+transform: rotate(180deg);
+}
+
+.loc-north .loc-point button{
+transform: rotate(-90deg);
+}
+
+.loc-south .loc-point button{
+transform: rotate(90deg);
+}
+
+.loc-southwest .loc-point button{
+transform: rotate(135deg);
+}
+
+.loc-southeast .loc-point button{
+  transform: rotate(45deg);
+}
+
+.loc-northwest .loc-point button{
+  transform:rotate(-135deg);
+}
+
+.loc-northeast .loc-point button{
+transform: rotate(-45deg);
+}
+
+.loc-visited .loc-point button {
+  clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+  transform:rotate(90deg);
+  transform: rotate(45deg);
+  width: 44%;
+  opacity: 0.66;
+  left: 18%;
+  top: 20%;
+}
+
+.loc-current .loc-point button{
+  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.loc-visited .loc-label{
+  display:none;
+}
+
+.loc-point-holder.loc-visited:hover .loc-point,.loc-point-holder.loc-visited:focus .loc-point{
+  filter:none;
+}

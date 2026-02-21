@@ -1,0 +1,1349 @@
+/*WIDTH FIXES*/
+
+#timeline,#timeline-content{
+ min-height: 100%; 
+}
+
+.title-holder .title,.title-holder {
+
+  width: 100%;
+}
+
+
+.menu-textbox.travel-log,.travel-log .quest-header,.quest-data .row,.quest-data .quest-data .row .div,.content-container{
+ width: 100%; 
+}
+.content-container{
+ height:100%; 
+}
+  
+  body.menu .timeline h1{
+   margin-top:0.25em; 
+   font-size:2em;
+  }
+  
+  .written-module-container{
+     filter: drop-shadow(1px 1px var(--menuborderbright)) drop-shadow(-1px 1px var(--menuborderbright)) drop-shadow(1px -1px var(--menuborderbright)) drop-shadow(-1px -1px var(--menuborderbright));
+     width:calc(100% - 2em);
+     margin:auto;
+  }
+  
+  .task-summaries{
+   text-indent:0;
+   font-size:0.9em;
+   padding-right:1em;
+  }
+  
+  .task-summaries li{
+   margin-bottom:1em;
+
+  }
+  
+ .passage .task-summaries ul{
+  padding:0; 
+ }
+ 
+  #story .task-summaries ul li::marker{
+    content:"";
+    display:none;
+    
+  }
+
+  
+  .episode-written, .written-module{
+    --padding:2em;
+       position:relative;
+   clip-path: polygon(0 2em,2em 0,100% 0,100% 2em,100% 100%,100% 100%,2em 100%,0 100%);
+   padding:var(--padding);
+  }
+  
+    .episode-written{
+   background-color: var(--menucolor); 
+   height:calc(100% - (1.2em * 2));
+   padding:1.2em;
+   text-align:left;
+     text-indent:var(--indent);
+  }
+  
+  .written-module{
+   width:calc(100% - 4px - (var(--padding) * 2 ));
+height: calc(100% - (var(--padding) * 2 ) - 0.33em);
+   margin:auto;
+   background-color: var(--menucolor); 
+   
+
+   
+  }
+  
+  .written-module:after,.episode-written:after{
+    content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-color: var(--menucolor); 
+  height: var(--padding);
+  width: var(--padding);
+
+  filter: drop-shadow(1px 1px var(--menuborderbright)) drop-shadow(-1px 1px var(--menuborderbright)) drop-shadow(1px -1px var(--menuborderbright)) drop-shadow(-1px -1px var(--menuborderbright));
+  }
+  
+  .episode-written:after{
+      background-color: var(--menucolor);
+  }
+  
+  .objective-scroll{
+   height: 100%;
+   overflow-y:auto;
+   scrollbar-width:thin;
+   font-size:0.9em;
+  }
+  
+  
+  .menu-grid.travel-log{
+    column-gap:0;
+    row-gap:0;
+  }
+  
+  #travel-log .travel-log.menu-textbox{
+  padding:0;
+  margin-top:0;
+height:var(--menuContent);
+  margin-bottom:0;
+}
+  
+
+#travel-log.menu-layout,#travel-log .menu-textbox{
+  background-color:transparent;
+}
+  
+  .episode-header .subtitle,.season-header .subtitle{
+   position: relative;
+  top: -0.5em;
+  font-variant: small-caps;
+line-height:0.8em;
+  text-indent: 1em;
+ 
+  }
+  
+  .season-header .subtitle{
+   top:-1em; 
+  }
+  
+      .season-header .subtitle i{
+      color: var(--whitebg);
+  background: var(--whitebg);
+  background: var(--whitegradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-style:normal;
+    }
+  
+    .episode-header .subtitle i{
+      color: var(--whitebg);
+  background: var(--whitebg);
+  background: var(--whitegradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-style:normal;
+   font-size:0.8em;
+    }
+  
+  
+  
+  .season-header{
+
+   width:calc(100% - 1em);
+  }
+  
+  .travel-log #directory-index {
+    position:relative;
+    justify-content:start;
+    
+  }
+  
+  
+  /* ttime line nodes */
+  
+  .timeline{
+   width: 100%;
+  }
+  
+  .timeline-holder{
+   width: 100%; 
+  }
+  
+  .timeline-grid{
+   grid-template-columns:100%;
+
+   display: grid;
+  }
+  
+.node-grid{
+  display:grid;
+ grid-template-columns:8em calc(100% - 8.5em); 
+ column-gap:0.5em;
+ position:relative;
+}
+
+
+
+.node-grid .square-holder{
+ width:100%; 
+}
+
+.square-holder .timeline-square{
+  --align:url('../gui/timeline/weave1.png');
+ width:100%; 
+ aspect-ratio:1/1;
+ background-size:100% 100%;
+ background-position:center center;
+ background-repeat:no-repeat;
+ background-image: var(--align), var(--square);
+ filter:sepia(33%);
+ opacity:0.66;
+ transition:var(--transition);
+}
+
+.square-holder .timeline-square.square-b{
+  --align:url('../gui/timeline/weave2.png');
+}
+
+.square-holder.active .timeline-square,.square-holder:hover .timeline-square,.square-holder:focus .timeline-square{
+  filter:sepia(0%);
+ opacity:1;
+}
+
+.ep-node{
+
+ --nodeborder:var(--buttonborder);
+ --nodeicon:var(--fade);
+}
+
+.node-grid .icon-holder:before{
+  
+  content:"";
+  width:3.4em;
+  height:1px;
+  border-top:2px solid var(--nodeborder);
+  top:1.5em;
+  left:-3em;
+  position: absolute;
+}
+
+.node-grid .icon-holder:after{
+  content:"";
+  width:0.75em;
+  aspect-ratio:1/1;
+  background-color:var(--nodeicon);
+  top:1.2em;
+  left:-3.3em;
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  
+  opacity:0.5;
+}
+
+/* subtypes */
+.ep-node.title{
+ padding-left:1em; 
+ position:relative;
+ background-color: var(--menubutton);
+  border: 2px solid var(--buttonborder);
+  width:calc(100% - 2em);
+
+  filter:var(--clipShadow);
+}
+.ep-node.title.season-header{
+  margin-bottom:1.8em;
+}
+.ep-node.title.episode-header{
+margin-left:0;
+   width:calc(100% - 3em);
+   margin-bottom:0;
+
+}
+
+.ep-title-holder{
+ display:flex;
+align-items: center;
+}
+
+.ep-node.title:after{
+  content:"";
+  width:1em;
+  height:1px;
+  background-color:var(--buttonborder);
+  right:-1em;
+  top:-2px;
+  height:calc(100% + 4px);
+  width:2em;
+  position: absolute;
+  clip-path:var(--chevRight);
+}
+
+.node-grid .text{
+margin-top: 1em;
+line-height: 1em;
+  font-variant: small-caps;
+  padding-right:1.5em;
+}
+
+.node-text{
+ max-height:6em;
+ overflow:auto;
+ scrollbar-width:thin;
+}
+
+.story .node-grid .text p{
+ font-size:0.75em; 
+ margin-top:0;
+}
+
+.node-grid .node-header{
+font-family: var(--headerFont);
+
+  color: var(--nodeicon);
+}
+
+
+
+.synopsis-entry.story{
+
+   --nodeborder:var(--menulink);
+   --nodeicon:var(--accent);
+}
+
+.synopsis-entry.episode,.synopsis-entry.season{
+   --nodeicon:var(--alertSealQuestObj);
+   --nodeborder:var(--questObjBorder);
+}
+
+
+.synopsis-entry.quest{
+   --nodeicon:var(--alertSealQuestMain);
+   --nodeborder:var(--questMBorder);
+}
+
+.synopsis-entry.quest.quest-major{
+   --nodeicon:var(--alertSealQuestObj);
+   --nodeborder:var(--questObjBorder);
+}
+
+.synopsis-entry.quest.quest-minor{
+   --nodeicon:var(--alertSealQuestSide);
+   --nodeborder:var(--questSBorder);
+}
+
+.synopsis-entry.major-dec{
+   --nodeicon:var(--alertY);
+   --nodeborder:var(--alertYdark);
+}
+
+.synopsis-entry.romance{
+   --nodeicon:var(--pink);
+   --nodeborder:var(--pinkDark);
+}
+
+.synopsis-entry.romance-end{
+   --nodeicon:var(--black);
+   --nodeborder:var(--black);
+}
+
+.synopsis-entry.faction{
+   --nodeicon:var(--alertSealQuestObj);
+   --nodeborder:var(--questObjBorder);
+}
+
+.synopsis-entry.faction.nn{
+   --nodeicon:var(--red);
+   --nodeborder:var(--redDark);
+}
+
+/* QUEST STUFF */
+
+.travel-log-quests{
+ border:2px solid var(--menuborderbright);
+  padding: 0.5em;
+  width: calc(100% - 1em);
+  border-radius: 15px; 
+
+}
+
+.travel-log-quests h2{
+ font-size:1.2em; 
+}
+
+.log-sticky .title-holder h1 {
+
+  line-height: 1em;
+
+}
+
+.travel-log .title-holder{
+ text-align:center; 
+  padding-bottom: 0.25em;
+ line-height:1;
+
+}
+
+.travel-log .title-holder h1{
+ font-size:1.75em; 
+}
+
+.travel-log .title-holder .subtitle{
+ text-transform:lowercase;
+ font-variant:small-caps;
+ font-family:var(--headerFont);
+ 	color: var(--whitegradientC);
+	background:var(--whitebg);
+	background: var(--whitegradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+
+.ep-summary{
+ height:calc(100% - 0.5em - 4em); 
+ width:calc(100% - 1em);
+}
+
+.travel-log .episode-synopsis{
+ text-align:center; 
+filter: drop-shadow(1px 1px var(--menuborderbright)) drop-shadow(-1px 1px var(--menuborderbright)) drop-shadow(1px -1px var(--menuborderbright)) drop-shadow(-1px -1px var(--menuborderbright));
+
+  padding-bottom:0.5em;
+  width:100%;
+  height: calc(100% - 6.5em );
+
+}
+
+.episode-scroll{
+  overflow: auto;
+  scrollbar-width: thin;
+  height:100%;
+  width:100%;
+}
+
+
+
+
+
+.travel-log-flex{
+ display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items:center;
+  height:calc(100% - 0.5em);
+  width:calc(100% - 0.5em);
+  padding:0.25em;
+}
+
+.travel-log-flex h2{
+ text-align:center; 
+font-size: 1.33em;
+}
+
+.log-quest-holder{
+width:100%;
+ height: 100%;
+ scrollbar-width:thin;
+ overflow-y:auto;
+
+    scroll-behavior: smooth;
+
+}
+
+.log-quest-grid{
+ display:grid;
+
+ row-gap:1.5em;
+ padding: 0.75em;
+  margin-top:0.33em;
+
+  width:calc(100% - 1.5em);
+}
+
+.text-container{
+      font-variant:small-caps;
+     font-family:var(--headerFont);
+     font-size: 0.9em; 
+}
+
+
+
+.log-quest-grid .quest,.log-quest-grid .quest.quest-major,.log-quest-grid .quest.quest-minor{
+ --accent:var(--qHover); 
+}
+
+.log-quest-grid .quest{
+  --qBorder:var(--questMBorder);
+  --qHover:var(--alertSealQuestMain);
+}
+
+.log-quest-grid .quest.quest-major{
+  --qBorder:var(--questObjBorder);
+  --qHover:var(--alertSealQuestObj);
+}
+
+.log-quest-grid .quest.quest-minor{
+  --qBorder:var(--questSBorder);
+  --qHover:var(--alertSealQuestSide);
+}
+
+
+.desc.text{
+ text-indent:var(--indent); 
+ padding:0.5em;
+ padding-top:0.25em;
+ padding-bottom:0.25em;
+ width:calc(100% - 1em);
+ overflow-y:auto;
+ scrollbar-width:thin;
+ height:100%;
+}
+
+
+
+.quest-info-window {
+  display: grid;
+  grid-template-rows: 12em calc(100% - 12.25em);
+  height: calc(100% - 1.5em);
+  padding: 0.5em;
+  padding-bottom: 1em;
+  row-gap: 0.25em;
+  width:calc(100% - 1em);
+}
+
+
+
+
+#quest-scroll .title-holder{
+ overflow-x:hidden; 
+ overflow-y:visible;
+ padding-bottom:1em;
+ background-color: var(--menucolor);
+  position: sticky;
+  top: -1px;
+  z-index:1;
+
+}
+
+.travel-log .quest-header{
+   filter:var(--clipShadow); 
+}
+
+
+.quest-header .title{
+ filter:drop-shadow(0px 1px var(--qBorder)) drop-shadow(0px 1px var(--qBorder)) drop-shadow(0px 1px var(--qBorder)) drop-shadow(0px -1px var(--qBorder)); 
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 0.25em;
+}
+
+
+.travel-log-flex .q-header h2{
+  text-align:left;
+}
+.quest-header .title div.q-header {
+  --s: 1.8em; /* the ribbon size */
+  --d: .5em;  /* the depth */
+  --c: .8em;  /* the cutout part */
+  
+
+  margin:auto;
+  
+  padding: 0 calc(var(--s) + var(--d) + .5em) var(--d);
+  line-height: 1.8;
+  background: 
+    linear-gradient(90deg,#0004 var(--d),#0000 0 calc(100% - var(--d)),#0004 0) 
+    50%/calc(100% - 2*var(--s)) 100% no-repeat;
+  clip-path: polygon(0 100%,var(--s) 100%,calc(var(--s) + var(--d)) calc(100% - var(--d)),calc(100% - var(--s) - var(--d)) calc(100% - var(--d)),calc(100% - var(--s)) 100%,100% 100%,calc(100% - var(--c)) calc(50% + var(--d)/2),100% var(--d),calc(100% - var(--s)) var(--d),calc(100% - var(--s) - var(--d)) 0,calc(var(--s) + var(--d)) 0,var(--s) var(--d),0 var(--d),var(--c) calc(50% + var(--d)/2));
+  background-color: var(--menubutton); /* the main color */
+  width: calc(100% - calc(var(--s) + var(--d) + 3em) - var(--d));
+ 
+}
+
+
+
+.quest-header h2{
+
+  font-size: 1.25em;
+  letter-spacing: 0;
+  margin-bottom:0;
+}
+
+
+
+.objectives-list{
+ margin-top:1em;
+ margin-bottom:1.5em;
+   font-size:0.9em;
+}
+
+#story .passage #quest-scroll ul{
+  padding:0;
+  margin:0;
+  padding-left:1em;
+
+  line-height:1;
+margin-bottom: 2.25em;
+
+}
+
+.quest-major ul{
+ font-weight: bold; 
+}
+.quest-stub .q-header{
+ background-color: var(--menucolor);
+  position: sticky;
+ top: calc(4.3em - 1px);
+ text-shadow: var(--textShadow);
+}
+.q-header{
+  display:grid;
+  grid-template-columns:2.5em calc(100% - 3em);
+  column-gap:0.5em;
+  line-height: 1;
+  border-bottom: 2px solid var(--qBorder);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.q-header .icon-holder{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+
+.quest-stub .q-header .icon-holder i{
+  font-size:2em;
+}
+
+.quest-stub .quest-title{
+ display: flex;
+  overflow: hidden; 
+  align-items:center;
+}
+
+.quest-title .subtitle{
+ font-size:0.75em; 
+   text-transform: lowercase;
+  font-variant: small-caps;
+
+}
+
+#story .quest-obj-holder ul li{
+ margin-bottom:1em; 
+}
+
+#story .passage #quest-scroll ul li ul{
+  padding-left:1.75em; 
+  font-weight:normal;
+}
+
+#story .quest-obj-holder ul li ul li{
+ margin-bottom:0.5em; 
+
+
+}
+
+#story .quest-obj-holder ul li::marker{
+  color:var(--qHover);
+}
+
+#story ul li.quest-stub{
+ padding:0;
+ margin-left: -1em;
+ width:calc(100% + 0.66em);
+}
+
+
+#story ul li.quest-stub::marker{
+display:none;
+content:none;
+}
+
+.quest-title .subtitle,.quest-title .subtitle a{
+    color:var(--fade);
+}
+
+.quest-stub .has-giver{
+ width:100%; 
+}
+
+.quest-stub .title{
+  font-size: 1.6em;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-family: var(--headerFont); 
+  color:var(--accent);
+  width:100%;
+}
+
+.q-header .sealHolder{
+ font-size:0.66em; 
+}
+
+.quest .title h2{
+        color: var(--nametag);
+  background: var(--silverbg);
+  background: var(--silvergradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:none;
+  
+}
+
+.quest-major .title h2{
+        color: var(--h1gradient);
+  background: var(--goldbg);
+  background: var(--goldgradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   filter:none;
+  
+}
+
+.quest-minor .title h2{
+        color: var(--questSBorder);
+  background: var(--questSBorder);
+  background: var(--bronzegradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   filter:none;
+  
+}
+
+.quest-header{
+  --accent: var(--alertSealQuestMain);
+  --qBorder: var(--questMBorder);
+}
+.quest-minor .quest-header{
+  --accent: var(--alertSealQuestSide);
+  --qBorder: var(--questSBorder);
+}
+
+
+
+.quest-major .quest-header{
+  --accent: var(--alertSealQuestObj);
+  --qBorder: var(--questObjBorder);
+}
+
+
+.quest-view .written-module-container{
+height:100%;
+width:100%;
+display: flex;
+
+}
+
+
+/* NAV */
+.codex-categories.travel-log{
+ font-family:var(--headerFont); 
+
+ height:calc(100% - 2px);
+}
+
+.synTab-grid{
+  display: grid;
+  grid-template-rows: 0.33em auto;
+}
+.synTab-grid .act{
+  font-size: 0.33em;
+ 
+}
+
+.synTab-grid .season{
+  font-size: 0.75em; 
+}
+
+
+.synTab-grid .roman-2{
+  transform:scaleX(0.75);
+  display: block;
+}
+
+.synTab-grid .roman-3{
+  transform: scaleX(0.66);
+  margin-left: -0.1em;
+  display: block;
+}
+
+ .menu-grid.travel-log{
+    grid-template-columns:100%;
+    grid-template-rows:50% 50%;
+  }
+  
+   .menu-grid.travel-log.index-view{
+    grid-template-columns:100%;
+    grid-template-rows:60% 40%;
+  }
+  
+  .log-page{
+   border:2px solid var(--menucolor);
+   height:calc(100% - 4px);
+   width: calc(100% - 4px);
+  }
+  
+  .travel-log .q-content{
+   flex-direction:column; 
+   padding:0.5em;
+   height:calc(100% - 1em);
+   width:calc(100% - 1em);
+  }
+  
+  .travel-log .q-module{
+   height:calc(100% - 0.33em);
+   width:calc(100% - 0.33em);
+  }
+  
+  .mobile-control-grid .controls{
+   display:none; 
+  }
+  
+  .mobile-control-grid{
+  width: calc(100% - 8px);
+  height: calc(100% - 2em - 8px);
+  border-radius: 5px;
+  border: 2px solid var(--menuborderbright);
+  }
+  
+  /* SYNOPSIS */
+  
+.timeline-grid{
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ filter: var(--clipShadow);
+}
+  
+  .menu-grid.synopsis{
+    grid-template-columns:25em calc(100% - 0.5em - 25em);
+    column-gap:0.5em;
+    row-gap:0;
+   
+
+  }
+  
+  .syn-image-holder{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+  }
+  
+  #syn-img{
+   aspect-ratio:1/1;
+height: calc(100% - 2em);
+width:100%;
+ max-width:600px;
+   background-image:var(--img);
+   background-repeat:no-repeat;
+   background-position:center;
+   background-size:contain;
+  }
+  
+.synopsis .header .title{
+ overflow-x: hidden;
+ color:var(--nodeicon);
+}
+
+.text-scroll p{
+ margin-top:0; 
+}
+  
+ .syn-sticky{
+       position:sticky;
+   top:7em; 
+  }
+  
+  .syn-desc-holder{
+   overflow: hidden; 
+  padding: 0.5em;
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  }
+  
+   .syn-view-grid{
+   display:grid;
+   width: calc(100% - 2em);
+    padding: 0.5em;
+    height: calc(var(--menuContent) - 4em);
+    grid-template-rows: 50% 50%;
+   }
+   
+    .syn-nav-holder{
+     padding-top:0.5em; 
+    }
+   
+   .syn-nav-holder form{
+     font-size: 0.9em;
+    display:grid;
+    grid-template-columns:calc(100% - 4.5em) 4em;
+    column-gap: 0.5em;
+    width:calc(100% - 2em);
+margin: auto;
+   }
+   
+   .syn-nav-holder select{
+    border-radius: 15px 0px 0px 15px; 
+   }
+   
+     .syn-nav-holder form button{
+    font-variant:small-caps;
+    text-transform:lowercase;
+   }
+   
+   .synopsis-entry{
+    height:100%; 
+   }
+  
+  .synopsis-entry .text-scroll{
+   height: calc(100% - 0.5em);
+    min-height:6em;
+  }
+  
+  .synopsis .header{
+   display:grid;
+   grid-template-columns:2em calc(100% - 2.33em);
+   column-gap:0.33em;
+   border:none;
+   font-variant:small-caps;
+   line-height:1;
+  }
+  
+  .synopsis .subtitle{
+    color: var(--nodeicon);
+  }
+  
+    .synopsis .icon-holder{
+   display: flex;
+  justify-content: center;
+  font-size: 1.33em;
+  color:var(--nodeicon);
+  }
+  
+  .synopsis .subtitle{
+   font-variant: small-caps;
+  text-transform: lowercase;
+  line-height: 1; 
+  }
+  
+  #syn-content{
+height: calc(100% - 2.5em);
+   width:100%;
+  }
+  
+  .q-module .loc-info .row{
+    display:flex;
+    justify-content: space-between;
+  border-bottom: 2px dashed var(--menuborderbright);
+  line-height: 1;
+  padding-top: 0.25em;
+  }
+  
+  .q-module .loc-info{
+   width:100%;
+   overflow:hidden;
+  }
+  
+  .log-loc-grid{
+     width:calc(100% - 1em);
+     margin:auto;
+   overflow:hidden;
+ grid-template-columns: calc(30% - 0.5em) 70%;
+ column-gap:0.5em;
+   display: grid;
+   height: 6em;
+   margin-bottom: 0.5em;
+   font-size:0.8em;
+  }
+  
+  .img-border{
+   filter:drop-shadow(1px 1px var(--menuborderbright)) drop-shadow(-1px 1px var(--menuborderbright)) drop-shadow(1px -1px var(--menuborderbright)) drop-shadow(-1px -1px var(--menuborderbright)); 
+   width:100%;
+   height:100%;
+  }
+  
+ .log-page .loc-thumb-holder{
+   width:100%;
+   height:100%;
+   overflow: hidden;
+      clip-path: polygon(0 0.63em,0.5em 0.5em,0.63em 0,calc(100% - 0.63em) 0,calc(100% - 0.5em) 0.5em,100% 0.63em,100% calc(100% - 0.63em),calc(100% - 0.5em) calc(100% - 0.5em),calc(100% - 0.63em) 100%,0.63em 100%,0.5em calc(100% - 0.5em),0 calc(100% - 0.63em));
+  }
+  
+  .loc-thumb-holder .loc-img{
+   background-image:var(--img);
+   background-position:center;
+background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  overflow:hidden;
+  position:relative;
+opacity: 0.9;
+  filter: contrast(50%) saturate(200%) brightness(140%);
+  }
+  
+  .loc-thumb-holder .loc-emblem{
+    background-image:var(--emblem);
+    height:110%;
+    aspect-ratio:1/1;
+    position:absolute;
+   top: -10%;
+    left:0;
+    background-size: contain;
+    mix-blend-mode: multiply;
+  filter: saturate(200%) brightness(1.9);
+  transform: rotate(15deg);
+
+  }
+  
+   .loc-thumb-holder .loc-emblem.north{
+    filter: saturate(190%) brightness(1.75) hue-rotate(30deg)
+  }
+  
+  .loc-thumb-holder .loc-emblem.middle{
+   filter:saturate(130%) brightness(2.76) hue-rotate(5deg);
+  }
+  
+
+        .synopsis-entry.update-grid{
+       grid-template-rows: 3em calc(100% - 4em);
+       row-gap:1em;
+  display: grid;
+      }
+  
+  
+  @media screen and (max-width:1200px){
+    
+    .quest-info-window {
+
+  grid-template-rows: 10em calc(100% - 10.5em);
+    }
+    
+    .quest-header .h2,.quest-header .row{
+ font-size:0.9em; 
+}
+
+    .desc.text p,.episode-written p{
+ margin-top:0; 
+ font-size:0.9em;
+}
+
+      #syn-content{
+   height:calc(100% - 2.33em);
+   width:calc(100% - 1em);
+   padding:0.5em;
+   min-height: 9em;
+   padding-bottom: 0;
+  }
+    
+    .text-container{
+     height: 100%; 
+
+    }
+    
+        .synopsis-log{
+
+   overflow: hidden;
+  }
+  
+    .synopsis-log .q-module{
+       position:relative;
+   top:0; 
+  }
+    
+      .menu-grid.synopsis{
+    grid-template-columns:100%;
+  grid-template-rows: 15em auto;
+    row-gap: 0.5em;
+      }
+      
+      .synopsis-entry{
+       display:flex;
+       align-items:center;
+      }
+      
+      .synopsis-entry .header-container{
+       width:100%; 
+      }
+      
+
+      
+      .syn-sticky{
+           position:relative;
+    top:0;
+    height: calc(100% - 1em);
+      }
+    
+    .synopsis-log{
+    position:relative;
+    top:0;
+    height:100%;
+    width: calc(100% + 1em);
+    }
+    
+
+  
+  .syn-view-grid{
+   display:grid;
+   grid-template-columns:8em calc(100% - 8.5em);
+   grid-template-rows:100%;
+   column-gap:0.5em;
+   height:100%;
+   min-height:100%;
+   margin-left:auto;
+   margin-right:auto;
+   width:80%;
+ 
+  }
+  
+  .synopsis-log .q-module{
+    height:100%;
+  }
+  
+ 
+
+    
+  .synopsis-log{
+position: sticky;
+    top: 5.5em;
+    background-color: var(--menubutton);
+    z-index: 4;
+    height: 15em;
+    padding-bottom: 0.33em;
+    width: 100%;
+  }
+  
+  .syn-nav-holder form{
+  width: 50%;
+  max-width: 19em;
+  margin-left: auto;
+  margin-right: 0;
+  }
+  
+  .syn-nav-holder{
+   font-size: 0.8em;
+   padding-top:0;
+  }
+  
+        .menu-layout div.menu-grid{
+      padding:0; 
+      width:calc(100% - 0.5em);
+ }
+  
+  }
+  
+  @media screen and (min-width:992px) and (max-width:1199px){
+    .syn-view-grid{
+     width: 80%;
+
+    }
+  }
+  
+  @media screen and (max-width:749px){
+     .syn-view-grid {
+    display: grid;
+
+    width:calc(100% - 2em);
+    column-gap: 0em;
+     }
+     
+     .timeline-grid{
+ grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.ep-node.title.season-header{
+  font-size: 0.9em;
+}
+
+ .menu-grid.synopsis {
+    grid-template-rows: 13em auto;
+  }
+  
+  .synopsis-log{
+   height: 13em; 
+  }
+
+  }
+  
+
+  @media screen and (max-width:700px){
+
+
+ .episode-written, .written-module{
+   --padding:1.8em;
+ }
+
+.written-module{
+    font-size: 0.9em;
+ 
+
+    margin-bottom: 0;
+    margin-top: 0.33em;
+  }
+
+.title-holder h2{
+  font-size:1.25em;
+}
+
+
+  }
+  
+
+
+@media screen and (min-width:750px) and (max-width:991px), (min-width:1100px){
+  
+
+
+
+ 
+  .travel-log .log-nav-holder {
+   position:relative;
+   left:0;
+   bottom:0;
+   border:0;
+   border-right: 3px solid var(--menuborderbright);
+  height: 100%;
+  } 
+  
+  .menu-grid.travel-log,.menu-grid.travel-log.index-view{
+    grid-template-columns:50% 50%;
+    grid-template-rows:100%;
+    filter:drop-shadow(1px 1px var(--menucolor)) drop-shadow(-1px 1px var(--menucolor)) drop-shadow(1px -1px var(--menucolor)) drop-shadow(-1px -1px var(--menucolor))
+    drop-shadow(1px 1px var(--menucolor)) drop-shadow(-1px 1px var(--menucolor)) drop-shadow(1px -1px var(--menucolor)) drop-shadow(-1px -1px var(--menucolor));
+  }
+  
+   
+       
+  
+  #log-p1{
+   width:calc(100% - 2px);
+   
+   border-right:2px solid var(--menucolor);
+   border-radius: 0 3em 0 0;
+  }
+  
+    #log-p2{
+   width:calc(100% - 2px);
+   border-left:2px solid var(--menucolor);
+   border-radius:  3em 0 0 0;
+  }
+  
+  .travel-log-flex{
+   height: calc(100% - 1em);
+   row-gap: 0.5em;
+  }
+  
+  .menu-layout div.menu-grid.travel-log {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: calc(100% - 4px);
+  margin-top: 2px;
+}
+  
+
+  
+  .log-page{
+    border:0;
+
+  width: 100%;
+  --c: 0.5em; /* control the curvature (works with percentage) */
+
+
+
+  mask: radial-gradient(50% var(--c) at bottom,#0000 calc(100% - 2px),#000);
+  background-color:var(--menubutton);
+  }
+  
+
+
+
+
+ 
+}
+
+
+
+@media screen and (max-width:749px){
+
+
+
+
+
+.log-quest-grid button{
+ height:3.1em; 
+margin: 0;
+}
+
+
+  .log-loc-grid{
+   font-size:0.75em; 
+  }
+  
+   .travel-log .episode-synopsis{
+    height: calc(100% - 5em);
+  }
+
+
+.timeline-holder .ep-node .text{
+ padding-right:0; 
+}
+
+.timeline-holder .ep-node .text{
+ font-size: 1.1em; 
+}
+
+}
+
+@media screen and (min-width:500px) and (max-width:600px){
+  .log-loc-grid{
+   font-size:0.75em; 
+   grid-template-columns:100%;
+   height:4em;
+  }
+  
+   .travel-log .episode-synopsis{
+    height: calc(100% - 3em - 0.5em);
+  }
+  
+  .log-loc-grid .loc-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: 1em;
+  height: 100%;
+  }
+  
+  .loc-thumb-holder{
+    display:none;
+  }
+  
+  
+}
+
+@media screen and (min-width:601px) and (max-width:749px), (min-width: 992px) and (max-width:1099px){
+  .ep-summary{
+    display:grid;
+    grid-template-columns:calc(100% - 13em) 13em;
+    padding-top: 0.5em;
+  }
+  
+  .log-loc-grid{
+    grid-template-columns: 100%;
+  grid-template-rows: auto 6em;
+  height: 100%;
+  }
+  
+    .travel-log .episode-synopsis {
+    height: 100%;
+    padding-bottom: 0;
+    width: calc(100% - 0.75em);
+    margin-left: 0.5em;
+  }
+
+  
+  
+}
+

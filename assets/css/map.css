@@ -1,0 +1,749 @@
+:root{
+ --mapText:#3D3229;
+ --mapMarkerColor:#35271d;
+ --mapMarkerInactive:#443428;
+ --mapOutline:#e6e6c0;
+ --mapOutlineSelect:#ecec9a;
+
+ --mapMarker:circle(35% at 50% 50%);
+ --mapMarkerCapital:polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+ --mapMarkerProvCap:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+ --mapMarkerPOI:polygon(50% 100%, 0 16%, 100% 16%);
+ --mapMarkerNature:inset(23% 26% 27% 27%);
+ --mapMarkerLast:polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+ --mapMarkerCamp:polygon(50% 0%, 100% 100%, 70% 100%, 50% 61%, 30% 100%, 0 100%, 0 100%);
+
+}
+
+body.map #display-area{
+  display:none;
+}
+
+
+
+body.map #passages{
+
+    max-width: unset;
+    padding: 0;
+}
+
+body.map #story{
+
+ position:relative;
+	min-height: calc(100vh  - var(--locHeaderText) - 7.3em);
+	min-height: calc(100dvh - var(--locHeaderText) - 7.3em);
+
+}
+
+@media screen and (max-width:750px){
+body.map #story{
+  padding-bottom:0;
+  min-height: calc(100dvh - var(--locHeaderText) - 6em - 0.4em);
+ }
+
+
+}
+
+
+
+.map-containment{
+    height: calc(100vh  - var(--locHeaderText) - var(--menuNav) - 3em);
+    height: calc(100dvh - var(--locHeaderText) - var(--menuNav) - 3em);
+    padding-top:1em;
+    position:relative;
+    display:grid;
+    grid-template-rows:calc(100% - 23em) 23em;
+
+}
+
+
+
+.map-menu-holder{
+height: 23em;
+ display:grid;
+ grid-template-columns:40% 60%;
+
+}
+
+.go-button-holder button{
+ height:100%;
+ width:100%;
+ position:absolute;
+ left:0;
+ top:0;
+ background-color:transparent;
+ border:0;
+ padding:0;
+}
+
+.go-button-holder .travel-btn{
+ height:100%;
+ width:100%;
+}
+
+
+@media screen and (min-width:750px) and (max-width:992px){
+ .map-containment{
+      grid-template-columns:50% 50%;
+      grid-template-rows:unset
+      height: calc(100vh  - var(--locHeaderText) - 9em);
+    height: calc(100dvh - var(--locHeaderText) - 9em);
+ }
+
+.map-menu-holder{
+height: calc(100vh  - var(--locHeaderText) - var(--menuNav) - 3em);
+height: calc(100dvh - var(--locHeaderText) - var(--menuNav) - 3em);
+}
+
+.map-menu-holder{
+  grid-template-rows:60% 40% ;
+  grid-template-columns:unset;
+}
+
+.map-menu{
+ height:60%;
+}
+
+}
+
+  .subtitle.proceed{
+ font-size:1.75em;
+ font-family:var(--headerFont);
+}
+
+@media screen and (min-width:992px){
+  .subtitle.proceed{
+ font-size:1.75em;
+}
+}
+
+@media screen and (min-width:1200px){
+ .map-containment{
+      grid-template-columns:60% 40%;
+      grid-template-rows:unset;
+      height: calc(100vh  - var(--locHeaderText) - 4em);
+    height: calc(100dvh - var(--locHeaderText) - 4em);
+ }
+
+.map-menu-holder{
+height: calc(100vh  - var(--locHeaderText) - var(--menuNav) - 3em);
+height: calc(100dvh - var(--locHeaderText) - var(--menuNav) - 3em);
+}
+
+ .map-menu-holder{
+  grid-template-rows:45% 55% ;
+  grid-template-columns:unset;
+}
+
+.map-menu{
+ height:55%;
+}
+
+}
+
+.map-scroll-holder{
+   height: calc(100% - 4px);
+
+  width:calc(100% - 4px);
+  overflow:hidden;
+filter: var(--clipShadow);
+}
+
+
+
+.map-scroller{
+ width:100%;
+ height:100%;
+ overflow:auto;
+ scroll-behavior: smooth;
+ -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+      clip-path: polygon(0 15.77px,10px 10px,15.77px 0,calc(100% - 15.77px) 0,calc(100% - 10px) 10px,100% 15.77px,100% calc(100% - 15.77px),calc(100% - 10px) calc(100% - 10px),calc(100% - 15.77px) 100%,15.77px 100%,10px calc(100% - 10px),0 calc(100% - 15.77px));
+}
+
+.map-scroller::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.map-buffer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+   width:250%;
+    aspect-ratio: 1/1;
+}
+
+.map-img{
+ background-image:var(--mapImg);
+height:100%;
+ width:100%;
+ background-size:contain;
+ background-repeat:no-repeat;
+ background-position:top left;
+ position:relative;
+}
+
+#map-content{
+ height:100%;
+ width:100%;
+ position:relative;
+ font-family:var(--headerFont);
+ font-variant:small-caps;
+ color:var(--mapText);
+}
+
+
+
+
+
+.map-menu{
+ background-color:var(--menucolor);
+
+ width:100%;
+ height:100%;
+}
+
+.loc-point-holder{
+ aspect-ratio:1/1;
+ width:1%;
+ position:absolute;
+
+}
+
+
+
+.loc-point{
+ width:100%;
+ height:100%;
+
+}
+
+.inactive .loc-point{
+ filter:none;
+}
+
+.loc-point button{
+ background-color:var(--mapMarkerColor);
+ aspect-ratio:1/1;
+ margin-top:10%;
+ margin-left:10%;
+ width:75%;
+ position:absolute;
+ top:0;
+ left:0;
+ z-index:1;
+ clip-path:var(--mapMarker);
+ padding:0;
+
+ transition:var(--transition);
+ border:0;
+}
+
+.inactive .loc-point button{
+ background-color:var(--mapMarkerInactive);
+}
+
+.loc-point-holder:hover .loc-point
+{
+  filter:drop-shadow(1px 1px var(--mapOutline)) drop-shadow(-1px 1px var(--mapOutline)) drop-shadow(1px -1px var(--mapOutline)) drop-shadow(-1px -1px var(--mapOutline));
+}
+
+.active .loc-point,.active .marker.camp,.loc-point-holder.active:hover .loc-point{
+   filter:drop-shadow(1px 1px var(--mapOutlineSelect)) drop-shadow(-1px 1px var(--mapOutlineSelect)) drop-shadow(1px -1px var(--mapOutlineSelect)) drop-shadow(-1px -1px var(--mapOutlineSelect));
+}
+
+
+
+.loc-point button,.loc-point button .go-img-holder,.loc-point button .title-holder,.loc-point button .proceed{
+   filter:saturate(100%) brightness(100%);
+}
+
+.inactive .loc-point button{
+
+ filter:saturate(80%) brightness(130%);
+    cursor:default;
+ opacity:0.75;
+}
+
+.inactive .loc-point button .go-img-holder,.inactive .loc-point button .go-img-holder,.inactive .loc-point button .title-holder,.inactive .loc-point button .proceed{
+ filter:saturate(80%) brightness(130%);
+
+}
+
+.loc-capital .loc-point button{
+   clip-path:var(--mapMarkerCapital);
+width: 120%;
+margin-top: -9%;
+  margin-left: -9%;
+}
+
+.loc-subcap .loc-point button{
+   clip-path:var(--mapMarkerProvCap);
+   margin-top:20%;
+   width:80%;
+   margin-left:10%;
+}
+
+.loc-poi .loc-point button{
+   clip-path:var(--mapMarkerPOI);
+   width:70%;
+   margin-top:30%;
+   margin-left:15%;
+}
+
+.loc-nature .loc-point button{
+   clip-path:var(--mapMarkerNature);
+   width:100%;
+   margin-top:0%;
+     margin-left:0%;
+}
+
+
+
+
+.loc-label{
+ position: absolute;
+top: -50%;
+  left: 100%;
+  z-index: 2;
+ filter:drop-shadow(1px 1px var(--mapOutline)) drop-shadow(-1px 1px var(--mapOutline)) drop-shadow(1px -1px var(--mapOutline)) drop-shadow(-1px -1px var(--mapOutline));
+
+  text-transform:lowercase;
+  font-weight:bold;
+  text-align: center;
+  line-height: 1;
+  font-size:110%;
+  transition:var(--transition);
+  opacity:0;
+  transform:scale(0);
+}
+
+.active .loc-label{
+ filter:drop-shadow(1px 1px var(--mapOutlineSelect)) drop-shadow(-1px 1px var(--mapOutlineSelect)) drop-shadow(1px -1px var(--mapOutlineSelect)) drop-shadow(-1px -1px var(--mapOutlineSelect));
+}
+
+.active .loc-label,.loc-point-holder:hover .loc-label{
+ opacity:1;
+ transform:scale(1);
+}
+
+.loc-point-holder:hover .loc-label{
+ z-index:3;
+}
+
+.marker.last-location{
+ height:1%;
+ width:1%;
+ background-color:#393195;
+ position:absolute;
+ mix-blend-mode: overlay;
+
+
+ clip-path:circle();
+ opacity:0.75;
+
+
+}
+
+.loc-point-holder.camp{
+    margin-left: -0.66%;
+  margin-top: 0.66%;
+}
+
+.marker.camp{
+background-color: var(--mapMarkerColor);
+  clip-path: var(--mapMarkerCamp);
+height: 70%;
+  width: 90%;
+  position: absolute;
+  opacity:0.75;
+
+}
+
+.marker.quest{
+ height:1.1%;
+ width:1.1%;
+ background-color:#42a5ca;
+ position:absolute;
+ mix-blend-mode: overlay;
+
+
+ clip-path:circle();
+ margin-left: -0.05%;
+  margin-top: -0.05%;
+ opacity:0.9;
+
+
+}
+
+.marker.quest.obj{
+ background-color:#e1b155;
+}
+
+.marker.quest.side{
+ background-color:#d38269;
+}
+
+
+.go-holder{
+
+ height:calc(100% - 4px);
+ border:2px solid var(--menucolor);
+}
+
+.go-button-holder,.go-quest-holder,#location-replace{
+ height:100%;
+ width:100%;
+}
+
+.go-button-holder{
+ position:relative;
+}
+
+.go-button-holder .title{
+ font-family:var(--headerFont);
+ font-size:1.1em;
+ padding-right: 1em;
+color: var(--buttonlink);
+}
+
+.go-view{
+ height:100%;
+ width:100%;
+ background-size:100% auto;
+ background-position:center;
+ background-repeat:no-repeat;
+ background-image:var(--img);
+ position:relative;
+ filter:contrast(66%);
+  mix-blend-mode: overlay;
+  opacity:0.5;
+
+}
+
+
+.go-emblem{
+height: 100%;
+  width: 100%;
+  background-image: var(--emblem);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+
+}
+
+.go-img-holder{
+ height:100%;
+ position:relative;
+ width:100%;
+ background-color:#A29984;
+   transition:var(--transition);
+   opacity:0.5;
+}
+
+button:focus .go-img-holder,button:hover .go-img-holder{
+  opacity:0.75;
+}
+
+.disabled button:focus .go-img-holder,.disabled button:hover .go-img-holder{
+  opacity:0.5;
+}
+
+.go-holder.disabled button{
+ cursor:not-allowed;
+
+}
+
+.go-holder.disabled {
+  opacity:0.5;
+}
+
+.travel-btn .title-holder .subtitle .text-clip{
+ line-height:1em;
+ font-size:0.75em;
+ width:calc(100% - 4.25em);
+ margin-left:4.25em;
+ margin-top: -0.5em;
+ min-height:1em;
+ color:var(--buttonlink);
+}
+
+.travel-btn .title-holder{
+   background-color:var(--menucolorTransparent);
+ padding-bottom:0.5em;
+  position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ color:var(--subtitle);
+}
+
+.travel-btn .title-grid{
+ display:grid;
+ grid-template-columns:1.5em calc(100% - 2em);
+ font-size:1.5em;
+
+
+}
+
+.travel-btn .proceed{
+  background-color:var(--menucolorTransparent);
+  text-align:right;
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:calc(100% - 4px);
+  padding:4px;
+  padding-left:0;
+  text-transform:lowercase;
+  color:var(--linkcolor);
+    transition:var(--transition);
+}
+
+
+
+button:hover .proceed,button:focus .proceed{
+  color:var(--linkhover);
+
+}
+
+.disabled .travel-btn .proceed{
+ color:var(--fade);
+}
+
+.go-holder .text-clip{
+ text-align:left;
+}
+
+.go-holder .title-grid .icon-holder{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ width:100%;
+ height:100%;
+ color:var(--accent);
+}
+
+.travel-btn .title,.travel-btn .icon,.travel-btn .proceed span{
+ filter:drop-shadow(1px 1px var(--menucolor)) drop-shadow(-1px 1px var(--menucolor)) drop-shadow(1px -1px var(--menucolor)) drop-shadow(-1px -1px var(--menucolor));
+}
+
+.loc-quest-flex{
+ display:flex;
+ flex-direction:column;
+ flex-wrap:no-wrap;
+ justify-content:center;
+ align-items:center;
+ height:100%;
+ overflow:hidden;
+ row-gap: 0.4em;
+ filter:var(--clipShadow);
+}
+
+.loc-quest-holder{
+ position:absolute;
+ top:2.5em;
+ left:0;
+ width:100%;
+ height:calc(100% - 4.5em);
+}
+
+.loc-quest-holder .text-clip{
+ height:100%;
+}
+
+.loc-quest-holder .subtitle{
+ font-size:0.75em;
+ color:var(--fade);
+ line-height:1;
+ width: calc(100% + 1.5em);
+  margin-left: -1.5em;
+}
+
+#story .subtitle ul li::marker{
+  content:"-";
+}
+
+.passage .loc-quest-holder .subtitle ul{
+ margin:0;
+ padding-left:0.5em;
+}
+
+.loc-quest-holder .seal{
+ font-size:1.5em;
+}
+
+.loc-quest{
+ width:calc(100% - 3em);
+}
+
+.loc-quest.tail{
+  background-color:var(--menucolor);
+  display:grid;
+grid-template-columns: 1em calc(100% - 1.25em);
+  column-gap: 0.25em;
+  padding:4px;
+}
+
+.loc-quest.objective, .quest-badge.obj {
+ color:var(--alertSealQuestObj);
+}
+
+.loc-quest.main,.quest-badge.main{
+ color:var(--alertSealQuestMain);
+}
+
+.loc-quest.side,.quest-badge.side{
+ color:var(--alertSealQuestSide);
+}
+
+.loc-quest .main-text{
+ font-family:var(--headerFont);
+ font-weight:bold;
+text-transform: uppercase;
+  letter-spacing: -1px;
+  text-indent: 0;
+}
+
+
+button .travel-btn,button .quest-badge,.loc-list-item button .icon{
+  filter:brightness(100%);
+  transition:var(--transition);
+}
+
+button:hover .travel-btn,button:focus .travel-btn,button:hover .quest-badge,button:focus .quest-badge,.loc-list-item button:hover .icon,.loc-list-item button:focus .icon{
+  filter:brightness(120%);
+}
+
+.theme-light button:hover .travel-btn,.theme-light button:focus .travel-btn,.theme-light button:hover .quest-badge,.theme-light button:focus .quest-badge,.theme-light .loc-list-item button:hover .icon,.theme-light .loc-list-item button:focus .icon{
+  filter:brightness(90%);
+}
+
+.map-menu .map-head{
+ height:3em;
+ border:2px solid var(--menuborderbright);
+ --tailColor:var(--menuborderbright);
+ background-color:var(--menubutton);
+ filter:var(--clipShadow);
+}
+
+.map-head .icon-holder{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+
+
+.map-head .header{
+border:0;
+ display:grid;
+ grid-template-columns:1em calc(100% - 1.5em);
+ column-gap:0.5em;
+ font-size:1.5em;
+ font-family:var(--headerFont);
+ font-variant:small-caps;
+ color:var(--accent);
+ padding:0.5em;
+ padding-top:0;
+ padding-bottom:0;
+ width:calc(100% - 1em);
+}
+
+
+
+.map-list-scroll{
+ height:calc((100% - 3em) - 4px);
+ width:100%;
+ overflow:auto;
+ scrollbar-width:thin;
+}
+
+.map-list{
+ padding:0.5em;
+}
+
+.loc-list-item{
+ margin-bottom:0.5em;
+}
+
+.loc-list-item .icon{
+  color:var(--accent);
+}
+
+.loc-list-item button{
+  color:unset;
+  width:100%;
+  border-radius:0;
+  display:block;
+
+  text-align:left;
+  text-shadow:none;
+  display:grid;
+  grid-template-columns:calc(100% - 3.5em) 3em;
+  column-gap:0.5em;
+  padding-bottom:2px;
+  border-width:0 0 2px 0;
+  border-style:dotted;
+}
+
+.theme-contrast .loc-list-item button{
+ color:var(--linkcolor);
+}
+
+.loc-list-item button:hover,.loc-list-item button:focus{
+  color:var(--linkhover);
+}
+
+.loc-list-item .header{
+ display:grid;
+ grid-template-columns:1em calc(100% - 1.5em);
+ column-gap:0.5em;
+ border:0;
+}
+
+.loc-list-item .header,.theme-light .loc-list-item .header{
+  border:0;
+}
+
+.quest-badge{
+ text-shadow:var(--textshadow);
+
+}
+
+.subheader.quests{
+ display: flex;
+justify-content: end;
+}
+
+.camp-icon{
+ clip-path: var(--mapMarkerCamp);
+ background-color:var(--accent);
+ aspect-ratio:1/1;
+ height:1em;
+}
+
+/*MAP MODS */
+.map-fade{
+ position:absolute;
+ top:0;
+ left:0;
+ height:100%;
+ width:100%;
+ background-color:#D5C4B0;
+ opacity:0.25;
+}
+
+
+
+.loc-travel .loc-point button{
+  clip-path:var(--mapMarkerLast);
+  width: 50%;
+    margin-top: 25%;
+    margin-left: 25%;
+}

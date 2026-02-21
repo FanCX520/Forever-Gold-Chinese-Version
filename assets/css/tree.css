@@ -1,0 +1,504 @@
+.family-tree-holder{
+ width:100%;
+ height:25vh;
+ height:25dvh;
+ min-height:20em;
+ overflow:auto;
+ scrollbar-width:hidden;
+ text-indent: 0;
+ --linecolor:var(--buttonborder);
+ --marriedline:var(--buttonborderhover);
+ --dude:#2f403b;
+ --chick:#5e2b32;
+
+ --stigma:#512a22;
+ --couplecolor:var(--marriedline);
+}
+
+.family-tree-holder{
+  
+}
+
+.theme-light .family-tree-holder{
+ --dude:#748f93; 
+ --chick:#BF6D6D;
+
+ --linecolor:#b09172;
+ --marriedline:#c4843f;
+ --stigma:#b53d23;
+}
+
+.family-tree-body{
+ min-height:100%;
+ min-width:100%;
+ background-color:var(--menubutton);
+display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  padding: 2em;
+  font-size: 0.75em;
+
+}
+
+.family-tree-body .family-section{
+ display:inline-flex;
+position: relative;
+
+}
+
+.family-tree-body .children{
+ display: flex; 
+ position:relative;
+
+ column-gap:2em;
+}
+
+.family-tree-body .children.multiple-child{
+left: -5em;
+margin-top:4em;
+}
+
+.family-tree-body .children.multiple-child.one-parent,.family-tree-body .children.one-parent{
+  left:0;
+  margin-left: 0;
+}
+
+
+
+.family-tree-body .node{
+   background-color:var(--menucolor);
+ border:1px solid var(--linecolor);
+   color:var(--fade);
+}
+
+.family-tree-body .node,.family-tree-body .children.multiple-child .node{
+ display:inline-block;
+ padding:0.5em;
+
+ margin-top:2em;
+
+
+ border-radius:8px;
+ text-align:center;
+ text-indent:0;
+ position:relative;
+height: 4em;
+  width: 8em;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+
+}
+
+.multispouse-child-buffer{
+   border-left:2px solid var(--linecolor);
+   height: 2em;
+  margin-left: calc(50% - 1px);
+}
+
+.multispouse-child-buffer.multiple-child{
+   margin-left: calc(5.5em);
+  height: 2.2em;
+  position: absolute;
+}
+
+.family-tree-body .children.multiple-child.multi-spouse{
+  left:0;
+}
+
+.node.f{
+ border-color:var(--chick); 
+ 
+}
+
+.node.m{
+ border-color:var(--dude); 
+}
+
+.node.f span:before,.node.m span:before{
+  position:absolute;
+  top: 0.25em;
+  left: 0.25em;
+}
+
+.node.f span.name:before{
+  content:"\2640";
+  color:var(--chick);
+}
+
+.node.m span.name:before{
+  content:"\2642";
+  color:var(--dude);
+}
+
+.family-tree-body .multiple-child > .node:before{
+  content:"";
+
+}
+
+.continue-sibling-line{
+position:relative;  
+}
+
+.continue-sibling-line:before{
+  content:"";
+  position:absolute;
+top: calc(-2em + 1px);
+  left:0;
+  height:0px;
+width: calc(100% + 2em);
+  border-bottom:2px solid var(--linecolor);
+ 
+}
+
+
+
+
+.family-tree-body .node:before{
+  content:"";
+  position:absolute;
+  top:-4em;
+  left:calc(50% - 1px);
+  width:0px;
+  border-left:2px solid var(--linecolor);
+  height:4em;
+}
+
+.family-tree-body .node.first-child:before{
+width:100%;
+  border-top:2px solid var(--linecolor);
+
+}
+
+.family-tree-body .node.mid-child:before{
+width:100%;
+  border-top:2px solid var(--linecolor);
+
+}
+
+.family-tree-body .node.mid-child:after{
+width:calc(50% - 1px);
+  border-top:2px solid var(--linecolor);
+    position:absolute;
+  top:-4em;
+  left:0;
+content:"";
+
+}
+
+.family-tree-body .node.last-child:before{
+width:4em;
+  border-top:2px solid var(--linecolor);
+  border-right:2px solid var(--linecolor);
+  border-left:0;
+left: -2px;
+}
+
+
+
+.family-tree-body .node.no-parent:before{
+ content:none;
+ display:none;
+}
+
+.family-tree-body .has-spouse{
+ position:relative; 
+ min-width: 13em;
+}
+
+.spouses-holder{
+display: inline-flex;
+  margin-top: 4em;
+  position: relative;
+  column-gap: 3em;
+  padding-left: 2em;
+}
+
+.children.last-kids,.children{
+ margin-left: calc(-3em - 1px); 
+}
+
+.children.multiple-child,.children.last-kids.one-parent{
+ margin-left:0; 
+}
+
+.children.one-parent{
+ margin-top: 2em; 
+}
+
+
+.family-tree-body .node.spouse{
+
+
+}
+
+.family-tree-body .affair .node{
+ border-style:dotted; 
+color:var(--stigma);
+
+}
+
+.family-tree-body .node a{
+ color:var(--textcolor); 
+}
+
+.family-tree-body .node.heir a,.family-tree-body .node.head a{
+ color:var(--linkcolor); 
+}
+
+.family-tree-body .node a:hover,.family-tree-body .affair .node a:hover{
+ color:var(--linkhover); 
+}
+
+.family-tree-body .affair .node a{
+color:var(--alertR);
+
+}
+
+.spouses-holder .node.spouse{
+ margin-top:3.5em; 
+}
+
+.family-section.lone-node{
+ display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.family-tree-body .coupling{
+  --couplecolor:var(--marriedline);
+  --borderstyle:double;
+ display:inline-block;
+width: 3em;
+margin-bottom: 0.33em;
+ border-bottom:5px var(--borderstyle) var(--couplecolor);
+position: absolute;
+  top: 4.5em;
+}
+
+.family-tree-body .ex .coupling,.family-tree-body .affair .coupling{
+  border-width:2px;
+}
+
+.family-tree-body .ex{
+  --couplecolor:var(--fade);
+  --borderstyle:dashed;
+  
+}
+
+.family-tree-body .affair{
+  --couplecolor:var(--stigma);
+  --borderstyle:dashed;
+    --linecolor:var(--stigma);
+  
+}
+
+.family-tree-body .deceased{
+  --couplecolor:var(--fade);
+
+}
+
+
+.family-tree-body .coupling.has-children:after{
+ position:absolute;
+ top:0;
+left: calc(50% - 1px);
+ border-right:2px solid var(--linecolor);
+height: 4.8em;
+ content:"";
+}
+
+.family-tree-body .spouses-holder .coupling{
+position: relative;
+  width: 6.6em;
+  transform: rotate(70deg);
+  margin-bottom: -0.9em;
+  top: 1.2em;
+  
+}
+
+.family-tree-body .spouses-holder .coupling:after{
+  content:"";
+
+}
+
+.family-tree-body .spouses-holder .spouse-holder:after{
+ position:absolute;
+ top:0;
+left: -2em;
+width: calc(100% + 4em);
+ border-top:2px dotted var(--linecolor);
+ content:"";
+}
+
+.tree-relation{
+position: absolute;
+  left: 0.5em;
+  top: 3.25em;
+  color:var(--couplecolor);
+  filter:drop-shadow(1px 1px var(--menubutton)) drop-shadow(-1px 1px var(--menubutton)) drop-shadow(1px -1px var(--menubutton)) drop-shadow(-1px -1px var(--menubutton));
+ z-index: 2;
+}
+
+.tree-relation span{
+ font-size:2em; 
+}
+
+.multi-spouse{
+ position: relative 
+}
+
+.multi-spouse .tree-relation{
+
+  top: -1.33em;
+}
+
+.lone-node.has-children .node.lone:after{
+ content:"";
+height: 2.2em;
+  border-left: 2px solid var(--linecolor);
+  position: absolute;
+  bottom: -2.2em;
+  left: calc(50% + 1em);
+}
+
+.children.multi-spouse{
+ margin-left:unset; 
+}
+
+
+.family-tree-body .family-section.has-ancestor{
+ margin-top:8em; 
+}
+
+
+.family-tree-body .node.has-ancestor:before{
+content:none;
+display:none;
+}
+
+.lone-node .node.lone.ancestor:after{
+ content:"";
+height: 2.2em;
+  border-left:2px dotted var(--linecolor);
+ height:10em;
+ bottom:-10em;
+ left: 4.5em;
+  position:absolute;
+}
+
+.family-tree-body .name-holder{
+ height: 100%;
+width:100%;
+display:block;
+  overflow: hidden; 
+}
+
+
+.family-tree-body .coupling-holder{
+height: 4em;
+  display: inline-block;
+  width: 3em;
+}
+
+.family-tree-body .spouses-holder .coupling-holder{
+height: 4.5em;
+  display: block;
+  margin-left: -0.5em;
+
+  position: absolute
+}
+
+.family-tree-body .name{
+ height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+
+.node .node-note{
+position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  font-size: 1.2em;
+  background-color: var(--menucolor);
+  width: 1.2em;
+  aspect-ratio: 1/1;
+  padding: 2px;
+  border-radius: 5em;
+  border: 1px solid var(--linecolor);
+  color:var(--linecolor);
+  --linecolor:var(--gold);
+}
+
+.node .node-note a{
+ color:var(--linecolor); 
+}
+
+.node .node-note.origin{
+  --linecolor:var(--fade);
+  top:unset;
+  bottom: -0.33em;
+}
+
+
+/* */
+.spouse-with-affair{
+ display: flex;
+  column-gap: 2em; 
+}
+
+.primary-relationship{
+ min-width: 13em; 
+ position:relative;
+}
+
+.spouse-with-affair .primary-relationship:after{
+content: "";
+  position: absolute;
+  right: calc(-100% + 8.6em);
+  top: 4em;
+  border-top: 2px dotted var(--linecolor);
+  width: calc(100% - 8em);
+}
+
+.family-tree-body .spouses-holder .spouse-holder.last-spouse:after{
+  width:3em;
+}
+
+.family-tree-body .node.other-family{
+border-radius: 10em !important;
+ background-color:var(--menubutton);
+ border-color:var(--fade);
+ border-style:dashed;
+ color:var(--accent);
+ opacity: 0.75;
+ transition:var(--transition);
+ text-transform:lowercase;
+ font-variant:small-caps;
+}
+
+.family-tree-body .node.other-family:hover{
+  opacity:1;
+}
+
+.family-tree-body .node.other-family a{
+  color:var(--fade);
+}
+
+.family-tree-body .node.other-family .arrow{
+ display: block;
+  margin-top: 0.15em;
+  font-size: 1.4em;
+}
+
+.family-tree-body .node.other-family a:hover{
+  color:var(--linkhover);
+}

@@ -1,0 +1,488 @@
+.north {
+	color: var(--alertG);
+}
+
+.middle {
+	color: var(--alertY);
+}
+
+.south {
+	color: var(--alertR);
+}
+
+.alertG {
+	color: var(--alertG);
+}
+
+.alert,
+.alertY {
+	color: var(--alertY);
+}
+
+.alertR {
+	color: var(--alertR);
+}
+
+
+.red {
+	color: var(--red);
+}
+
+.pink {
+	color: var(--pink);
+}
+
+.yellow {
+	color: var(--yellow);
+}
+
+.green {
+	color: var(--green);
+}
+
+.blue {
+	color: var(--blue);
+}
+
+.blue2 {
+	color: var(--blue2);
+}
+
+.blue3 {
+	color: var(--blue3);
+}
+
+.black {
+	color: var(--black);
+}
+
+.white {
+	color: var(--white);
+}
+
+.accent {
+	color: var(--accent);
+}
+
+.accentD {
+	color: var(--ntgradient);
+}
+
+.accentH {
+	color: var(--h1color);
+}
+
+.accentHD {
+	color: var(--h1gradient);
+}
+
+.faded,
+.faded a,
+.disabled {
+	color: var(--fade);
+}
+
+.skillCheck {
+	font-variant: small-caps;
+	font-stretch: condensed;
+	color:var(--linkcolor);
+	transition:var(--transition);
+	font-size:0.9em;
+}
+
+a:hover .skillCheck{
+ 	color:var(--linkhover);
+}
+
+.skillCheck i{
+ font-size:1.15em;
+}
+
+
+
+.choice-grid .skillCheck{
+ display: block;
+  text-align: center;
+  position:static;
+  margin-bottom:0.5em;
+  letter-spacing: -0.05em;
+  position:absolute;
+  top:0.25em;
+  left:0.25em;
+}
+
+.check-text{
+ text-transform: lowercase;
+  position: relative;
+  bottom: 0.33em;
+
+  display: inline-block;
+  font-family:var(--headerFont);
+  margin-top: -0.65em;
+  text-shadow: var(--textShadow);
+}
+
+
+
+
+.goldQ {
+
+	color: var(--alertSealQuestObj);
+}
+
+.silverQ {
+	color: var(--alertSealQuestMain);
+}
+
+.bronzeQ {
+	color: var(--alertSealQuestSide);
+}
+
+.talkText {
+	font-size: 1.05em;
+}
+
+
+word {
+	display: inline-block;
+}
+
+.inkblur{
+filter: blur(0.035em);
+}
+
+.talk-action {
+	color: var(--iltextcolor);
+	text-transform: lowercase;
+	font-variant: small-caps;
+	position: relative;
+	top: -0.1em;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+line-height: 1;
+		display:block;
+}
+
+.talk-action.alertY{
+ color:var(--alertY);
+ font-weight:bold;
+}
+
+.talk-action:before {
+	content: '〚';
+	speak: never;
+	position: relative;
+	top: 0.1em;
+}
+
+.talk-action:after {
+	content: '〛';
+	speak: never;
+	font-family: Arial;
+	position: relative;
+	top: 0.1em;
+}
+
+.action-label{
+ display:block;
+ position:relative;
+ color:var(--accent);
+transition:var(--transition);
+ text-transform: lowercase;
+  font-variant: small-caps;
+  margin-top: -0.5em;
+ font-size: 0.75em;
+ line-height:1em;
+text-align: left;
+  position: absolute;
+top: 0.75em;
+  left: 1em;
+
+  transform:scaleX(0.9);
+  transform-origin:left;
+}
+
+a:hover .action-label{
+ color:var(--linkhover);
+}
+
+.action-label.item{
+ max-width:calc(100% - 2em);
+
+}
+
+
+
+
+
+.flashback{
+ filter:sepia(66%) contrast(100%) saturate(150%) hue-rotate(-15deg) drop-shadow(2px 2px #35231f) drop-shadow(-2px -2px #35231f);
+ background-color:var(--flashbackcolor);
+ display:block;
+padding-top: 4em;
+  padding-bottom: 2em;
+ border-radius:15px;
+
+ margin-top:1em;
+ margin-bottom:3em;
+
+-webkit-mask: linear-gradient(0deg, rgba(0,0,0,0) calc(0% + 1em), rgb(0, 0, 0) calc(0% + 3em), rgb(0, 0, 0) calc(100% - 3em),rgba(0,0,0,0) calc(100% - 1em));
+
+}
+
+span.dead{
+  display:block;
+padding-top: 4em;
+  padding-bottom: 2em;
+ border-radius:15px;
+ -webkit-mask: linear-gradient(0deg, rgba(0,0,0,0) calc(0% + 1em), rgb(0, 0, 0) calc(0% + 3em), rgb(0, 0, 0) calc(100% - 3em),rgba(0,0,0,0) calc(100% - 1em));
+}
+
+
+.condense .passage-item{
+ margin-top:0;
+ margin-bottom:0;
+}
+
+.condense .written{
+ padding-top:0.5em;
+ padding-bottom:0.5em;
+}
+
+.written .ammendment{
+  font-family: "cursive_serifoblique";
+  color:#511818;
+}
+
+
+
+body.past #story, body.past #display-area, body.past #display-header{
+ filter:sepia(66%) contrast(100%) saturate(150%) hue-rotate(-15deg);
+}
+
+body.past #story{
+ background-color:#221d18;
+}
+
+.flashback .portHolder,.flashback .ilImg,body.past #story .portHolder, body.past #story .ilImg{
+ filter: blur(0.033em);
+  opacity: 0.9;
+}
+
+
+
+.theme-light .flashback, .theme-contrast .flashback{
+ filter: saturate(66%) contrast(90%) brightness(80%) drop-shadow(2px 2px #b9b1a4) drop-shadow(-2px -2px #b9b1a4);
+  background-color: #fff4ea;
+}
+
+.theme-light body.past #story,.theme-light body.past #display-area,.theme-light body.past #display-header{
+ filter:saturate(66%) contrast(90%) brightness(80%) sepia(40%);
+}
+
+.theme-light body.past #story{
+ background-color:var(--bgcolor);
+}
+
+.theme-contrast .flashback{
+ filter: saturate(33%) contrast(90%) brightness(80%) drop-shadow(2px 2px #b9b1a4) drop-shadow(-2px -2px #b9b1a4);
+  background-color: #fff4ea;
+}
+
+.theme-contrast body.past #story, .theme-contrast body.past #display-area,.theme-contrast body.past #display-header{
+ filter:saturate(33%) contrast(90%) brightness(80%)  sepia(60%);
+}
+
+.theme-contrast body.past #story{
+ background-color:var(--bgcolor);
+}
+
+body.insert .ilText{
+ border:0;
+}
+
+body.insert .ilWords h1,body.insert .ilWords h2{
+  text-indent:0;
+  text-align:center;
+}
+
+body.insert .written-insert .ilWords{
+font-family:var(--headerFont);
+ font-size:1.25em;
+ padding:0;
+}
+
+.theme-contrast body.insert #passages,.theme-contrast body.title  #passages{
+  color: #bdbdbd;
+}
+
+.atlantean,.ilText p .atlantean::first-letter{
+ font-family:var(--atlantisFont) !important;
+ text-transform:uppercase !important;
+letter-spacing: -1px;
+}
+
+.atlantean-link{
+	--textcolor:var(--atlantcolor);
+	--linkcolor:var(--atlantcolor);
+	--linkhover:var(--atlantcolorhover);
+	--textGlow:-1px -1px 0.05em rgba(4,197,230, 0.15), 1px 1px 0.05em rgba(4,197,230, 0.15),1px -1px 0.05em rgba(4,197,230, 0.15), -1px 1px 0.05em rgba(4,197,230, 0.15);
+}
+
+.translated-atlantean,.ilText p .translated-atlantean::first-letter{
+
+	font-variant:small-caps;
+	 text-transform:lowercase;
+}
+
+.translated-atlantean:before{
+	content:"《";
+	text-transform:uppercase;
+}
+.translated-atlantean:after{
+	content:"》";
+}
+
+.atleantean-link a:hover,.atleantean-link a:focus{
+text-shadow:none !important;
+filter:none !important;
+}
+
+
+
+.surprise {
+	animation: shockCam 0.3s linear infinite;
+	display: inline-block;
+}
+
+.intense {
+	animation: intenseCam 0.3s linear infinite;
+	display: inline-block;
+}
+
+.big{
+ font-size:1.075em;
+}
+
+.yell {
+	font-size: 1.1em;
+	font-weight: 600;
+	transform: scaleY(1.1);
+	display: inline-block;
+	animation: shockCam 0.3s linear infinite;
+}
+
+.yell-loud {
+	font-size: 1.2em;
+	font-weight: 600;
+	animation: yellCam 1s linear infinite;
+	display: inline-block;
+	font-variant: small-caps;
+}
+
+
+.whisper {
+	font-size: 0.9em;
+
+	opacity:0.5;
+
+}
+
+
+.whisper:before {
+	content: '｟';
+}
+
+.whisper:after {
+	content: '｠';
+}
+
+.stutter {
+
+	display: inline-block;
+}
+
+.stutter .anim {
+	animation: stutterCam 0.5s linear infinite;
+	display: inline-block;
+}
+
+.lilt {
+	animation: liltCam 1s linear infinite;
+	display: inline-block;
+}
+
+.posh{
+ font-family:"cursive_serifoblique";
+ font-size: 0.9em;
+}
+
+
+.talkText:hover,
+.talkText:hover .anim,
+.talkText:hover .yell-loud,
+.talkText:hover .yell,
+.talkText:hover .slur,
+.talkText:hover .sing .anim,
+.talkText:hover .sing:after,
+.talkText:hover .singsong .anim,
+.talkText:hover .yell,
+.talkText:hover .surprise,
+.talkText:hover .lilt,.talkText:hover .intense {
+	animation-play-state: paused;
+}
+
+
+.slur {
+	animation: drunkCam 3s infinite linear;
+	animation-timing-function: ease;
+	display: inline-block;
+
+}
+
+
+.singsong .anim {
+	animation: singsongCam 0.75s infinite linear;
+	position: relative;
+	animation-timing-function: ease;
+}
+
+.sing .anim {
+	animation: singCam 2s infinite linear;
+	position: relative;
+	animation-timing-function: ease;
+}
+
+.sing {
+	font-style: italic;
+	color: var(--subtitle);
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing: 0.05em;
+	text-shadow: 0.04em 0.04em 0px var(--goldborderdarker);
+	font-size: 1.1em;
+}
+
+.sing:after {
+	content: " ♪";
+	font-size: 0.9em;
+	position: relative;
+	margin-top: -0.7em;
+	animation: singCam 1.5s infinite linear;
+	opacity: 0.75;
+}
+
+.sing:before {
+	content: "♪ ";
+	font-size: 0.9em;
+	position: relative;
+	margin-top: 0.3em;
+	animation: singCam 1.5s infinite linear;
+	opacity: 0.75;
+
+}
+
+.noTextAnim .sing,.noTextAnim .singsong,.noTextAnim .slur,.noTextAnim .stutter,.noTextAnim .yell,.noTextAnim .yell-loud,.noTextAnim .surprise, .noTextAnim .anim,.noTextAnim .intense{
+  animation:none;
+  	animation-play-state: paused;
+}

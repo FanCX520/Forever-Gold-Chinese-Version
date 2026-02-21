@@ -1,0 +1,183 @@
+/* Q STATS */
+.icon-deception:before {
+  content: "\e995";
+}
+
+.icon-empathy:before {
+  content: "\e9a7";
+}
+.icon-etiquette:before {
+  content: "\e9a9";
+}
+
+.icon-physical:before {
+  content: "\e907";
+}
+
+.icon-hare:before {
+  content: "\ea07";
+}
+
+/* Q TRAITS  */
+
+.icon-guilty:before {
+  content: "\e926";
+}
+
+.icon-unguilty:before {
+  content: "\e945";
+}
+
+
+.icon-dispersal:before {
+  content: "\e927";
+}
+
+.icon-packbonded:before {
+  content: "\e92c";
+}
+
+.icon-moleman:before {
+  content: "\e92b";
+}
+
+.icon-feral:before {
+  content: "\e947";
+}
+
+.icon-shameful:before {
+  content: "\e943";
+}
+.icon-shameless:before {
+  content: "\e944";
+}
+
+.icon-jester:before {
+  content: "\e929";
+}
+
+.icon-cerebral:before {
+  content: "\e951";
+}
+
+.icon-dense:before {
+  content: "\e954";
+}
+
+/* ;) TRAITS */
+
+.icon-haretouched-belt:before {
+  content: "\e928";
+}
+
+.icon-coffee:before {
+  content: "\e92f";
+}
+
+.icon-playful:before {
+  content: "\e934";
+}
+
+/* IDEALS */
+
+.icon-ambition:before {
+  content: "\e95d";
+}
+.icon-survival:before {
+  content: "\e95e";
+}
+
+.icon-cunning:before {
+  content: "\e953";
+}
+
+.icon-earnest:before {
+  content: "\e955";
+}
+
+.icon-individualist:before {
+  content: "\e957";
+}
+.icon-collectivist:before {
+  content: "\e952";
+}
+
+.icon-orthodox:before {
+  content: "\e958";
+}
+.icon-rebel:before {
+  content: "\e959";
+}
+
+/* BONDS AND RELATIONSHIPS */
+.icon-bond:before {
+  content: "\e94b";
+}
+.icon-bond-romance:before {
+  content: "\e94f";
+}
+
+.icon-grudge:before {
+  content: "\e956";
+}
+
+.icon-tension-high:before {
+  content: "\e95a";
+}
+.icon-tension-low:before {
+  content: "\e95b";
+}
+.icon-tension-neutral:before {
+  content: "\e95c";
+}
+
+/* OTHER STATS */
+
+.icon-cha:before {
+  content: "\e92d";
+}
+
+.icon-dex:before {
+  content: "\e93e";
+}
+.icon-ins:before {
+  content: "\e93f";
+}
+.icon-int:before {
+  content: "\e940";
+}
+
+.icon-str:before {
+  content: "\e942";
+}
+
+/* OTHER TRAITS */
+
+.icon-unknown:before {
+  content: "\e946";
+}
+
+.icon-army:before {
+  content: "\e92e";
+}
+
+.icon-eloquent:before {
+  content: "\e930";
+}
+.icon-inappropriate:before {
+  content: "\e931";
+}
+.icon-ineloquent:before {
+  content: "\e932";
+}
+.icon-ladiesman:before {
+  content: "\e933";
+}
+
+.icon-unassuming:before {
+  content: "\e935";
+}
+
+.icon-law:before {
+  content: "\e9da";
+}

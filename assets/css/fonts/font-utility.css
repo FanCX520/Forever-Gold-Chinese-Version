@@ -1,0 +1,206 @@
+/* DECISIONS */
+
+.icon-decide-a:before {
+  content: "\e936";
+}
+
+.icon-decide-b:before {
+  content: "\e938";
+}
+.icon-decide-c:before {
+  content: "\e93b";
+}
+.icon-decide-d:before {
+  content: "\e93c";
+}
+.icon-decide-accept:before {
+  content: "\e937";
+}
+
+.icon-decide-reject:before {
+  content: "\e93d";
+}
+
+/* SPEAK ICONS */
+
+.icon-a-hunch:before {
+  content: "\e924";
+}
+
+.icon-a-end:before {
+  content: "\e9bc";
+}
+
+.icon-reputation:before {
+  content: "\e925";
+}
+
+.icon-a-timer:before {
+  content: "\e908";
+}
+
+
+/* ROMANCE */
+
+.icon-a-romance-f:before {
+  content: "\e902";
+}
+
+.icon-a-romance:before {
+  content: "\e9cc";
+}
+
+/* DICE */
+
+.icon-dice:before {
+  content: "\e998";
+}
+
+/* BRACKET */
+.icon-bracket-l:before {
+  content: "\e912";
+}
+.icon-bracket-r:before {
+  content: "\e913";
+}
+
+.icon-flourish-l:before {
+  content: "\e903";
+}
+.icon-flourish-r:before {
+  content: "\e904";
+}
+
+/* BULLET */
+.icon-bullet:before {
+  content: "\e914";
+}
+
+/* FILES AND SUCH */
+
+.icon-file:before {
+  content: "\e915";
+}
+
+.icon-appendix:before {
+  content: "\e9ba";
+}
+.icon-appendix-p:before {
+  content: "\e9bb";
+}
+
+.icon-appendix-d:before {
+  content: "\e909";
+}
+
+.icon-quil:before,.icon-quill:before {
+  content: "\e949";
+}
+.icon-restart:before {
+  content: "\e94a";
+}
+
+.icon-saves:before {
+  content: "\e94e";
+}
+.icon-save-d:before {
+  content: "\e950";
+}
+.icon-save-l:before {
+  content: "\e962";
+}
+.icon-save-s:before {
+  content: "\e972";
+}
+.icon-settings:before {
+  content: "\e982";
+}
+.icon-snout:before {
+  content: "\e983";
+}
+
+.icon-party:before {
+  content: "\e91b";
+}
+.icon-party-s:before,.snout .icon-party:before {
+  content: "\e92a";
+}
+
+.icon-plus:before {
+  content: "\e93a";
+}
+
+.icon-minus:before {
+  content: "\e901";
+}
+.icon-opinion:before {
+  content: "\e900";
+}
+
+
+
+
+
+/* INVENTORY */
+
+.icon-guilder:before {
+  content: "\e905";
+}
+.icon-item:before {
+  content: "\e906";
+}
+
+.icon-mail:before {
+  content: "\e941";
+}
+
+/*ARROWS */
+
+.icon-arrow-down:before {
+  content: "\e910";
+}
+.icon-arrow-up:before {
+  content: "\e911";
+}
+
+.icon-arrow-right:before {
+  content: "\e923";
+}
+
+.icon-return:before {
+  content: "\e94c";
+}
+
+/* CHESS PIECES */
+
+.icon-rook:before {
+  content: "\e94d";
+}
+
+.icon-bishop:before {
+  content: "\e9b2";
+}
+.icon-king:before {
+  content: "\e9b5";
+}
+.icon-knight:before {
+  content: "\e9b6";
+}
+
+.icon-queen:before {
+  content: "\e948";
+}
+
+.icon-pawn:before {
+  content: "\e939";
+}
+
+/* YES NO */
+.icon-check:before {
+  content: "\e9b8";
+}
+.icon-cross:before {
+  content: "\e9b9";
+}
+
+

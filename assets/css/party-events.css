@@ -1,0 +1,401 @@
+.clock-grid{
+ grid-template-columns:10em calc(100% - 11em);
+ display:grid;
+ margin:auto;
+ column-gap:1em;
+ width: 35em;
+ max-width:100%;
+ color:var(--menulink);
+
+}
+
+
+.clock-grid .clock-holder{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-size:0.5em;
+ position: relative;
+
+}
+
+.clock-body{
+ aspect-ratio:39/50;
+ width:100%;
+ background-color: var(--menucolor);
+ -webkit-mask-image: url('../gui/ui/party_clock.svg');
+  mask-image: url('../gui/ui/party_clock.svg');
+  mask-repeat: no-repeat; 
+  mask-size: 100%;
+  
+
+}
+
+.theme-contrast .clock-body{
+  background-color: var(--talkcolor); 
+
+}
+
+.theme-contrast .clock-grid{
+   --menubutton:var(--talkborder); 
+}
+
+.clock-grid .clock-face{
+ background-color:var(--bgcolor); 
+ border-radius:10em;
+ aspect-ratio:1/1;
+ width:10em;
+ display:flex;
+  justify-content:center;
+ align-items:center;
+ position: absolute;
+ bottom: 3.7em;
+
+}
+
+
+.clock-grid .hand{
+ height:0.5em;
+ width:0.5em;
+ aspect-ratio:1/1;
+ background-color:var(--menucolor);
+ position:relative;
+ border-radius:1em;
+ filter:drop-shadow(1px 1px var(--bgcolor)) drop-shadow(-1px -1px var(--bgcolor));
+
+}
+
+.clock-grid .hand:after{
+  position:absolute;
+  top:-4.75em;
+  left:-0.25em;
+  content:"";
+  background-color:var(--menucolor);
+  height:5em;
+  width:1em;
+  /*clip-path: polygon(50% 0%, 80% 20%, 58% 11%, 69% 81%, 54% 100%, 46% 100%, 31% 80%, 42% 11%, 20% 20%); */
+  transform:var(--rotate);
+  transform-origin: bottom center;
+  -webkit-mask-image: url('../gui/ui/party_hand1.svg');
+  mask-image: url('../gui/ui/party_hand1.svg');
+  mask-repeat: no-repeat; 
+  mask-size: 100%;
+}
+
+.clock-grid .hand:before{
+  position:absolute;
+  top:-4.25em;
+ left: -0.06em;
+  content:"";
+  background-color:var(--menucolor);
+  height:4.5em;
+  width:0.75em;
+
+  transform:var(--sRotate);
+  transform-origin: bottom center;
+    -webkit-mask-image: url('../gui/ui/party_hand2.svg');
+  mask-image: url('../gui/ui/party_hand2.svg');
+  mask-repeat: no-repeat; 
+  mask-size: 100%;
+  opacity:0.75;
+
+
+}
+
+.clock-grid .text{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-size:1.75em;
+ font-family:var(--headerFont);
+ font-variant:small-caps;
+ height: 100%;
+  filter:var(--clipShadow);
+ 
+}
+
+.clock-grid .text span{
+  --tailBorder:3px;
+background-color:var(--menucolor);
+ width:calc(100% - 2em);
+ display:block;
+position:relative;
+border: var(--tailBorder) solid var(--buttonborder);
+}
+
+.clock-grid .text span:after{
+  content:'';
+  position:absolute;
+  top:-3px;
+  right:-0.5em;
+  width:1.5em;
+  height:100%;
+ background-color:var(--menucolor);
+ clip-path:var(--chevRight);
+ border: var(--tailBorder) solid var(--buttonborder);
+ border-left:0;
+  border-right:0;
+}
+
+.clock-grid .text span:before{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-1em;
+  width:1em;
+  height:100%;
+  
+ background-color:var(--menucolor);
+ clip-path: polygon(80% 0, 100% 0%, 100% 100%, 80% 100%, 0% 50%);
+ border: var(--tailBorder) solid var(--buttonborder);
+ border-left:0;
+  border-right:0;
+}
+
+.clock-grid .text span strong{
+
+  text-shadow: var(--textShadow);
+}
+
+@media screen and (max-width:600px){
+ .clock-grid{
+  grid-template-columns: 7em calc(100% - 7em); 
+  column-gap:0;
+ }
+ 
+ .clock-grid .text{
+  font-size:1.25em; 
+ }
+}
+
+
+/* TALK BORDERS */
+
+.party-mid{
+  --partyColor:var(--alertY);
+  --partyColorB:var(--alertYdark);
+  
+ --bg1:url('../gui/port/port-bg-mk1.png');
+ --bg2:url('../gui/port/port-bg-mk2.png');
+ --bg3:url('../gui/port/port-bg-mk3.png');
+ --bg4:url('../gui/port/port-bg-mk4.png');
+ --bg5:url('../gui/port/port-bg-mk5.png');
+ 
+ --fr1:url('../gui/port/port-border-party-mk1.png');
+ --fr2:url('../gui/port/port-border-party-mk2.png');
+ --fr3:url('../gui/port/port-border-party-mk3.png');
+ --fr4:url('../gui/port/port-border-party-mk4.png');
+ --fr5:url('../gui/port/port-border-party-mk5.png');
+ 
+ --pf1: sepia(90%) brightness(40%) contrast(200%) saturate(300%) hue-rotate(140deg);
+ --pf2: sepia(90%) brightness(40%) contrast(200%) saturate(300%) hue-rotate(12deg);
+ --pf3: sepia(90%) brightness(40%) contrast(200%) saturate(300%) hue-rotate(456deg);
+ --pf4: sepia(90%) brightness(40%) contrast(200%) saturate(300%) hue-rotate(-36deg);
+ --pf5: sepia(90%) brightness(40%) contrast(200%) saturate(300%) hue-rotate(240deg);
+ 
+ --if1:hue-rotate(140deg) saturate(180%);
+ --if2:hue-rotate(12deg) saturate(180%);
+ --if3:hue-rotate(456deg) saturate(180%);
+ --if4:hue-rotate(-36deg) saturate(180%);
+ --if5:hue-rotate(240deg) saturate(180%);
+}
+
+.party-south{
+  
+  --partyColor:var(--alertR);
+  --partyColorB:var(--alertRdark);
+  
+ --bg1:url('../gui/port/port-bg-sk1.png');
+ --bg2:url('../gui/port/port-bg-sk2.png');
+ --bg3:url('../gui/port/port-bg-sk3.png');
+ --bg4:url('../gui/port/port-bg-sk4.png');
+ --bg5:url('../gui/port/port-bg-sk5.png');
+ 
+ --fr1:url('../gui/port/port-border-party-sk1.png');
+ --fr2:url('../gui/port/port-border-party-sk2.png');
+ --fr3:url('../gui/port/port-border-party-sk3.png');
+ --fr4:url('../gui/port/port-border-party-sk4.png');
+ --fr5:url('../gui/port/port-border-party-sk5.png');
+ 
+ --pf1: sepia(90%) brightness(60%) contrast(140%) saturate(300%) hue-rotate(120deg);
+ --pf2: sepia(90%) brightness(60%) contrast(140%) saturate(300%) hue-rotate(250deg);
+ --pf3: sepia(90%) brightness(60%) contrast(140%) saturate(300%) hue-rotate(20deg);
+ --pf4: sepia(90%) brightness(60%) contrast(140%) saturate(300%) hue-rotate(160deg);
+ --pf5: sepia(90%) brightness(60%) contrast(140%) saturate(300%) hue-rotate(-10deg);
+ 
+ --if1:hue-rotate(120deg) saturate(180%);
+ --if2:hue-rotate(250deg) saturate(180%);
+ --if3:hue-rotate(20deg) saturate(180%);
+ --if4:hue-rotate(160deg) saturate(180%);
+ --if5:hue-rotate(-10deg) saturate(180%);
+}
+
+
+
+.party-south #location-map-fade{
+  background-color: #5c0707;
+  mix-blend-mode: overlay;
+}
+
+.party-south .loc-board-grid li .loc-thumb{
+  filter:sepia(90%) brightness(60%) contrast(140%) saturate(700%) hue-rotate(10deg);
+}
+
+.party-south .loc-board-grid li:nth-child(odd) .loc-thumb{
+  filter:sepia(90%) brightness(60%) contrast(140%) saturate(700%) hue-rotate(-10deg);
+}
+
+.party-port{
+   --portFrame2:var(--fr1); 
+}
+
+.party-port .portHolder{
+  filter:saturate(150%);
+}
+
+.party-port .port-frame{
+ background-image: var(--portFrame2), var(--portFrame); 
+ background-size: contain,contain;
+  background-repeat: no-repeat,no-repeat;
+  background-position: bottom center,bottom center;
+ 
+}
+
+.party-port.v-2 .port-frame{
+  --portFrame2:var(--fr2);
+}
+
+.party-port.v-3 .port-frame{
+  --portFrame2:var(--fr3);
+}
+
+.party-port.v-4 .port-frame{
+  --portFrame2:var(--fr4);
+}
+
+.party-port.v-5 .port-frame{
+  --portFrame2:var(--fr5);
+}
+
+
+.party-port .port-bg{
+  background-image:var(--bg1);
+}
+
+.party-port.v-2 .port-bg{
+  background-image:var(--bg2);
+}
+
+.party-port.v-3 .port-bg{
+  background-image:var(--bg3);
+}
+
+.party-port.v-4 .port-bg{
+  background-image:var(--bg4);
+}
+
+.party-port.v-5 .port-bg{
+  background-image:var(--bg5);
+}
+
+.party-port .port-person{
+ filter:var(--pf1); 
+}
+
+.party-port.v-2 .port-person{
+ filter:var(--pf2); 
+}
+
+.party-port.v-3 .port-person{
+ filter:var(--pf3); 
+}
+
+.party-port.v-4 .port-person{
+ filter:var(--pf4); 
+}
+
+.party-port.v-5 .port-person{
+ filter:var(--pf5); 
+}
+
+.ilImgHolder.party-il-img{
+  filter: var(--if1);
+}
+
+.ilImgHolder.party-il-img.v-2{
+  filter: var(--if2);
+}
+
+.ilImgHolder.party-il-img.v-3{
+  filter: var(--if3);
+}
+
+.ilImgHolder.party-il-img.v-4{
+  filter: var(--if4) ;
+}
+
+.ilImgHolder.party-il-img.v-5{
+  filter: var(--if5) ;
+}
+
+.link-item-text.party{
+  filter: var(--if1);
+}
+
+.link-item-text.party.v-2{
+  filter: var(--if2);
+}
+
+.link-item-text.party.v-3{
+  filter: var(--if3);
+}
+
+.link-item-text.party.v-4{
+  filter: var(--if4);
+}
+
+.link-item-text.party.v-5{
+  filter: var(--if5);
+}
+
+body.party #display-header{
+  --menulink:var(--partyColor);
+  --buttonborder:var(--partyColorB);
+  --buttonborderhover:var(--partyColor);
+  
+}
+
+body.party .locInfoHeader,body.party .next{
+  font-family:"cursive_serifoblique";  
+   font-variant:none;
+   text-transform:unset;
+
+}
+
+body.party .next{
+  font-variant:none;
+}
+
+
+.party-title-divider{
+  --img:"";
+ background-color:var(--menuborderbright);
+ -webkit-mask-image: var(--img);
+  mask-image: var(--img);
+  mask-repeat: no-repeat; 
+  height:15vh;
+  height:15dvh;
+  width:100%;
+  mask-size: contain;
+  mask-repeat: no-repeat; 
+  mask-position:center;
+}
+
+body.party .title-card h1{
+  font-family:"cursive_serifoblique";  
+  font-variant: none;
+}
+.title-card .subtitle.host{
+ display:block;
+ font-size:1.2em;
+}

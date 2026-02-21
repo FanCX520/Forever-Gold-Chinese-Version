@@ -1,0 +1,539 @@
+#save-menu{
+ width:100%;
+ display:grid;
+ row-gap:1em;
+ max-width: 50em;
+  margin: auto;
+}
+
+ .save-file.disabled{
+ opacity:0.33;
+
+}
+
+.save-file.disabled button{
+  cursor:not-allowed; 
+}
+
+.save-grid{
+ display:grid;
+grid-template-columns: calc(100% - 3em) 2em;
+ column-gap: 0.5em;
+ --portHeight: 9em;
+}
+
+#ui-dialog-body button .save-quincy .portHolder{
+ width:100%; 
+  filter:saturate(90%) brightness(100%);
+  opacity:0.9;
+  transition:var(--transition);
+}
+
+#ui-dialog-body .empty button .save-quincy .portHolder{
+
+  filter:saturate(70%) brightness(70%);
+  opacity:0.66;
+}
+
+button .save-details{
+ display:flex;
+ flex-direction:row;
+  align-items: center;
+  justify-content: end;
+  margin-top: 0.5em;
+  column-gap:0.5em;
+  transition:var(--transition);
+  opacity:0.66;
+}
+
+button:hover .save-details,button:focus .save-details{
+ opacity:1; 
+}
+
+.save-details .save-item{
+  width:25%;
+ max-width:3em; 
+}
+
+
+
+.save-current .ep-img{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ flex-direction:column;
+ max-height: var(--portHeight);
+ overflow:hidden;
+}
+
+.save-square-bg{
+ width: calc(100% - 16px);
+ aspect-ratio:1/1;
+ position:relative;
+ background-color:#5a4240;
+ border:8px double #413131;
+}
+
+.save-square{
+  position:absolute;
+ width: calc(100% + 16px);
+ aspect-ratio:1/1;
+ background-image:var(--img);
+ background-position:center;
+ background-size:100% 100%;
+ top: -8px;
+  left: -8px;
+}
+
+.save-info{
+ display: flex;
+  width: 100%;
+  height: 100%; 
+
+}
+
+.save-current{
+
+ width:100%;
+}
+
+
+.save-quincy{
+ position:relative; 
+}
+
+
+
+#ui-dialog-body .save-quincy button{
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background-color:transparent;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  transition:var(--transition);
+  position:relative;
+
+
+}
+
+#ui-dialog-body .save-quincy button:hover,#ui-dialog-body .save-quincy button:focus{
+  background-color:var(--uiselect);
+}
+
+#ui-dialog-body button:hover .save-quincy  .portHolder,#ui-dialog-body button:focus .save-quincy  .portHolder{
+  filter:saturate(125%) brightness(125%);
+  opacity:1;
+}
+
+.save-currents ul{
+ margin:0;
+ padding:0;
+}
+
+#ui-dialog-body .delete-btn button{
+ border:0;
+ background-color:transparent;
+ color:var(--alertR);
+ opacity:0.5;
+ transition:var(--transition);
+ filter:brightness(100%) saturate(100%);
+ border-radius:10em;
+}
+
+#ui-dialog-body .delete-btn button:hover,#ui-dialog-body .delete-btn button:focus{
+ border:0;
+ background-color:var(--uiselect);
+ opacity:1;
+ filter:brightness(125%) saturate(125%);
+}
+
+#ui-dialog-body .delete-btn.disabled button,#ui-dialog-body .delete-btn.disabled button:hover,#ui-dialog-body .delete-btn.disabled button:focus{
+cursor: not-allowed;
+ color:var(--fade);
+ opacity:0.33;
+  filter:brightness(100%) saturate(100%);
+   transition:var(--transition);
+}
+
+.save-file.autosave{
+
+ --accent:var(--alertY);
+}
+
+.save-file.empty{
+   --accent:var(--blue);
+}
+
+.savemenu-label{
+ font-variant: small-caps;
+  text-transform: uppercase; 
+  font-family: georgia;
+
+  background-color: var(--uiborder);
+  --mask: radial-gradient(0.33em at 0.33em 0.33em,#0000 90%,#000) -0.33em -0.33em;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  display: inline-block;
+  padding: 0.33em;
+
+  width:100%;
+}
+
+
+.savemenu-label.save i,.savemenu-label.load i,.autosave .savemenu-label.save i{
+  color:var(--accent);
+  font-style:normal;
+}
+
+
+
+.savemenu-label span{
+ border: 1px solid var(--uibg);
+  border-radius: 3px;
+  padding: 0.1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: var(--uiborder); 
+  display:block;
+}
+
+.save-info .empty{
+ color:var(--fade);
+ text-transform:lowercase;
+ font-variant:small-caps;
+ display:flex;
+ height:100%;
+ width:100%;
+ justify-content:center;
+ align-items:center;
+ opacity:0.75;
+}
+
+.save-currents{
+  line-height:1;
+}
+
+.save-currents .act-season{
+ font-variant:small-caps;
+ text-transform:lowercase;
+ font-size: 0.8em;
+}
+
+.save-currents .timestamp{
+ font-variant:small-caps;
+ text-transform:lowercase;
+ font-size: 0.75em;
+   color:var(--fade);
+   padding-left: 2em;
+}
+
+
+
+
+
+.save-currents .episode-name{
+color: var(--accent);
+  font-family: var(--headerFont);
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-weight: bold;
+  font-size: 1.35em;
+  margin-top: -0.20em;
+
+}
+
+
+.save-currents .location{
+  display:grid;
+  grid-template-columns:1em calc(100% - 1.5em);
+  column-gap:0.5em;
+}
+
+.save-currents .icon-holder{
+ color:var(--accent); 
+}
+
+#save-menu .save-file{
+ position:relative; 
+ border-bottom:2px dotted var(--uiborder);
+ padding-bottom:0.75em;
+}
+
+#save-menu .save-file:last-child{
+ border-bottom:0; 
+}
+
+#save-menu .save-file.autosave{
+ border-bottom:6px double var(--uiborder);
+ padding-bottom:1em;
+ margin-bottom:0.5em;
+}
+
+#ui-dialog-body .saveload-button{
+  width:100%;
+  height:100%;
+  display:block;
+   min-height:var(--portHeight);
+ 
+}
+#ui-dialog-body .saveload-button button{
+ width:100%;
+ height:100%;
+  min-height:var(--portHeight);
+ border:0;
+ display: grid;
+  grid-template-columns: var(--portHeight) calc(100% - var(--portHeight));
+  text-align: left;
+
+ transition:var(--transition);
+ background-color:var(--uibg);
+ color:var(--uitext);
+   padding-right:1em;
+padding-top: 2.2em;
+}
+
+#ui-dialog-body .saveload-button button:hover,#ui-dialog-body .saveload-button button:focus{
+ background-color:var(--uiselect); 
+}
+
+
+#ui-dialog-body .saveload-button button .savemenu-labelholder{
+
+ z-index:2;
+top:0;
+ left:0;
+ text-align:center;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ filter: brightness(100%) saturate(100%);
+text-shadow: none;
+ position: absolute;
+
+  font-size: 0.8em;
+
+  transition:var(--transition);
+  font-weight:bold;
+  width: calc(100% - 4em);
+}
+
+
+
+#ui-dialog-body .saveload-button button:focus .savemenu-labelholder,#ui-dialog-body .saveload-button button:hover .savemenu-labelholder{
+ filter: brightness(150%) saturate(120%);
+}
+
+.theme-light #ui-dialog-body .saveload-button button:focus .savemenu-labelholder,.theme-light #ui-dialog-body .saveload-button button:hover .savemenu-labelholder{
+ filter: brightness(105%) saturate(110%);
+}
+
+.slot-label {
+ position:absolute;
+top: -3.5em;
+left: -0.75em;
+  z-index:3;
+ filter:var(--clipShadow) saturate(110%) brightness(100%);
+ font-family:var(--titleFont);
+ font-size: 0.66em;
+  transition:var(--transition);
+}
+
+
+
+.slot-label .sealIcon i{
+ font-size:2.3em; 
+}
+
+.slot-label .sealIcon{
+ margin-left: -0.2em;
+  margin-top: 0.2em; 
+}
+
+.empty .no-save{
+  color:var(--fade);
+  text-transform:uppercase;
+  display:flex;
+  height:100%;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  opacity:0.5;
+  font-family:georgia;
+}
+
+.empty button .slot-label{
+   filter:var(--clipShadow) saturate(70%) brightness(70%);
+  
+}
+
+.empty button:hover .slot-label,.empty button:focus .slot-label{
+   filter:var(--clipShadow) saturate(80%) brightness(90%);
+}
+
+button:hover .slot-label,.button:focus .slot-label{
+   filter:var(--clipShadow) saturate(130%) brightness(120%);
+}
+
+.personal-info{
+ display:flex;
+
+justify-content: space-evenly;
+width: 90%;
+  margin: auto;
+   margin-top:0.5em;
+   max-width: 28em;
+}
+
+.save-stats{
+ display:flex;
+
+justify-content: center;
+column-gap:1em;
+width: 100%;
+  margin: auto;
+
+}
+
+.save-stats .stat{
+ color:var(--fade);
+ font-size:0.8em;
+ padding-top:0.25em;
+}
+
+.save-stats i{
+ opacity:0.5; 
+ position:relative;
+ right: -0.6em;
+  top: -0.15em;
+  z-index:1;
+}
+
+.save-stats strong{
+ font-size:1.1em;
+ position:relative;
+ z-index:2;
+ font-family:georgia;
+ filter:drop-shadow(1px 1px var(--uibg)) drop-shadow(-1px 1px var(--uibg)) drop-shadow(1px -1px var(--uibg)) drop-shadow(-1px -1px var(--uibg));
+ color:var(--uitext);
+}
+
+.save-info .quincy-detail{
+    color:var(--accent);
+    opacity:0.5;
+    transition:var(--transition);
+    filter:saturate(75%);
+}
+
+.save-info .quincy-detail:hover{
+    opacity:1;
+    filter:saturate(100%);
+}
+
+.personal-info .quincy-detail{
+  font-size:1.5em;
+
+}
+
+
+.save-notice{
+ width: 100%;
+  text-align: center;
+  line-height: 1;
+  padding-bottom: 2em;
+  font-variant: small-caps;
+  font-size: 0.9em;
+  text-transform: lowercase;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--uibg);
+}
+
+.save-notice strong{
+ color:var(--red); 
+}
+
+.save-buttons{
+width: 100%;
+  background-color: var(--uibg);
+  position: sticky;
+  bottom: -2em;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75em;
+}
+
+#ui-dialog-body .save-buttons button{
+
+ filter:brightness(100%) saturate(80%);
+ transition:var(--transition);
+}
+
+#ui-dialog-body .save-buttons button:hover,#ui-dialog-body .save-buttons button:focus{
+  filter:brightness(120%) saturate(120%);
+}
+
+.save-buttons i{
+   color:var(--green);
+}
+
+#ui-dialog-body .save-buttons .delete button{
+ color: var(--red);
+
+  filter:brightness(100%) saturate(50%);
+}
+
+.save-buttons .delete i {
+   color: var(--red);
+}
+
+@media screen and (max-width: 475px) {
+  .save-and-load{
+   display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  margin-right: 3em;
+ 
+  }
+  
+  #ui-dialog-body .save-and-load button{
+   display:flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .save-buttons{
+   padding-left: 1em;
+  padding-right: 1em;
+  margin-left: -1em; 
+  }
+  
+    .save-notice{
+   padding-left: 1em;
+  padding-right: 1em;
+  margin-left: -1em; 
+  }
+  
+  .save-grid {
+
+    grid-template-columns: calc(100% - 1.5em) 1.5em;
+  column-gap: 0;
+  }
+  
+  #ui-dialog-body .saveload-button button{
+    display:block;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .save-details{
+   justify-content: start; 
+  }
+  }

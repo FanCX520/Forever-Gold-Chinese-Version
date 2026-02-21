@@ -1,0 +1,70 @@
+.northernDinnerHolder{
+  display:block;
+  height:3em;
+  width:100%;
+  background-color:var(--menucolor);
+  border:3px solid var(--menuborder);
+  position:relative;
+  border-radius: 15px;
+  margin-top: 2.5em;
+  margin-bottom:2em;
+  filter:var(--clipShadow);
+}
+
+#northernDinnerCursor{
+height:3em;
+width:0.25em;
+background: var(--goldgradient);
+border:2px solid #5e2d10;
+position:absolute;
+top:-2px;
+left:calc(-0.125em + -2px);
+z-index:2;
+
+}
+
+#northernDinnerCursor:before{
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  filter:drop-shadow(1px 1px #5e2d10) drop-shadow(-1px 1px #5e2d10) drop-shadow(1px -1px #5e2d10) drop-shadow(-1px -1px #5e2d10);
+  position:absolute;
+  top:-1em;
+  left: -0.33em;
+background: var(--goldgradient);
+  width:1em;
+  height:1em;
+  content:"";
+}
+
+.northernDinnerBar{
+  width:100%;
+z-index:1;
+position:relative;
+  background-color:var(--alertRdark);
+  border-radius:15px;
+  overflow: hidden;
+}
+
+.northernDinnerSafezone{
+  background-color:var(--green);
+
+  margin:auto;
+
+  height:3em;
+}
+
+.northernDinnerButton button{
+font-size:1.75em;
+font-family:var(--headerFont);
+margin:auto;
+display:block;
+padding:0.5em;
+color:var(--alertY);
+border-color:var(--alertYdark);
+border-width:2px;
+filter:var(--clipShadow);
+}
+
+.northernDinnerButton button:hover,.northernDinnerButton button:focus{
+  color:var(--linkhover);
+  border-color:var(--alertY);
+}
