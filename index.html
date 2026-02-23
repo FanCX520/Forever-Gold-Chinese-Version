@@ -9148,7 +9148,7 @@ function drawPersonInfo (entry,key){
   };
   name += setup.getPersonName(key);
 
-  returnStr += drawField("姓名",name);
+  returnStr += drawField("Name",name);
 
 
 
@@ -9173,7 +9173,7 @@ function drawPersonInfo (entry,key){
       ageConc += ib.age;
     }
     ageConc += agePres;
-    returnStr += drawField("年龄",ageConc);
+    returnStr += drawField("Age",ageConc);
 
     //birthdate
     if (Array.isArray(ib.age)){
@@ -9182,18 +9182,18 @@ function drawPersonInfo (entry,key){
         var season = ib.age[1];
         season = setup.seasonKey(season);
         born += season;
-      returnStr += drawField("出生",born);
+      returnStr += drawField("Born",born);
     }
   };
 
   //height
   if (ib.hasOwnProperty("height")){
-  returnStr += drawField("身高",ib.height)
+  returnStr += drawField("Height",ib.height)
   }
 
   if (ib.hasOwnProperty("country")){
     var affText = setup.affiliation[ib.country]+" "+setup.getAffiliation(ib.country);
-    returnStr += drawField("所属",affText)
+    returnStr += drawField("Allegiance",affText)
   }
 
   //heritage
@@ -9212,7 +9212,7 @@ function drawPersonInfo (entry,key){
     heritage = setup.heritageKey(ib.heritage);
   }
 
-  returnStr+= drawField("族裔",heritage);
+  returnStr+= drawField("Heritage",heritage);
   }
 
   //CLASS
@@ -9223,7 +9223,7 @@ function drawPersonInfo (entry,key){
     classT = setup.classKey(classTemp);
 
 
-    returnStr += drawField("阶级",classT);
+    returnStr += drawField("Class",classT);
   }
 
 
@@ -9237,11 +9237,11 @@ function drawPersonInfo (entry,key){
     } else {
       meur += setup.meurType[ib.meurType];
     }
-    returnStr += drawField("誓约",meur);
+    returnStr += drawField("Pledge",meur);
   }
 
   if (ib.hasOwnProperty("relic") && ib.relic != false){
-    returnStr += drawField("传家宝","<<cLink \""+ib.relic[0]+"\" \""+ib.relic[1]+"\">>");
+    returnStr += drawField("Relic","<<cLink \""+ib.relic[0]+"\" \""+ib.relic[1]+"\">>");
   }
 
   //STATUS
@@ -9297,7 +9297,7 @@ function drawFactionInfo (entry,key){
       allegName = setup.getCodexData("factions",entry.allegiance).name;
     }
     if (entry.allegiance == "tri"){
-      allegName = "Tri-Kingdom";
+      allegName = "维斯特三王国";
     }
 
       returnStr += drawField("所属",setup.getAffIcon(entry.allegiance) + " <<cLink \""+entry.allegiance+"\" \""+allegName+"\">>");
@@ -9315,13 +9315,13 @@ function drawFactionInfo (entry,key){
       var headKey = fam.head;
       var headName = fam[headKey].name;
 
-        returnStr += drawField("首领","<<cLink \""+headKey+"\" \""+headName+"\" \"short\">>");
+        returnStr += drawField("领袖","<<cLink \""+headKey+"\" \""+headName+"\" \"short\">>");
 
 
 
     }
     else {
-        returnStr += drawField("首领",ib.head);
+        returnStr += drawField("领袖",ib.head);
 
     }
 
@@ -9339,14 +9339,14 @@ function drawFactionInfo (entry,key){
 
 
   if (ib.hasOwnProperty("governance")){
-    returnStr += drawField("治理方式",ib.governance);
+    returnStr += drawField("政体",ib.governance);
   } else if (ib.hasOwnProperty("hierarchy")){
-    returnStr += drawField("层级结构",ib.hierarchy);
+    returnStr += drawField("阶层",ib.hierarchy);
   }
 
 
   if (ib.hasOwnProperty("symbol")){
-      returnStr += drawField("徽记",ib.symbol);
+      returnStr += drawField("象征",ib.symbol);
   }
 
 
@@ -9361,7 +9361,7 @@ function drawFactionInfo (entry,key){
 
   if (ib.hasOwnProperty("territory")){
 
-      returnStr += drawField("领地",ib.territory);
+      returnStr += drawField("领土",ib.territory);
   }
 
 
@@ -9370,7 +9370,7 @@ function drawFactionInfo (entry,key){
   }
 
   if (ib.hasOwnProperty("identity")){
-      returnStr += drawField("特质",ib.identity);
+      returnStr += drawField("特性",ib.identity);
   }
 
   if (ib.hasOwnProperty("cliche")){
@@ -9379,19 +9379,19 @@ function drawFactionInfo (entry,key){
 
 
   if (ib.hasOwnProperty("biome")){
-      returnStr += drawField("生态",ib.biome);
+      returnStr += drawField("生物群系",ib.biome);
   }
   if (ib.hasOwnProperty("climate")){
       returnStr += drawField("气候",ib.climate);
   }
 
   if (ib.hasOwnProperty("religion")){
-      returnStr += drawField("主流信仰",ib.religion);
+      returnStr += drawField("主要信仰",ib.religion);
   }
   if (ib.hasOwnProperty("founded") && ib.hasOwnProperty("ended")){
     returnStr += drawField("活跃时期",ib.founded +" - "+ ib.ended)
   } else if (ib.hasOwnProperty("founded")){
-    returnStr += drawField("建立",ib.founded)
+    returnStr += drawField("成立",ib.founded)
   }
 
 
@@ -9400,7 +9400,7 @@ function drawFactionInfo (entry,key){
     if (setup.getStatus(key) == "dead"){
       status = "<span class='faded'>已解散</span>";
     }
-      returnStr += drawField("现状",status);
+      returnStr += drawField("状态",status);
 
 
 
@@ -9423,7 +9423,7 @@ function drawFamilyInfo (entry,key){
       allegName = setup.getCodexData("factions",entry.allegiance).name;
     }
     if (entry.allegiance == "tri"){
-      allegName = "Tri-Kingdom";
+      allegName = "维斯特三王国";
     }
 
       returnStr += drawField("所属",setup.getAffIcon(entry.allegiance) + " <<cLink \""+entry.allegiance+"\" \""+allegName+"\">>");
@@ -9437,10 +9437,10 @@ function drawFamilyInfo (entry,key){
         var provData = setup.getProvData(ib.prov[i]);
         provsList.push("<<cLink \""+ib.prov[i]+"\" \""+provData.fullName+"\">>")
       }
-      returnStr += drawField("领地",provsList);
+      returnStr += drawField("领土",provsList);
     } else {
       var provData = setup.getProvData(ib.prov);
-      returnStr += drawField("领地","<<cLink \""+ib.prov+"\" \""+provData.fullName+"\">>");
+      returnStr += drawField("领土","<<cLink \""+ib.prov+"\" \""+provData.fullName+"\">>");
     }
 
   }
@@ -9450,7 +9450,7 @@ function drawFamilyInfo (entry,key){
     var headGuy = famInfo.head;
 
       if (setup.getCodexData("people",headGuy) != false){
-        returnStr += drawField("首领","<<cLink \""+headGuy+"\" \""+famInfo[headGuy].name+"\" \"short\">>");
+        returnStr += drawField("家主","<<cLink \""+headGuy+"\" \""+famInfo[headGuy].name+"\" \"short\">>");
       }
 
 
@@ -9458,7 +9458,7 @@ function drawFamilyInfo (entry,key){
 
 
   if (ib.hasOwnProperty("symbol")){
-      returnStr += drawField("徽记",ib.symbol);
+      returnStr += drawField("象征",ib.symbol);
   }
 
   if (ib.hasOwnProperty("meurType")){
@@ -9476,16 +9476,16 @@ function drawFamilyInfo (entry,key){
 
 
   if (ib.hasOwnProperty("identity")){
-      returnStr += drawField("特质",ib.identity);
+      returnStr += drawField("特性",ib.identity);
   }
 
 
 
     var status = "活跃";
     if (setup.getStatus(key) == "dead"){
-      status = "<span class='faded'>已故</span>";
+      status = "<span class='faded'>已灭绝</span>";
     }
-      returnStr += drawField("现状",status);
+      returnStr += drawField("状态",status);
 
 
 
@@ -9500,10 +9500,10 @@ function drawBeastInfo (entry,key){
   var ib = entry.infoBlock;
 
   if (entry.hasOwnProperty("fullName")){
-    returnStr += drawField("姓名",entry.fullName);
+    returnStr += drawField("Name",entry.fullName);
   }
     else if (entry.hasOwnProperty("name")){
-    returnStr += drawField("姓名",entry.name);}
+    returnStr += drawField("Name",entry.name);}
 
  if (entry.hasOwnProperty("subcat") && entry.subcat.includes("known")){
    //this is a known individual animal
@@ -9529,7 +9529,7 @@ function drawBeastInfo (entry,key){
        ageConc += ib.age;
      }
      ageConc += agePres;
-     returnStr += drawField("年龄",ageConc);
+     returnStr += drawField("Age",ageConc);
 
      //birthdate
      if (Array.isArray(ib.age)){
@@ -9542,7 +9542,7 @@ function drawBeastInfo (entry,key){
          born += season;
 
 
-       returnStr += drawField("出生",born);
+       returnStr += drawField("Born",born);
      }
    };
 
@@ -9550,10 +9550,10 @@ function drawBeastInfo (entry,key){
 
 
    if (ib.hasOwnProperty("species")){
-     returnStr += drawField("种类",ib.species)
+     returnStr += drawField("Species",ib.species)
    }
    if (ib.hasOwnProperty("height")){
-     returnStr += drawField("体型",ib.height)
+     returnStr += drawField("Size",ib.height)
    }
 
    if (ib.hasOwnProperty("meurType")){
@@ -9564,7 +9564,7 @@ function drawBeastInfo (entry,key){
 
       tempType= ib.meurType;
      }
-     returnStr += drawField("导体类型",tempType)
+     returnStr += drawField("Meur Type",tempType)
    }
 
 
@@ -9574,7 +9574,7 @@ function drawBeastInfo (entry,key){
      if (ib.keeper.hasOwnProperty("key")){
         keeper = "<<cLink \""+ib.keeper.key+"\" \""+ib.keeper.name+"\">>";
      }
-     returnStr += drawField("饲养者",keeper)
+     returnStr += drawField("Keeper",keeper)
    }
    //STATUS
 
@@ -9625,24 +9625,24 @@ function drawBeastInfo (entry,key){
 
 
    if (ib.hasOwnProperty("height")){
-     returnStr += drawField("体型",ib.height);
+     returnStr += drawField("Size",ib.height);
    }
 
    if (ib.hasOwnProperty("diet")){
-     returnStr += drawField("食性",ib.diet);
+     returnStr += drawField("Diet",ib.diet);
 
    }
 
    if (ib.hasOwnProperty("domestication")){
-     returnStr += drawField("驯化程度",ib.domestication);
+     returnStr += drawField("Domestication",ib.domestication);
    }
 
    if (ib.hasOwnProperty("use")){
-     returnStr += drawField("用途",ib.use);
+     returnStr += drawField("Use",ib.use);
    }
 
    if (ib.hasOwnProperty("range")){
-returnStr += drawField("栖息地",ib.range);
+returnStr += drawField("Range",ib.range);
    }
 
    if (ib.hasOwnProperty("meurType")){
@@ -9652,7 +9652,7 @@ returnStr += drawField("栖息地",ib.range);
      } else {
        tempType= ib.meurType;
      }
-     returnStr += drawField("导体类型",tempType);
+     returnStr += drawField("Meur Type",tempType);
    }
 
 
@@ -9664,16 +9664,16 @@ returnStr += drawField("栖息地",ib.range);
 
      switch(status){
        case "dead":
-       status= "<span class='faded'>已灭绝</span>";
+       status= "<span class='faded'>Extinct</span>";
        break;
        case "?":
-       status= "濒危";
+       status= "Endangered";
        break;
        default:
        //alive
-       status= "现存";
+       status= "Extant";
      }
-     returnStr += drawField("现状",status);
+     returnStr += drawField("Status",status);
 
 
  }
@@ -9691,19 +9691,19 @@ function drawPlantInfo (entry,key){
   var ib = entry.infoBlock;
 
     if (entry.hasOwnProperty("name")){
-    returnStr += drawField("姓名",entry.name);}
+    returnStr += drawField("Name",entry.name);}
 
 
    if (ib.hasOwnProperty("domestication")){
-     returnStr += drawField("栽培",ib.domestication);
+     returnStr += drawField("Cultivation",ib.domestication);
    }
 
    if (ib.hasOwnProperty("attributes")){
-     returnStr += drawField("特性",ib.attributes);
+     returnStr += drawField("Attributes",ib.attributes);
    }
 
    if (ib.hasOwnProperty("range")){
-returnStr += drawField("栖息地",ib.range);
+returnStr += drawField("Range",ib.range);
    }
 
 
@@ -9712,16 +9712,16 @@ returnStr += drawField("栖息地",ib.range);
      var status = setup.getStatus(key);
      switch(status){
        case "dead":
-       status= "<span class='faded'>已灭绝</span>";
+       status= "<span class='faded'>Extinct</span>";
        break;
        case "?":
-       status= "濒危";
+       status= "Endangered";
        break;
        default:
        //alive
-       status= "现存";
+       status= "Extant";
      }
-     returnStr += drawField("现状",status);
+     returnStr += drawField("Status",status);
 
 
 
@@ -9739,11 +9739,11 @@ function drawLocInfo (entry,key){
   var locData = setup.getLocData(key);
 
 
-returnStr += drawField("姓名",entry.name);
+returnStr += drawField("Name",entry.name);
 
 
   if (locData.hasOwnProperty("occupied") && locData.occupied != locData.state){
-      returnStr += drawField("<span class='red'>被占领</span>","<<cLink \""+locData.occupied+"\" \".\" >>");
+      returnStr += drawField("<span class='red'>Under Occupation</span>","<<cLink \""+locData.occupied+"\" \".\" >>");
   }
 
 
@@ -9751,11 +9751,11 @@ returnStr += drawField("姓名",entry.name);
 if (setup.provinces.hasOwnProperty(key)){
   var prov = setup.provinces[key];
   if (setup.hasCodexEntry("factions",prov.state)){
-    returnStr += drawField("所属国",setup.getAffIcon(prov.state) + " <<cLink \""+prov.state+"\" \""+setup.getCodexData("factions",prov.state).name+"\">>")
+    returnStr += drawField("Country",setup.getAffIcon(prov.state) + " <<cLink \""+prov.state+"\" \""+setup.getCodexData("factions",prov.state).name+"\">>")
   }
 
   if (setup.hasCodexEntry("people",prov.head)){
-    returnStr += drawField("首领","<<cLink \""+prov.head+"\" \".\" \"short\">>");
+    returnStr += drawField("Head","<<cLink \""+prov.head+"\" \".\" \"short\">>");
   }
 
   var fKey = key+"s";
@@ -9765,7 +9765,7 @@ if (setup.provinces.hasOwnProperty(key)){
   var famInfo = setup.getFamilyInfo(fKey);
 
   if (famInfo != false){
-      returnStr += drawField("统治家族","<<cLink \""+fKey+"\" \"The "+famInfo.name+"s\" \"short\">>");
+      returnStr += drawField("Ruling Family","<<cLink \""+fKey+"\" \"The "+famInfo.name+"s\" \"short\">>");
   }
 
 
@@ -9775,7 +9775,7 @@ if (setup.provinces.hasOwnProperty(key)){
 
   var capLoc = setup.getLocData(locs[0]);
   if (capLoc != false){
-    returnStr += drawField("首都","<<cLink \""+locs[0]+"\" \""+capLoc.name+"\">>");
+    returnStr += drawField("Capital","<<cLink \""+locs[0]+"\" \""+capLoc.name+"\">>");
   }
 
 
@@ -9788,11 +9788,11 @@ if (setup.provinces.hasOwnProperty(key)){
 
 
     if (setup.getCodexEntries("factions").hasOwnProperty(locInfo.state)){
-      returnStr += drawField("所属国",setup.getAffIcon(locInfo.state)+ " <<cLink \""+locInfo.state+"\" \".\">>");
+      returnStr += drawField("Country",setup.getAffIcon(locInfo.state)+ " <<cLink \""+locInfo.state+"\" \".\">>");
     }
 
     if (setup.hasCodexEntry("locations",locInfo.province)){
-      returnStr += drawField("省份","<<cLink \""+locInfo.province+"\" \".\">>");
+      returnStr += drawField("Province","<<cLink \""+locInfo.province+"\" \".\">>");
 
     }
 
@@ -9800,29 +9800,29 @@ if (setup.provinces.hasOwnProperty(key)){
   } else {
     //no linked state/country data
     if (ib.hasOwnProperty("country")){
-      returnStr += drawField("所属国","<span class='accent'>"+setup.icon.rook + "</span> "+ib.country)
+      returnStr += drawField("Country","<span class='accent'>"+setup.icon.rook + "</span> "+ib.country)
     }
 
     if (ib.hasOwnProperty("province")){
-      returnStr += drawField("省份","<span class='accent'>"+setup.icon.rook + "</span> "+ib.province);
+      returnStr += drawField("Province","<span class='accent'>"+setup.icon.rook + "</span> "+ib.province);
     }
   }
 
   if (ib.hasOwnProperty("head") && setup.hasCodexEntry("people",ib.head)){
-    returnStr += drawField("首领","<<cLink \""+ib.head+"\" \"short\">>");
+    returnStr += drawField("Head","<<cLink \""+ib.head+"\" \"short\">>");
   } else if (setup.getProvData(key) != false && setup.getProvData(key).hasOwnProperty("head") && setup.hasCodexEntry("people",setup.getProvData(key).head)){
-    returnStr += drawField("首领","<<cLink \""+setup.getProvData(key).head+"\" \"short\">>");
+    returnStr += drawField("Head","<<cLink \""+setup.getProvData(key).head+"\" \"short\">>");
   }
 }
 
 
 
 if (ib.hasOwnProperty("identity")){
-  returnStr += drawField("特质",ib.identity);
+  returnStr += drawField("Identity",ib.identity);
 }
 
 if (ib.hasOwnProperty("cliche")){
-  returnStr += drawField("刻板印象",ib.cliche)
+  returnStr += drawField("Cliché",ib.cliche)
 }
 
   if (ib.hasOwnProperty("biome")){
@@ -9838,32 +9838,32 @@ if (ib.hasOwnProperty("cliche")){
       }
 
     }
-    returnStr += drawField("生态",biomeList);
+    returnStr += drawField("Biome",biomeList);
   }
 
   if (ib.hasOwnProperty("climate")){
-    returnStr += drawField("气候",ib.climate);
+    returnStr += drawField("Climate",ib.climate);
   }
 
   if (ib.hasOwnProperty("exploration")){
-    returnStr += drawField("探索程度",ib.exploration);
+    returnStr += drawField("Exploration",ib.exploration);
   }
 
 
 
 
-    var status = "活跃";
+    var status = "Active";
     if (setup.getStatus(key) == "dead"){
-      status = "<span class='faded'>已废弃</span>";
+      status = "<span class='faded'>Defunct</span>";
     }
 
-    returnStr += drawField("现状",status);
+    returnStr += drawField("Status",status);
 
 
   if (ib.hasOwnProperty("founded") && ib.hasOwnProperty("ended")){
-    returnStr += drawField("活跃时期",ib.founded +" - "+ ib.ended)
+    returnStr += drawField("Active from",ib.founded +" - "+ ib.ended)
   } else if (ib.hasOwnProperty("founded")){
-    returnStr += drawField("建立",ib.founded)
+    returnStr += drawField("Founded",ib.founded)
   }
 
 
@@ -10673,7 +10673,7 @@ function codexEntryKeyPeople(entry,key,cat){
 
 
     if (key != "tri"){
-        var returnStr = "<h2>Key Figures</h2>";
+        var returnStr = "<h2>关键角色</h2>";
     }
 
   var buffer = 0;
@@ -10933,7 +10933,7 @@ if (key == "tri"){
 } else if (entry.hasOwnProperty("infoblock") && entry.infoblock.hasOwnProperty("head") && setup.families.hasOwnProperty(entry.infoblock.head) ){
   var fam = setup.getFamilyInfo(entry.infoblock.head);
 
-  returnStr += "<h2>统治家族：The "+fam.name+"s</h2>";
+  returnStr += "<h2>Ruling Family: The "+fam.name+"s</h2>";
   returnStr += setup.drawFamilySummary(entry.infoblock.head);
 }
 
@@ -11130,11 +11130,11 @@ Macro.add('showCodex', {
       if (document.getElementById("codexview-nav") == null){
         $("#mini-nav-menu").empty();
         var nav = "<div id='codexview-nav'><div class='nav-flex controls'>";
-        nav += "<div class='prev-btn' id='prev-cod-btn'><<button \"<span class='icon'>◀</span><span class='title' title='Previous Article'><span class='subtitle'>Previous Article:</span><span class='text-clip'><span id='prev-article'></span></span></span>\">><<run setup.navCodview(\"left\")>><<\/button>></div>";
-        nav += "<div class='category-btn' title='Return to Category'><<button \"<span class='icon'><span id='category-icon'></span></span><span class='title'><span class='subtitle'>Category</span><span class='cat-label-holder'><span id='category-label'></span></span></span>\">>";
+        nav += "<div class='prev-btn' id='prev-cod-btn'><<button \"<span class='icon'>◀</span><span class='title' title='上一篇'><span class='subtitle'>上一篇：</span><span class='text-clip'><span id='prev-article'></span></span></span>\">><<run setup.navCodview(\"left\")>><<\/button>></div>";
+        nav += "<div class='category-btn' title='返回分类'><<button \"<span class='icon'><span id='category-icon'></span></span><span class='title'><span class='subtitle'>分类</span><span class='cat-label-holder'><span id='category-label'></span></span></span>\">>";
         nav += "<<goto \"CODEX\">>";
         nav += "<<\/button>></div>";
-        nav += "<div class='next-btn' id='next-cod-btn'><<button \"<span class='title' title='Next Article'><span class='subtitle'>Next Article:</span><span class='text-clip'><span id='next-article'></span></span></span><span class='icon'>▶</span>\">><<run setup.navCodview(\"right\")>><<\/button>></div>";
+        nav += "<div class='next-btn' id='next-cod-btn'><<button \"<span class='title' title='下一篇'><span class='subtitle'>下一篇：</span><span class='text-clip'><span id='next-article'></span></span></span><span class='icon'>▶</span>\">><<run setup.navCodview(\"right\")>><<\/button>></div>";
         nav += "</div></div>";
         nav += setup.onLoadScript("setup.eventCodViewNav();");
         $("#mini-nav-menu").wiki(nav);
@@ -13211,17 +13211,18 @@ setup.renderIntuition = function(packet){
     }
 
     if (tempNum > 0){
-      returnStr += "<span class='bonus has-bonus'>Due to your "+setup.skillKey[stat].name+" score, you gain a @@.alertG;"+mods[stat]+"@@ boon to "+tempArg+" gambits.</span>";
+      returnStr += "<span class='bonus has-bonus'>由于你的"+setup.skillKey[stat].name+"属性，你获得@@.alertG;"+mods[stat]+"@@的加成，适用于"+tempArg+"策略。</span>";
     } else if (tempNum < 0){
-      returnStr += "<span class='bonus pelanty'>Due to your "+setup.skillKey[stat].name+" score, you gain a @@.alertR;"+mods[stat]+"@@ penalty to "+tempArg+" gambits.</span>";
+      returnStr += "<span class='bonus pelanty'>由于你的"+setup.skillKey[stat].name+"属性，你获得@@.alertR;"+mods[stat]+"@@的减益，适用于"+tempArg+"策略。</span>";
     } else {
-      returnStr += "<span class='bonus'>Due to your "+setup.skillKey[stat].name+" score, you gain no boon or penalty to "+tempArg+" gambits.</span>";
+      returnStr += "<span class='bonus'>由于你的"+setup.skillKey[stat].name+"属性，你在"+tempArg+"策略上既无加成也无减益。</span>";
     }
     returnStr += "</div>";
     returnStr += "</div>";
     }
 
   }
+  
 
   returnStr += "</div>";
   return returnStr;
@@ -13680,10 +13681,10 @@ Macro.add('actMenu', {
         returnStr += "<div class='act-menu'><div class='act-menu-header tails'>" + setup.icon.decorL + " ";
         switch (this.args[0]) {
             case "tactic":
-                returnStr += "CHOOSE YOUR APPROACH";
+                returnStr += "你的论据是";
                 break;
             default:
-                returnStr += "MAKE YOUR DECISION";
+                returnStr += "做出你的抉择";
         }
         returnStr += " " + setup.icon.decorR + "</div>"
         returnStr += "<div class='act-menu-flex'>";
@@ -29914,7 +29915,7 @@ setup.tempCodex.biota["orc"] = codexBeast({
     domestication:["Domesticated","Feral"],
     use:"Meat",
     range:["Throughout Vestur","Foreign lands"],
-    status:"现存"
+    status:"Extant"
   },
   image:{
     url:"orc.png",
@@ -30651,10 +30652,10 @@ setup.tempCodex.factions["church"] = codexFaction(
       type:"faith",
       head:"<<cLink \"ancha\" \"High Sybil Sadaltajir\" \"short\">>",
       subcat:["minor"],
-      symbol:["<<cLink \"unicorn\" \"Unicorn\">>","<<cLink \"narwhal\" \"Narwhal\">>","<<cLink \"angel\" \"Angel\">>"],
+      symbol:["<<cLink \"unicorn\" \"独角兽\">>","<<cLink \"narwhal\" \"独角鲸\">>","<<cLink \"angel\" \"天使\">>"],
       hq:["octanis","Octanis"],
       hierarchy:"神权制",
-      mission:"维护<<cLink \"ceros\" \"Cerostianism\">>",
+      mission:"维护<<cLink \"ceros\" \"塞罗斯教\">>",
       identity:"虔诚信众",
       cliche:"陈旧而迷信",
       territory:"遍布维斯特"
@@ -30691,7 +30692,7 @@ setup.tempCodex.factions["convoy"] = codexFaction(
       mission:"和平与合一",
       identity:"和解者",
       cliche:"最奇特之人担此重任",
-      head: "<<cLink \"lucas\" \"Prince Lucas\" \"short\">>",
+      head: "<<cLink \"lucas\" \"卢卡斯王子\" \"short\">>",
 
     },
     image: {url:"codex_convoy.png",alt:"王子车队徽记：三王国金字塔顶冠王冠。"},
@@ -30718,20 +30719,20 @@ see:["princeconvoy","convoy1","convoy2","convoy3","convoy4"]
 setup.tempCodex.factions["andimeurs"] = codexFamily(
 {
   info:{
-    name:"The Andimeurs",
+    name:"安迪梅尔家族",
 
-    symbol:"The <<cLink \"unicorn\" \"true.unicorn\">> and the <<cLink \"manticore\" \"true.manticore\">>, with a hunting spear between them",
+    symbol:"<<cLink \"unicorn\" \"独角兽\">> 与 <<cLink \"manticore\" \"曼提柯\">>，中间有一支狩猎矛",
     allegiance:"middle",
-    relic:["unicornhorn","The Unicorn's Horn"],
+    relic:["unicornhorn","独角兽之角"],
     prov:"andimeur",
     meurType:setup.meurType.white,
-    identity:"维斯特化身"
+    identity:"维斯特的化身"
   },
-  image: {url:"family_andimeur.png",alt:"Emblem of the Andimeur family: a unicorn and a manticore facing one another, with a hunting spear between them."},
+  image: {url:"family_andimeur.png",alt:"安迪梅尔家族徽记：独角兽与曼提柯相对而立，中间有一支狩猎矛。"},
   text:[
-    "“天使”坐在三国的最高宝座上。从安迪梅尔主权区的迪亚德姆城堡开始，他们统治着中央王国和整个维斯图尔。他们的徽章是一支拱形狩猎矛，左边是一只螳螂，右边是一只独角兽。",
-    "Andimeurs家族比任何其他贵族家族都更受建筑师的青睐。有人说，他们的祝福始于亚瑟王和《礼物》；其他人则认为《建筑师》的影响力可以追溯到圣阿利斯泰尔，宣称这位塞洛斯坦圣徒是“第一位安迪梅尔”。然而，神圣的恩惠并不意味着安迪梅尔家族没有冲突地统治。被建筑师选中是一种祝福，也是一种诅咒，安迪梅尔家族长期繁荣的统治，尽管他们有敌人，但并非没有。安迪梅尔防线经受着悲剧、暗杀和越来越不忠实的人民，一如既往地继续以公平公正的方式统治。",
-    "这个家族拥有两件传家宝：可怕的螳螂剑和神圣的独角兽之角。尽管最高宝座有权使用各种类型的meur，但王室的孩子们应该追求白人实践，以纪念第四车队的奥利弗王子。"
+    "“天使”坐在三国的最高宝座上。从安迪梅尔主权区的迪亚德姆城堡开始，他们统治着中央王国和整个维斯图尔。他们的徽章是一支拱形狩猎矛，左边是一只曼提柯，右边是一只独角兽。",
+    "安迪梅尔家族比任何其他贵族家族都更受建筑师的青睐。有人说，他们的祝福始于亚瑟王和《礼物》；其他人则认为《建筑师》的影响力可以追溯到圣阿利斯泰尔，宣称这位塞洛斯坦圣徒是“第一位安迪梅尔”。然而，神圣的恩惠并不意味着安迪梅尔家族没有冲突地统治。被建筑师选中是一种祝福，也是一种诅咒，安迪梅尔家族长期繁荣的统治，尽管他们有敌人，但并非没有。安迪梅尔防线经受着悲剧、暗杀和越来越不忠实的人民，一如既往地继续以公平公正的方式统治。",
+    "这个家族拥有两件传家宝：可怕的曼提柯剑和神圣的独角兽之角。尽管最高宝座有权使用各种类型的meur，但王室的孩子们应该追求白人实践，以纪念第四车队的奥利弗王子。"
 
   ],
   see:["nobles","middle","andimeur","arthur","unicornhorn","manticoreblade","unicorn","manticore","alistair"]
@@ -30742,18 +30743,18 @@ setup.tempCodex.factions["andimeurs"] = codexFamily(
 setup.tempCodex.factions["barghurs"] = codexFamily(
 {
   info:{
-    name:"The Barghurs",
+    name:"巴古尔家族",
 
-    symbol:"The <<cLink \"hare\" \"true.hare\">>, depicted in Midland style",
+    symbol:"<<cLink \"hare\" \"野兔\">>，以米德兰风格描绘",
     allegiance:"north",
     prov:"barghur",
     meurType:setup.meurType.green,
     identity:"维斯特之剑"
 
   },
-  image: {url:"family_barghur.png",alt:"Emblem of the Barghur family: a hare drawn in a Midland style."},
+  image: {url:"family_barghur.png",alt:"巴古尔家族徽记：一只以米德兰风格绘制的野兔。"},
   text:["巴古尔人是北方王国的王室，也是大三国北方大公国的统治者。从巴尔古尔主权开始，他们统治着一个广阔而严酷的北方。他们的徽章是一只野兔，以米德兰风格绘制，以纪念王国之间的条约。",
-  "Malik Barghur是一名战士，他的父亲和他之前的所有人都是战士。根据这一传统，巴古尔家族的每个儿子都应该在年轻时为国王的军队服役，希望他们作为士兵学到的荣誉和忠诚能够继承王位。因此，Barghur线以务实的规则和对公平和纪律的坚定承诺而闻名。",
+  "马利克·巴古尔是一名战士，他的父亲和他之前的所有人都是战士。根据这一传统，巴古尔家族的每个儿子都应该在年轻时为国王的军队服役，希望他们作为士兵学到的荣誉和忠诚能够继承王位。因此，巴古尔家族以务实的规则和对公平和纪律的坚定承诺而闻名。",
   "对于他们这样的家庭来说，这是不寻常的，他们没有把文物作为传家宝，而是允许每个儿子为自己选择一件——尽管大多数人都发誓要做出环保承诺。"
 ],
   see:["nobles","north","barghur","malik","hare","kingsarmy"]
@@ -30763,20 +30764,20 @@ setup.tempCodex.factions["barghurs"] = codexFamily(
 setup.tempCodex.factions["keshets"] = codexFamily(
 {
   info:{
-    name:"The Keshets",
+    name:"凯谢家族",
 
-    symbol:"The <<cLink \"roc\" \"true.roc\">>, depicted in Midland style",
+    symbol:"<<cLink \"roc\" \"大鹏\">>，以米德兰风格描绘",
     allegiance:"south",
-    relic:["rocslayer","The Rocslayer"],
+    relic:["rocslayer","大鹏杀手"],
     prov:["aaru","keshet"],
     meurType:setup.meurType.yellow,
     identity:"维斯特之笔"
 
   },
   image: {url:"family_keshet.png",alt:"凯谢家族的徽章：一只米德兰风格的大鹏。"},
-  text:["Keshets是南部王国的王室，也是大三国南部大公国的统治者。他们控制着他们同名的主权和外交飞地阿鲁。他们的徽章是一只大鹏，以米德兰风格绘制，以纪念王国之间的条约。",
-"在过去的时代，Keshets是著名的大鹏杀手。由于他们的英勇事迹，他们被授予了头衔和声望。然而，直到三国统一和旧神权政治的衰落，凯谢才真正占据了他作为君主的应有地位。在此后的几代人中，他们以明智的手段和敏锐的眼光统治着南方。他们王国的财富和繁荣证明了他们的智慧和狡猾。",
-"他们的家族遗物是Rocslayer Glaive，宣誓黄色誓言是家族的传统。"
+  text:["凯谢家族是南部王国的王室，也是大三国南部大公国的统治者。他们控制着他们同名的主权和外交飞地阿鲁。他们的徽章是一只大鹏，以米德兰风格绘制，以纪念王国之间的条约。",
+"在过去的时代，凯谢家族是著名的大鹏杀手。由于他们的英勇事迹，他们被授予了头衔和声望。然而，直到三国统一和旧神权政治的衰落，凯谢家族才真正占据了他作为君主的应有地位。在此后的几代人中，他们以明智的手段和敏锐的眼光统治着南方。他们王国的财富和繁荣证明了他们的智慧和狡猾。",
+"他们的家族遗物是大鹏杀手长戟，宣誓黄色誓言是家族的传统。"
 ],
   see:["nobles","south","keshet","atlas","rocslayer","roc"]
 
@@ -30786,18 +30787,18 @@ setup.tempCodex.factions["keshets"] = codexFamily(
 setup.tempCodex.factions["daeynors"] = codexFamily(
 {
   info:{
-    name:"The Daeynors",
+    name:"戴伊诺尔家族",
 meurType:setup.meurType.red,
     allegiance:"middle",
     prov:"daeynor",
-    identity:"王室的兄弟",
-    symbol:"剑与绣球花交替环"
+    identity:"王冠的兄弟",
+    symbol:"剑与绣球花的交替环"
 
   },
-  image: {url:"family_daeynor.png",alt:"Emblem of the Daeynor family: a ring of swords and hydrangeas."},
-  text:["“戴伊诺尔人”统治着中王国的西南海岸。他们的徽章是剑和绣球花的交替环。",
-"Daeynor家族是米德兰为数不多的“老家族”之一，也就是说，这个家族在第一王子车队之后保留了其历史头衔。而且，就像米德兰的大多数老家族一样，它与Andimeur家族有着共同的血脉。两人在历史上一直通婚，他们对王室的忠诚被认为是坚定不移的，直到克劳迪斯·戴伊诺的背叛玷污了他家族的名誉。他的行为的持久影响尚不清楚。",
-"传统上是红色的导体，Daeynor家族的遗物是由螳螂甲壳质制成的矛。然而，当叛逆的克劳迪斯消失时，这件传家宝也随之消失了。"
+  image: {url:"family_daeynor.png",alt:"戴伊诺尔家族徽记：剑与绣球花的交替环。"},
+  text:["戴伊诺尔家族统治着中王国的西南海岸。他们的徽章是剑和绣球花的交替环。",
+"戴伊诺尔家族是米德兰为数不多的“老家族”之一，也就是说，这个家族在第一王子车队之后保留了其历史头衔。而且，就像米德兰的大多数老家族一样，它与安迪梅尔家族有着共同的血脉。两人在历史上一直通婚，他们对王室的忠诚被认为是坚定不移的，直到克劳迪斯·戴伊诺尔的背叛玷污了他家族的名誉。他的行为的持久影响尚不清楚。",
+"传统上是红色的导体，戴伊诺尔家族的遗物是由螳螂甲壳质制成的矛。然而，当叛逆的克劳迪斯消失时，这件传家宝也随之消失了。"
 ],
   see:["nobles","middle","daeynor","convoy1"]
 
@@ -30806,16 +30807,16 @@ meurType:setup.meurType.red,
 setup.tempCodex.factions["glenmaers"] = codexFamily(
 {
   info:{
-    name:"The Glenmaers",
+    name:"格伦梅尔家族",
     allegiance:"middle",
     prov:"glenmaer",
     identity:"新贵族的导师",
-    symbol:"<<cLink \"pigeon\" \"true.Doves\">> 与橄榄枝，图案于盾上"
+    symbol:"<<cLink \"pigeon\" \"鸽子\">> 和橄榄枝图案于盾牌上"
 
   },
-  image: {url:"family_glenmaer.png",alt:"Emblem of the Glenmaer family: a shield, patterned with olive branches and doves."},
-  text:["“巨人”统治着中王国的西北部丘陵。他们的徽章是一个盾牌，上面有交替的橄榄枝和鸽子图案。",
-"Godbert Glenmaer是第一车队最早任命的领主之一，曾以骑士身份为亚瑟王服务。他是如此谦逊，以至于他们说他否认了这个头衔。当然，礼物的存在不容争辩，随着时间的推移，他接受了贵族的合法地位。他的后代将继承他的谦逊和奉献精神，而格伦梅尔家族的原因将塑造维斯特的政策和基础设施。这方面没有比维斯特皇家军事学院更有力的证据了，格伦梅尔家族自三国成立以来一直在管理这所学院。",
+  image: {url:"family_glenmaer.png",alt:"格伦梅尔家族徽记：绘有橄榄枝与鸽子的盾牌。"},
+  text:["格伦梅尔家族统治着中王国的西北部丘陵。他们的徽章是一个盾牌，上面有交替的橄榄枝和鸽子图案。",
+"戈德伯特·格伦梅尔是第一车队最早任命的领主之一，曾以骑士身份为亚瑟王服务。他是如此谦逊，以至于他们说他否认了这个头衔。当然，礼物的存在不容争辩，随着时间的推移，他接受了贵族的合法地位。他的后代将继承他的谦逊和奉献精神，而格伦梅尔家族的原因将塑造维斯特的政策和基础设施。这方面没有比维斯特皇家军事学院更有力的证据了，格伦梅尔家族自三国成立以来一直在管理这所学院。",
 "格伦梅尔夫妇对特定的承诺没有偏见，鼓励他们的孩子追求他们感兴趣的东西。尽管他们拥有许多文物，但没有一件大到在VRMA的阴影下被称为“传家宝”。"
 ],
   see:["nobles","middle","glenmaer","vrma","convoy1"],
@@ -30826,20 +30827,20 @@ setup.tempCodex.factions["glenmaers"] = codexFamily(
 setup.tempCodex.factions["elkhatus"] = codexFamily(
 {
   info:{
-    name:"The Elkhatus",
+    name:"埃尔哈图家族",
 
     allegiance:"north",
     prov:"elkhatu",
     meurType:setup.meurType.white,
-    identity:"白色誓约的守护者",
-    relic:["angelblood","true.Angelblood Stones <sup>(numerous)</sup>"],
-    symbol:"<<cLink \"angel\" \"true.angel\">>"
+    identity:"白之实践的守护者",
+    relic:["angelblood","天使之血石 <sup>(多枚)</sup>"],
+    symbol:"<<cLink \"angel\" \"天使\">>"
 
   },
-  image: {url:"family_elkhatu.png",alt:"Emblem of the Elkhatu family: an angel."},
+  image: {url:"family_elkhatu.png",alt:"埃尔哈图家族徽记：一位天使。"},
   text:[
-    "“民族”统治着北方王国的最西端海岸。他们的家族徽章宛如天使。",
-    "Elkhatus由白人实践之父、圣洁的豪厄尔勋爵创立，努力以身作则，体现理想的实践者。埃尔哈图家族的每个孩子不仅要学习白眉，而且要擅长白眉，因为家族肩负着巨大的责任。Elkhatus负责监督神圣治疗学院，以及由于梅尔西线的灭绝，米德兰王室的健康状况。",
+    "埃尔哈图家族统治着北方王国最西端的海岸。他们的家族徽章宛如天使。",
+    "埃尔哈图家族由白之实践之父、圣洁的豪厄尔勋爵创立，努力以身作则，体现理想的白之实践者。埃尔哈图家族的每个孩子不仅要学习白之实践，而且要精通白之实践，因为家族肩负着巨大的责任。埃尔哈图家族负责监督神圣治疗学院，以及由于梅尔西血脉的灭绝，米德兰王室的健康状况。",
   ],
   see:["nobles","north","elkhatu","sainthowell","whitepractice","hcdh"],
   timestamp:[1,1,1]
@@ -30849,20 +30850,20 @@ setup.tempCodex.factions["elkhatus"] = codexFamily(
 setup.tempCodex.factions["middle"] = codexFaction(
   {
     info:{
-      name:"Middle Kingdom",
+      name:"中王国",
       type:"aristocracy",
       subcat:["major"],
-      allegiance: "tri",
+      allegiance: "维斯特三王国",
 
-      symbol:"<<cLink \"unicorn\" \"Unicorn\">> & <<cLink \"manticore\" \"Manticore\">>",
+      symbol:"<<cLink \"unicorn\" \"独角兽\">> & <<cLink \"manticore\" \"曼提柯\">>",
       head: "andimeurs",
       governance:"世袭君主制",
-      territory:"中土维斯特",
+      territory:"米德兰韦斯特",
       climate:"温带",
-      biome:["平原","森林"],
-      religion:"<<cLink \"holyceros\" \"Holy Cerostianism\">>",
-      identity:"传统与荣耀",
-      cliche:"浮华而疏离",
+      biome:["田野","森林"],
+      religion:"<<cLink \"holyceros\" \"塞罗斯提安主义\">>",
+      identity:"传统与骑士精神",
+      cliche:"浮华与疏离",
 
 
     },
@@ -30871,7 +30872,7 @@ setup.tempCodex.factions["middle"] = codexFaction(
     map:true,
     states:{title:"Lordship Territories",tag:"middle",priority:"andimeur"},
     keyPeople:{
-        title: ["Ruling Family","The Andimeurs"],
+        title: ["Ruling Family","安迪梅尔家族"],
         keys:["alexander","oscar","lucas"]
     },
 
@@ -30890,19 +30891,19 @@ setup.tempCodex.factions["nn"] = codexFaction(
     info:{
       name:"$newNorth",
       subcat:["minor"],
-      mission:"以抗议推动改革",
-      symbol:"<<cLink \"hare\" \"Hare\">>",
-      head: "<<cLink \"lazarus\" \"Lazarus\">>",
-      territory:"<<cLink \"north\" \"北境王国\">>",
-      identity:"北境人民之声",
-      cliche:"盗贼与恐怖分子"
+      mission:"通过抗议进行改革",
+      symbol:"<<cLink \"hare\" \"野兔\">>",
+      head: "<<cLink \"lazarus\" \"拉撒路\">>",
+      territory:"<<cLink \"north\" \"北方王国\">>",
+      identity:"北方人民之声",
+      cliche:"窃贼与恐怖分子"
 
     },
     image: {url:"codex_nn.png",alt:"兄弟会徽章：一只野兔，被一颗钻石形状的星星包围。"},
     emblem: {url:"emblem_nn.png",alt:"兄弟会徽章：一只野兔，被一颗钻石形状的星星包围。"},
     keyPeople:{
       head:"lazarus",
-      lazarus:{name:"Lazarus"}
+      lazarus:{name:"拉撒路"}
     },
 
     text:["“赤手空拳兄弟”是一个抗议组织。他们为改善北方平民的生活条件而请愿。虽然最初是一个组织松散的派系，但随着蒙面领袖拉撒路的出现，赤脚者的数量、组织和勇气都在增长。",
@@ -30918,22 +30919,22 @@ setup.tempCodex.factions["nn"] = codexFaction(
 setup.tempCodex.factions["nomads"] = codexFaction(
   {
     info:{
-      name:"Northern Nomads",
-      head:"<<cLink \"payne\" \"Lord Segrengachi\" \"short\">> <sup>(informal)</sup>",
-      hierarchy:"各异",
-      mission:"维护古老传统",
-      identity:"真正的北境人",
+      name:"北方游牧民族",
+      head:"<<cLink \"payne\" \"塞格伦加奇勋爵\" \"short\">> <sup>(非正式)</sup>",
+      hierarchy:"多样",
+      mission:"维持古老传统",
+      identity:"真正的北方人",
       cliche:"沉默的异教徒",
-      religion:"<<cLink \"oldways\" \"The Old Ways\">>",
-      territory:"北境维斯特各地"
+      religion:"<<cLink \"oldways\" \"古老之道\">>",
+      territory:"北维斯特各地"
 
 
     },
-    image: {url:"codex_oldways.png",alt:"A pagan symbol associated with the Northern nomads. It resembles the sigil for black meur."},
+    image: {url:"codex_oldways.png",alt:"与北方游牧民族相关的异教符号。它类似于黑色默尔的徽记。"},
 
-    text:["所有北方人都曾存在于“北欧氏族”中。很少有人记得他们曾经属于哪个氏族，在统一战争后被同化并定居在城镇。其他人仍然固执地坚持着他们自由漫游的根。在遥远的北方，许多游牧部落仍然将Segrengachi和Urdagan地区称为家园，只向南前往定居的北方进行贸易。",
+    text:["所有北方人都曾存在于“北欧氏族”中。很少有人记得他们曾经属于哪个氏族，在统一战争后被同化并定居在城镇。其他人仍然固执地坚持着他们自由漫游的根。在遥远的北方，许多游牧部落仍然将塞格伦加奇和乌尔达甘地区称为家园，只向南前往定居的北方进行贸易。",
     "尽管游牧民族和其他人一样是北方王国的臣民，但他们对三国的政治和习俗漠不关心，很少谈论自己的政治和风俗。因此，游牧社会的内部阴谋只有游牧民族自己以及那些仍然保持密切家庭关系的人知道。",
-    "游牧民族经常认为塞格伦加奇勋爵是他们的傀儡，即使他们不住在塞格伦加齐境内。"
+    "游牧民族经常认为塞格伦加奇勋爵是他们的傀儡，即使他们不住在塞格伦加奇境内。"
   ],
   see:["oldways","segrengachi","urdagan","preservationists"],
   timestamp:[999,999,999]
@@ -30944,21 +30945,21 @@ setup.tempCodex.factions["nomads"] = codexFaction(
 setup.tempCodex.factions["north"] = codexFaction(
   {
     info:{
-      name:"Northern Kingdom",
+      name:"北方王国",
       type:"aristocracy",
       subcat:["major"],
-      allegiance: "tri",
+      allegiance: "维斯特三王国",
     //  motto:"we love mining and dying",
-      symbol:"<<cLink \"hare\" \"Hare\">>",
+      symbol:"<<cLink \"hare\" \"野兔\">>",
       head: "barghurs",
       governance:"世袭君主制",
       territory:"冰封荒原",
       prov:"barghur",
       identity:"坚韧与耐力",
-      cliche:"矿工与野人",
-      climate:["亚北极","极地"],
-      biome:["山地","冻原","寒带针叶林"],
-      religion:"漠然"
+      cliche:"矿工与野蛮人",
+      climate:["亚北极","北极"],
+      biome:["山脉", "苔原", "泰加林"],
+      religion:"冷漠"
     },
     image: {url:"codex_north.png",alt:"北方王国的象征：一只被橄榄三角包围的野兔。"},
     emblem: {url:"emblem_north.png",alt:"北方王国的象征：一只被橄榄三角包围的野兔。"},
@@ -30977,18 +30978,18 @@ see:["tri","unificationwar","nobility","thegift","malik","relicsartefacts","mine
 setup.tempCodex.factions["preservationists"] = codexFaction(
   {
     info:{
-      name:"The Northern Preservationist Society",
+      name:"北方保护主义协会",
       hierarchy:"非正式",
-      mission:"保存古老传统",
-      identity:"受迫害的历史学者",
-      cliche:"书呆子气太重，无法游牧",
-      territory:"北境维斯特各地"
+      mission:"保护古老传统",
+      identity:"受迫害的历史学家",
+      cliche:"太过书呆子而无法像游牧民一样生活",
+      territory:"北维斯特各地"
 
 
     },
-    image: {url:"preservationists.png",alt:"Preservationists have no formal symbol. On occasion, they make use of the likeness of Old Gods."},
+    image: {url:"preservationists.png",alt:"保护主义者没有正式的象征。有时他们会使用旧神的外貌。"},
 
-    text:["“北方保护主义协会”（也称为“保留主义协会”或简称“保留主义者”）是一个松散的自称学者的团体。这些所谓的历史学家试图将朝鲜无数年的口头传统归结为笔墨，因为在他们看来，旧方式的异端是值得保留的。..如果只是为了学习。",
+    text:["“北方保护主义协会”（也称为“保留主义协会”或简称“保留主义者”）是一个松散的自称学者的团体。这些所谓的历史学家试图将北方无数年的口头传统归结为笔墨，因为在他们看来，旧方式的异端是值得保留的……如果只是为了学习。",
     "由于没有官方的等级制度，也没有任何大学来管理他们的研究，保护主义者是一个值得怀疑的群体，很少有人愿意承认。然而，那些被冠以绰号的人在他们的使命中不知疲倦地工作，他们的决心不容低估。"
   ],
   see:["oldways","nomads","unificationwar"],
@@ -31001,20 +31002,20 @@ setup.tempCodex.factions["preservationists"] = codexFaction(
 setup.tempCodex.factions["south"] = codexFaction(
   {
     info:{
-      name:"Southern Kingdom",
+      name:"南方王国",
       type:"aristocracy",
       subcat:["major"],
-      allegiance: "tri",
+      allegiance: "维斯特三王国",
     //  motto:"screw the rules I have money",
-      symbol:"<<cLink roc \"Roc\">>",
+      symbol:"<<cLink \"roc\" \"大鹏\">>",
       head: "keshets",
       governance:"世袭君主制",
-      territory:["南境维斯特","南境腹地","南境北部林地"],
+      territory:["南维斯特","南方心脏地带","南方针叶林区"],
       climate:["热带","多样"],
       biome:["海岸","丛林","多样"],
-      identity:"商人与外交家",
-      religion:"<<cLink \"cetolism\" \"Cetolist-Cerostianism\">>",
-      cliche:"贪婪而虚伪",
+      identity:"贸易者与外交家",
+      religion:"<<cLink \"cetolism\" \"鲸类保护主义\">>",
+      cliche:"贪婪且虚伪",
     },
     image: {url:"codex_south.png",alt:"南方王国的象征：一只被朱红色三角形包围的大鹏。"},
     emblem: {url:"emblem_south.png",alt:"南方王国的象征：一只被朱红色三角形包围的大鹏。"},
@@ -31022,9 +31023,9 @@ setup.tempCodex.factions["south"] = codexFaction(
     states:{title:"Lordship Territories",list:"south",tag:"south",priority:"aaru"},
 
 
-    text:["“南方王国”在字面和比喻上都是连接维斯特和大陆的桥梁。作为一个古老的贸易中心，南方的声誉跨越海洋和语言障碍，延伸到世界最遥远的角落。这个王国对旅行、外交价值观的迷恋，以及对外国婚姻的宽松态度，使其人民成为三国的天然使者。南方人无论走到哪里，都被视为受欢迎的客人，南方人享有远离其历史边界的飞地定居点。",
+    text:["“南方王国”在字面和比喻上都是连接维斯特与大陆的桥梁。作为一个古老的贸易中心，南方的声誉跨越海洋和语言障碍，延伸到世界最遥远的角落。这个王国对旅行、外交价值观的迷恋，以及对外国婚姻的宽松态度，使其人民成为三国的天然使者。南方人无论走到哪里，都被视为受欢迎的客人，南方人享有远离其历史边界的飞地定居点。",
 
-"当然，一个人需要良好的声誉才能做生意，对一个人来说，一笔好交易对另一个人来说并不总是公平的。南方的名声仅次于它的恶名。"],
+"当然，良好的声誉是做生意的必要条件，对一方来说的好交易，对另一方而言未必公平。南方的名声仅次于它的恶名。"],
 see:["tri","unificationwar","nobility","thegift","atlas"]
 
 
@@ -31045,7 +31046,7 @@ setup.tempCodex.factions["tri"] = codexFaction(
       identity:"蒙恩之民",
       cliche:"闭塞、落后的巫术之国",
       founded:"十五世纪",
-      religion:"<<cLink \"ceros\" \"Cerostianism\">>",
+      religion:"<<cLink \"ceros\" \"塞罗斯提安主义\">>",
       capital:"<<cLink \"diadem\" \"Diadem\">>",
     },
     image: {url:"codex_tri.png",alt:"联合三王国徽记：三王国徽章聚成三角。中土徽居中，北方徽在其左，南方徽在其右。"},
@@ -31094,7 +31095,7 @@ setup.tempCodex.history["arthur"] = codexConcept({
 setup.tempCodex.history["atlas"] = codexConcept({
   info:{
     name:"阿特拉斯·凯希特",
-    subcat:["person"]
+    subcat:["人物"]
   },
   image:{
     url:"atlas.png",
@@ -31121,7 +31122,7 @@ setup.tempCodex.history["atlas"] = codexConcept({
 setup.tempCodex.history["convoy1"] = codexConcept({
   info:{
     name:"第一届王子护航团",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"convoy1.png",
@@ -31146,7 +31147,7 @@ setup.tempCodex.history["convoy1"] = codexConcept({
 setup.tempCodex.history["convoy2"] = codexConcept({
   info:{
     name:"第二届王子护航团",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"convoy2.png",
@@ -31172,7 +31173,7 @@ setup.tempCodex.history["convoy2"] = codexConcept({
 setup.tempCodex.history["convoy3"] = codexConcept({
   info:{
     name:"第三届王子护航团",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"convoy3.png",
@@ -31197,7 +31198,7 @@ setup.tempCodex.history["convoy3"] = codexConcept({
 setup.tempCodex.history["convoy4"] = codexConcept({
   info:{
     name:"第四届王子护航团",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"convoy4.png",
@@ -31222,7 +31223,7 @@ setup.tempCodex.history["convoy4"] = codexConcept({
 setup.tempCodex.history["greathunt"] = codexConcept({
   info:{
     name:"大狩猎",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"greathunt.png",
@@ -31278,7 +31279,7 @@ setup.timeline.main = [
 setup.tempCodex.history["timeline"] = codexConcept({
   info:{
     name:"时间轴：三国同盟史",
-    subcat:["default"]
+    subcat:["默认"]
   },
   image:false,
     text:["//以下时间轴概述了从统一战争开始到第五届王子护航团开启的三国同盟历史。//",
@@ -31291,7 +31292,7 @@ setup.tempCodex.history["timeline"] = codexConcept({
 setup.tempCodex.history["malik"] = codexConcept({
   info:{
     name:"马利克·巴格尔",
-    subcat:["person"]
+    subcat:["人物"]
   },
   image:{
     url:"malik.png",
@@ -31316,7 +31317,7 @@ setup.tempCodex.history["malik"] = codexConcept({
 setup.tempCodex.history["unificationwar"] = codexConcept({
   info:{
     name:"统一战争",
-    subcat:["event"]
+    subcat:["事件"]
   },
   image:{
     url:"unificationwar.png",
@@ -31343,7 +31344,7 @@ setup.tempCodex.history["unificationwar"] = codexConcept({
 setup.tempCodex.locations["aaru"] = codexLocation({
   info:{
     name: "雅卢领",
-    subcat:["south","province"],
+    subcat:["南境","省份"],
     type:"贵族统治",
     stateOf:"south",
     biome: ["草地高原"],
@@ -31374,7 +31375,7 @@ setup.tempCodex.locations["aaru"] = codexLocation({
 setup.tempCodex.locations["alnilam"] = codexLocation({
   info:{
     name: "阿尔尼兰",
-    subcat:["south","settlement"],
+    subcat:["南境","定居点"],
     identity:"伟人之会所",
     cliche:"颓废者的避暑胜地",
     biome:"草地高原",
@@ -31402,7 +31403,7 @@ timestamp:[1,1,1]
 setup.tempCodex.locations["andimeur"] = codexLocation({
   info:{
     name: "安迪缪领",
-    subcat:["middle","province"],
+    subcat:["中土","省份"],
     type:"贵族统治",
     stateOf:"middle",
     biome: ["丘陵","平原"],
@@ -31428,7 +31429,7 @@ setup.tempCodex.locations["andimeur"] = codexLocation({
 setup.tempCodex.locations["diadem"] = codexLocation({
   info:{
     name: "戴德姆",
-    subcat:["middle","settlement"],
+    subcat:["中土","定居点"],
     stateOf:"andimeur",
     identity:"皇权与中心性",
     cliche:"阶级森严的大都市",
@@ -31452,7 +31453,7 @@ see:["andimeurs"]
 setup.tempCodex.locations["barghur"] = codexLocation({
   info:{
     name: "巴格尔领",
-    subcat:["north","province"],
+    subcat:["北境","省份"],
     type:"贵族统治",
     stateOf:"north",
     biome: ["泰加林","山脉"],
@@ -31493,7 +31494,7 @@ return article;
 setup.tempCodex.locations["morbre"] =codexLocation({
   info:{
     name: "莫布雷",
-    subcat:["north","settlement"],
+    subcat:["北境","定居点"],
     identity:"军事强权",
     cliche:"压抑的首都",
     biome:"砍伐后的泰加林",
@@ -31517,7 +31518,7 @@ see:["barghurs"]
 setup.tempCodex.locations["naktogascar"] =codexLocation({
   info:{
     name: "纳克托加裂痕",
-    subcat:["north","poi"],
+    subcat:["北境","兴趣点"],
     biome:"被摧毁的泰加林",
     stateOf:"barghur",
   },
@@ -31538,7 +31539,7 @@ timestamp:[1,1,2]
 setup.tempCodex.locations["daeynor"] = codexLocation({
   info:{
     name: "代诺领",
-    subcat:["middle","province"],
+    subcat:["中土","省份"],
     type:"贵族统治",
     stateOf:"middle",
     biome: ["沿海草地","丘陵"],
@@ -31563,7 +31564,7 @@ setup.tempCodex.locations["daeynor"] = codexLocation({
 setup.tempCodex.locations["glenmaer"] = codexLocation({
   info:{
     name: "格伦梅尔领",
-    subcat:["middle","province"],
+    subcat:["中土","省份"],
     type:"贵族统治",
     stateOf:"middle",
     biome: ["针叶林","山脉"],
@@ -31592,7 +31593,7 @@ timestamp:[1,1,1]
 setup.tempCodex.locations["kagthur"] = codexLocation({
   info:{
     name: "卡格图尔领",
-    subcat:["north","province"],
+    subcat:["北境","省份"],
     stateOf:"north",
     biome: ["荒原","冻原","山脉","泰加林"],
     climate: ["亚寒带","极地"],
@@ -31620,7 +31621,7 @@ timestamp:[1,1,2]
 setup.tempCodex.locations["demonsgrove"] = codexLocation({
   info:{
     name: "恶魔林",
-    subcat:["north","nature"],
+    subcat:["北境","自然"],
     biome:"人工林", // Curated Woods
     stateOf:"kagthur",
   },
@@ -31643,7 +31644,7 @@ timestamp:[1,1,2]
 setup.tempCodex.locations["keshet"] = codexLocation({
   info:{
     name: "凯希特领",
-    subcat:["south","province"],
+    subcat:["南境","省份"],
     type:"贵族统治", // aristocracy
     stateOf:"south",
     biome: ["退化雨林","沼泽","海岸"], // Deforested Jungle
@@ -31673,7 +31674,7 @@ setup.tempCodex.locations["keshet"] = codexLocation({
 setup.tempCodex.locations["octantis"] = codexLocation({
   info:{
     name: "奥克塔尼斯",
-    subcat:["south","settlement"],
+    subcat:["南境","定居点"],
     identity:"圣城",
     cliche:"市集与狂信徒",
     biome:"海岸绝壁",
@@ -31698,7 +31699,7 @@ setup.tempCodex.locations["laurentia"] = codexLocation(
   {
     info:{
       name:"劳伦提亚主权领",
-      subcat:["foreign"],
+      subcat:["异域"],
       governance:"封建邦国",
       territory:"西部大陆",
     },
@@ -31713,7 +31714,7 @@ setup.tempCodex.locations["opona"] = codexLocation(
   {
     info:{
       name:"奥波南王国",
-      subcat:["foreign"],
+      subcat:["异域"],
       governance:"君主制",
       territory:"东部大陆",
       status:"已灭亡" // dead
@@ -31729,7 +31730,7 @@ timestamp:[999,999,999]
 setup.tempCodex.locations["tebenka"] = codexLocation({
   info:{
     name: "特本卡领地",
-    subcat:["north","province"],
+    subcat:["北境","省份"],
     stateOf:"north",
     biome: ["泰加林","冻原","山脉"],
     climate: ["亚寒带","极地"],
@@ -31760,7 +31761,7 @@ timestamp:[999,999,999]
 setup.tempCodex.locations["bronvull"] = codexLocation({
   info:{
     name: "布隆沃尔",
-    subcat:["north","settlement"],
+    subcat:["北境","定居点"],
     identity:"青铜之城",
     cliche:"“另一座”首都",
     biome:"泰加林",
@@ -31782,7 +31783,7 @@ timestamp:[999,999,999]
 setup.tempCodex.locations["crekhash"] = codexLocation({
   info:{
     name: "克雷卡什",
-    subcat:["north","settlement"],
+    subcat:["北境","定居点"],
     identity:"典型的边境小镇",
     cliche:"“那是在哪儿？”",
     biome:"泰加林",
@@ -31806,7 +31807,7 @@ timestamp:[999,999,999]
 setup.tempCodex.locations["vrma"] = codexLocation({
   info:{
     name: "西点皇家军事学院",
-    subcat:["middle","poi"],
+    subcat:["中土","兴趣点"],
     head:"<<cLink \"people.ederic\" \"格伦梅尔勋爵\" \"short\">>",
     stateOf:"glenmaer",
     biome:"丘陵",
@@ -31835,7 +31836,7 @@ setup.tempCodex.people["alexander"] = codexPerson(
   {
     info:{
       name:{first:"亚历山大",last:"安迪缪"},
-      subcat:["middle","ruler"],
+      subcat:["中土","统治者"],
       heritage:"中土",
       height:"5'08\"",
       meurType:"红色",
@@ -31863,7 +31864,7 @@ setup.tempCodex.people["alexander"] = codexPerson(
 setup.tempCodex.people["ancha"] = codexPersonCast(
 {
     info:{
-      subcat:["south"],
+      subcat:["南境"],
       heritage:"南境",
     },
     image:{
@@ -31884,7 +31885,7 @@ setup.tempCodex.people["arcturus"] = codexPerson(
   {
     info:{
       name:{first:"阿克图鲁斯",last:"海登",suffix:"四世"},
-      subcat:["middle"],
+      subcat:["中土"],
       heritage:"中土",
       height:"6'07\"",
       title:"勋爵",
@@ -31914,7 +31915,7 @@ setup.tempCodex.people["beiric"] = codexPerson(
   {
     info:{
       name:{first:"莱昂内尔",last:"拜里克"},
-      subcat:["middle"],
+      subcat:["中土"],
       heritage:"中土",
       height:"5'06\"",
       class:"私生子", // bastard
@@ -31944,7 +31945,7 @@ setup.tempCodex.people["calypso"] = codexPerson(
   {
     info:{
       name:{first:"卡吕普索",last:"内芙塞"},
-      subcat:["south"],
+      subcat:["南境"],
       heritage:["南境","北境"],
       height:"6'02\"",
       title:"女士",
@@ -31975,7 +31976,7 @@ setup.tempCodex.people["calypso"] = codexPerson(
 setup.tempCodex.people["dangelo"] = codexPersonCast(
   {
     info:{
-      subcat:["north","heir"],
+      subcat:["北境","继承人"],
       heritage:"北境"
     },
     image:{
@@ -31995,7 +31996,7 @@ setup.tempCodex.people["deion"] = codexPerson(
   {
     info:{
       name:{first:"戴恩",last:"巴格尔"},
-      subcat:["north","ruler"],
+      subcat:["北境","统治者"],
       heritage:"北境",
       height:"5'10\"",
       title:"大公",
@@ -32025,7 +32026,7 @@ setup.tempCodex.people["ederic"] = codexPerson(
   {
     info:{
       name:{first:"埃德里克",last:"格伦梅尔"},
-      subcat:["middle"],
+      subcat:["中土"],
       heritage:"中土",
       height:"5'05\"",
       title:"勋爵",
@@ -32057,7 +32058,7 @@ setup.tempCodex.people["elijah"] = codexPersonCast(
 
   {
     info:{
-      subcat:["north"],
+      subcat:["北境"],
       heritage:["北境","南境"],
     },
     image:{
@@ -32078,7 +32079,7 @@ setup.tempCodex.people["elijah"] = codexPersonCast(
 setup.tempCodex.people["imani"] = codexPersonCast(
 {
     info:{
-      subcat:["north"],
+      subcat:["北境"],
       heritage:"北境",
       haretouched:{key:"salmiak",name:"$salmiak"}
     },
@@ -32103,7 +32104,7 @@ setup.tempCodex.people["jonah"] = codexPerson(
   {
     info:{
       name:{first:"乔纳",last:"维罗阿纳"},
-      subcat:["middle"],
+      subcat:["中土"],
       heritage:"中土",
       height:"5'03\"",
       class:"平民",
@@ -32131,7 +32132,7 @@ setup.tempCodex.people["kaitos"] = codexPersonCast(
 
   {
     info:{
-      subcat:["south"],
+      subcat:["南境"],
       heritage:"南境",
     },
     image:{
@@ -32156,7 +32157,7 @@ setup.tempCodex.people["kalas"] = codexPerson(
   {
     info:{
       name:{first:"卡拉斯",last:"阿斯纳斯"},
-      subcat:["south"],
+      subcat:["南境"],
       heritage:"南境",
       height:"5'06\"",
       class:"无手套者",
@@ -32189,7 +32190,7 @@ setup.tempCodex.people["lazarus"] = codexPerson(
   {
     info:{
       name:{first:"拉撒路"},
-      subcat:["north"],
+      subcat:["北境"],
       heritage:"北境",
       class:"平民",
       affiliation: {
@@ -32215,7 +32216,7 @@ setup.tempCodex.people["lucas"] = codexPersonCast(
 
   {
     info:{
-      subcat:["middle","heir"],
+      subcat:["中土","继承人"],
       heritage:"中土",
     },
     image:{
@@ -32235,7 +32236,7 @@ setup.tempCodex.people["midas"] = codexPerson(
   {
     info:{
       name:{first:"迈达斯",last:"凯希特"},
-      subcat:["south","ruler"],
+      subcat:["南境","统治者"],
       heritage:"南境",
       height:"5'09\"",
       title:"大公",
@@ -32266,7 +32267,7 @@ setup.tempCodex.people["midas"] = codexPerson(
 setup.tempCodex.people["oscar"] = codexPersonCast(
   {
     info:{
-      subcat:["middle","heir"],
+      subcat:["中土","继承人"],
       heritage:"中土",
     },
     image:{
@@ -32288,7 +32289,7 @@ setup.tempCodex.people["pegasus"] = codexPerson(
   {
     info:{
       name:{first:"帕伽索斯",last:"阿斯特罗斯"},
-      subcat:["south"],
+      subcat:["南境"],
       heritage:"南境",
       height:"5'0\"",
       class:"贵族",
@@ -32322,7 +32323,7 @@ setup.tempCodex.people["persephatta"] = codexPerson(
   {
     info:{
       name:{first:"珀耳塞法塔",last:"凯希特"},
-      subcat:["south","coruler"],
+      subcat:["南境","共同统治者"],
       heritage:"南境",
       height:"5'07\"",
       title:"大公夫人",
@@ -32352,7 +32353,7 @@ setup.tempCodex.people["persephatta"] = codexPerson(
 setup.tempCodex.people["quincy"] = codexPersonCast(
   {
     info:{
-      subcat:["north","heir"], // north, heir
+      subcat:["北境","继承人"], // north, heir
       heritage:"北境", // north
       haretouched:"$licorice",
     },
@@ -32372,7 +32373,7 @@ setup.tempCodex.people["quincy"] = codexPersonCast(
 setup.tempCodex.people["rhea"] = codexPersonCast(
   {
     info:{
-      subcat:["south","heir"], // south, heir
+      subcat:["南境","继承人"], // south, heir
       heritage:"南境", // south
     },
     image:{
@@ -32392,7 +32393,7 @@ setup.tempCodex.people["rhea"] = codexPersonCast(
 setup.tempCodex.people["vicky"] = codexPersonCast(
   {
     info:{
-      subcat:["north"], // north
+      subcat:["北境"], // north
       heritage:["北境","中土"], // north, middle
     },
     image:{
@@ -34045,7 +34046,7 @@ setup.debug = false;</script><tw-tag name="seasonFall" color="blue"></tw-tag><tw
 
 &lt;&lt;speak  &quot;guillemin.neutral&quot; &gt;&gt; 我那儿子说，西点皇家军事学院 里流言纷纷，称他早已去世，而大公爵巴尔古尔只是假装他还活着。 grief，你懂的。当然，这纯属胡扯，可—— &lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak  &quot;alexander.angry&quot; &gt;&gt; @@.intense;“教养！@@ 你得有点“教养”。巴尔格公爵对你而言可是&lt;&lt;His Grace&gt;&gt;（阁下）！ &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak  &quot;alexander.angry&quot; &gt;&gt; @@.intense;“教养！@@ 你得有点“教养”。巴尔格公爵对你而言可是阁下！ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
 肘部猛然顶了你肋骨一下，丹杰洛的唇息倏然贴近你耳畔。
@@ -34676,7 +34677,7 @@ setup.debug = false;</script><tw-tag name="seasonFall" color="blue"></tw-tag><tw
 &lt;&lt;case &quot;duh&quot;&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.furrow&quot;&gt;&gt; 这与我方才所言并不矛盾。 &lt;&lt;/qSpeak&gt;&gt;
 
-&lt;&lt;speak &quot;lucas.eyeroll&quot;&gt;&gt; 我知道。 只需&lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;耐心听我解释&lt;&lt;/if&gt;&gt;——&lt;&lt;if setup.hasTrait(&quot;cerebral&quot;)&gt;&gt;，你这学究，且容我先把论点讲完，再去翻你的反驳稿，如何？&lt;&lt;else&gt;&gt;。&lt;&lt;endif&gt;&gt; &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.eyeroll&quot;&gt;&gt; 我知道。 只需&lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;耐心听我解释&lt;&lt;/if&gt;&gt;——&lt;&lt;if setup.hasTrait(&quot;cerebral&quot;)&gt;&gt;，你这学究，且容我先把论点讲完，再去翻你的反驳稿，如何？&lt;&lt;else&gt;&gt;。&lt;&lt;/if&gt;&gt; &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;qSpeak &quot;quincy.furrow&quot;&gt;&gt; *你的血液翻涌沸腾，但&lt;&lt;if setup.hasTrait(&quot;cerebral&quot;)&gt;&gt;你终究不是野兽。&lt;&lt;else&gt;&gt;你暂且按捺住性子。&lt;&lt;end&gt;&gt;*  
 ……行吧。  &lt;&lt;/qSpeak&gt;&gt;
@@ -36565,8 +36566,8 @@ D’Angelo 猝然惊醒，鼻腔里迸出一声惊惶的喷息。
 &lt;&lt;if !hasVisited(&quot;0open drank elijah dangel 3 interest&quot;)&gt;&gt;
 [[工作之余，你有什么兴趣爱好吗？|0open drank elijah dangel 3 interest]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[呃... 谢谢你愿意告诉我。|0open: drank elijah dangel bye]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="0open drank elijah dangel 3 rocks" tags="" position="925,1750" size="100,100">&lt;&lt;if $response == &quot;fun&quot;&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[呃... 谢谢你愿意告诉我。|0open: drank elijah dangel bye]]@@</tw-passagedata><tw-passagedata pid="95" name="0open drank elijah dangel 3 rocks" tags="" position="925,1750" size="100,100">&lt;&lt;if $response == &quot;fun&quot;&gt;&gt;
 &lt;&lt;toneGain &quot;elijah&quot;&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 无关紧要。海平面高低与此毫无关联。我们讨论的是石头本身的起源，而石头一旦冷却，岩浆就会变成它——这点我们早已心知肚明。 &lt;&lt;/qSpeak&gt;&gt;
 
@@ -36631,8 +36632,8 @@ D’Angelo 猝然惊醒，鼻腔里迸出一声惊惶的喷息。
 &lt;&lt;actions
 [[关于你的工作，想必有不少趣事可谈。|0open drank elijah dangel 3 work]]
 &gt;&gt;
-&lt;&lt;special &quot;end&quot; [[我该走了。|0open: drank elijah dangel bye]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="96" name="0open drank elijah dangel 3 work" tags="" position="1050,1625" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; &lt;&lt;if hasVisited(&quot;0open drank elijah dangel 3 work&quot;)&gt;&gt;那么，你的工作呢？&lt;&lt;/if&gt;&gt;倘若你真如自己所说，把那么多时间都花在工作上—— &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[我该走了。|0open: drank elijah dangel bye]]@@</tw-passagedata><tw-passagedata pid="96" name="0open drank elijah dangel 3 work" tags="" position="1050,1625" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; &lt;&lt;if hasVisited(&quot;0open drank elijah dangel 3 work&quot;)&gt;&gt;那么，你的工作呢？&lt;&lt;/if&gt;&gt;倘若你真如自己所说，把那么多时间都花在工作上—— &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;elijah.smile&quot;&gt;&gt; 我确实如此！ &lt;&lt;/speak&gt;&gt;
 
@@ -36664,8 +36665,8 @@ D’Angelo 猝然惊醒，鼻腔里迸出一声惊惶的喷息。
 &lt;&lt;if !hasVisited(&quot;0open drank elijah dangel 3 interest&quot;)&gt;&gt;
 [[工作之外，你有什么兴趣爱好呢？|0open drank elijah dangel 3 interest]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[呃... 谢谢你的分享。|0open: drank elijah dangel bye]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="97" name="0open drank lucas vicky 3 explain" tags="" position="175,1700" size="100,100">&lt;&lt;switch $response&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[呃... 谢谢你的分享。|0open: drank elijah dangel bye]]@@</tw-passagedata><tw-passagedata pid="97" name="0open drank lucas vicky 3 explain" tags="" position="175,1700" size="100,100">&lt;&lt;switch $response&gt;&gt;
 
 &lt;&lt;case &quot;uni&quot;&gt;&gt;
 
@@ -37784,7 +37785,7 @@ z:2
 
 &lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 更该问的是：曼提柯尔究竟凭什么与之抗衡？独角兽的智慧与纯真，本就是传说中的存在。 &lt;&lt;/qSpeak&gt;&gt;
 
-&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 这头野兽&lt;&lt;if setup.hasItem(&quot;uniStory&quot;)&gt;&gt;常被描述为&lt;&lt;else&gt;&gt;素来被认为&lt;&lt;else&gt;&gt;在一切事务上都极为公正。我并不认为，由此推断它对公平的执着会体现为一丝不苟的账目管理与仁厚周全的外交手腕，是种荒谬的逻辑跳跃。&lt;&lt;if setup.hasItem(&quot;uniStory&quot;)&gt;&gt;——在每一则她登场的故事里，独角兽皆甘愿献出自身，以拯救维斯图尔或她的子民；这难道不是与曼提柯兽所展现的忠诚与献身精神等量齐观的壮举吗？&lt;&lt;/if&gt;&gt; &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 这头野兽&lt;&lt;if setup.hasItem(&quot;uniStory&quot;)&gt;&gt;常被描述为&lt;&lt;else&gt;&gt;素来被认为在一切事务上都极为公正。我并不认为，由此推断它对公平的执着会体现为一丝不苟的账目管理与仁厚周全的外交手腕，是种荒谬的逻辑跳跃。&lt;&lt;/if&gt;&gt;&lt;&lt;if setup.hasItem(&quot;uniStory&quot;)&gt;&gt;——在每一则她登场的故事里，独角兽皆甘愿献出自身，以拯救维斯图尔或她的子民；这难道不是与曼提柯兽所展现的忠诚与献身精神等量齐观的壮举吗？&lt;&lt;/if&gt;&gt; &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;dangelo.neutral&quot;&gt;&gt; 听上去，倒也相当忠诚。 &lt;&lt;/speak&gt;&gt;
 
@@ -38643,6 +38644,7 @@ z:2
 &lt;&lt;if setup.hasItem(&quot;fairsex&quot;) &amp;&amp; setup.checkPass(2)&gt;&gt;
 &lt;&lt;skillCheck 2 &quot;debate&quot;&gt;&gt;
 
+
 &lt;&lt;text&gt;&gt;
 他这番结论，仿佛在你脑中某处激起一阵微弱的震颤。你迟滞的思绪猛然一紧，急切地搜寻着某处读过的、与此相类的言论。
 &lt;&lt;/text&gt;&gt;
@@ -38671,10 +38673,10 @@ z:2
 
 &lt;&lt;text&gt;&gt;
 
-这论调实在虚伪至极&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;——一个对“普罗米修斯王子”作品痴迷至此的男人，竟说出这番话来！&lt;&lt;else&gt;&gt;。&lt;&lt;&lt;/if&gt;&gt;
+这论调实在虚伪至极&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;——一个对“普罗米修斯王子”作品痴迷至此的男人，竟说出这番话来！&lt;&lt;else&gt;&gt;。&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/text&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 
 &lt;&lt;case &quot;u&quot;&gt;&gt;
 &lt;&lt;speak  &quot;lucas.tipsy.thinking&quot; &gt;&gt; 每一幅画中的独角兽，皆被描绘成温顺、哀泣、柔弱不堪的生物。这些画作是我们唯一能窥见其性情的窗口，可它们所“勾勒”的，却绝非一幅和善的肖像。 &lt;&lt;/speak&gt;&gt;
@@ -38707,7 +38709,7 @@ z:2
 @@
 
 &lt;&lt;text&gt;&gt;
-这论调实在虚伪至极&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;——一个对“普罗米修斯王子”作品痴迷至此的男人，竟说出这番话来！&lt;&lt;else&gt;&gt;。&lt;&lt;&lt;/if&gt;&gt;
+这论调实在虚伪至极&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;——一个对“普罗米修斯王子”作品痴迷至此的男人，竟说出这番话来！&lt;&lt;else&gt;&gt;。&lt;&lt;/if&gt;&gt;
 &lt;&lt;/text&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/switch&gt;&gt;
@@ -39172,7 +39174,7 @@ z:2
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $drinkCounter &gt;= 2&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*每次你看向卢卡斯的方向，他都试图招手让你过去。你应该去看看他想要什么。*|open: drank predebate 1]]&gt;&gt;
+@@.next;[[*每次你看向卢卡斯的方向，他都试图招手让你过去。你应该去看看他想要什么。*|open: drank predebate 1]]@@
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="149" name="0open: drank arrive" tags="" position="900,850" size="100,100">&lt;&lt;text&gt;&gt;
 摄政王想必为包下“蹄与角”酒馆一整夜，付出了不菲代价。如今馆内宾客寥寥——不过你的同伴们，以及护卫队的士兵——可整座酒馆却从地板到天花板，处处装点着独角兽与曼提柯尔的图腾纹饰。你凝视着杯中麦酒，不禁怀疑：这些镀金酒杯，是否真曾落入过酒馆寻常客人的手中？
@@ -39510,9 +39512,9 @@ z:2
 [[我想问问这是什么麦酒。|0open: drank bartender ale]]
 &gt;&gt;
 &lt;&lt;if passage() == &quot;0open: drank bartender&quot;&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[...算了。|0open: drank bartender bye]]&gt;&gt;
+@@.next;[[...算了。|0open: drank bartender bye]]@@
 &lt;&lt;else&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[I should go.|0open: drank bartender bye]]&gt;&gt;
+@@.next;[[我要走了。|0open: drank bartender bye]]@@
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="161" name="0open: drank boobpainting" tags="" position="2250,1400" size="100,100">&lt;&lt;text&gt;&gt;
@@ -39601,7 +39603,7 @@ z:2
 &lt;&lt;set $response to &quot;nothanks&quot;&gt;&gt;
 &lt;&lt;choose&gt;&gt;
 [[颇为反常。此事值得进一步探究。|0open: drank elijah dangel 2]]
-&lt;&lt;special &quot;end&quot; [[你自己都不清楚，我怎么会知道?|0open: drank elijah dangel bye]]&gt;&gt;
+@@.next;[[你自己都不清楚，我怎么会知道?|0open: drank elijah dangel bye]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="166" name="0open: drank elijah dangel 2" tags="" position="1050,1500" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 嗯……你若连人际交往这种事都来向我讨教，那想必已是焦头烂额了。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;dangelo.smilestress&quot;&gt;&gt; 我确实焦头烂额了！ &lt;&lt;/speak&gt;&gt;
@@ -39677,7 +39679,7 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 &lt;&lt;check `[&quot;hare&quot;,setup.DCKey[&quot;easy&quot;]]` [[再次尝试弄清楚，他到底在死死盯着什么。|0open: drank kaitos 2]]&gt;&gt;&lt;&lt;set $response to &quot;check&quot;&gt;&gt;&lt;&lt;/check&gt;&gt;
 [[你在干什么|0open: drank kaitos 2][$response to &quot;what&quot;]]
 
-&lt;&lt;special &quot;end&quot; [[他看起来……嗯....挺忙的。也许你该去问问别人。|0open: drank kaitos nothanks]]&gt;&gt;
+@@.next;[[他看起来……嗯....挺忙的。也许你该去问问别人。|0open: drank kaitos nothanks]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="169" name="0open: drank kaitos 2" tags="" position="625,1650" size="100,100">&lt;&lt;if $response == &quot;check&quot;&gt;&gt;
 &lt;&lt;text&gt;&gt;
 你满腹狐疑，再次仔细打量起那面墙来。他总不至于……是真的在凝视虚空吧？……吧？
@@ -39942,7 +39944,10 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 
 &lt;&lt;include &quot;0open: drank kaitos hub&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="175" name="0open: drank kaitos hub" tags="" position="625,2025" size="100,100">&lt;&lt;choose&gt;&gt;
 &lt;&lt;if passage() == &quot;0open: drank kaitos companion&quot; &amp;&amp; setup.checkPass(1) &amp;&amp; !hasVisited(&quot;0open: drank kaitos companion yestouch&quot;)&gt;&gt;
-&lt;&lt;specialC &quot;hunch&quot; [[嘿你还别说，搞不好我还真得去摸摸画里那对酥胸。|0open: drank kaitos companion yestouch]]&gt;&gt;&lt;&lt;passiveCheck 1 `[&quot;emp&quot;,setup.DCKey[&quot;easy&quot;]]`&gt;&gt;&lt;&lt;passiveCheck 2 `[&quot;emp&quot;,setup.DCKey[&quot;medium&quot;]]`&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;嘿你还别说，搞不好我还真得去摸摸画里那对酥胸。&lt;/span&gt;&quot; &quot;0open: drank kaitos companion yestouch&quot;&gt;&gt;
+&lt;&lt;passiveCheck 1 `[&quot;emp&quot;,setup.DCKey[&quot;easy&quot;]]`&gt;&gt;
+&lt;&lt;passiveCheck 2 `[&quot;emp&quot;,setup.DCKey[&quot;medium&quot;]]`&gt;&gt;
+&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if !hasVisited(&quot;0open: drank kaitos companion&quot;)&gt;&gt;
 &lt;&lt;trait &quot;shameless&quot; [[在那十个乱摸画像的家伙里，难不成也有我们的同伴？|0open: drank kaitos companion]]&gt;&gt;&lt;&lt;passiveCheck 1 `[&quot;emp&quot;,setup.DCKey[&quot;easy&quot;]]`&gt;&gt;&lt;&lt;passiveCheck 2 `[&quot;emp&quot;,setup.DCKey[&quot;medium&quot;]]`&gt;&gt;&lt;&lt;/trait&gt;&gt;
@@ -39953,9 +39958,9 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 &gt;&gt;
 &lt;&lt;onceLink &quot;你怀疑至少会有十三个人去摸那幅画。可为什么偏偏是‘十三’？&quot; &quot;0open: drank kaitos why thirteen&quot;&gt;&gt;&lt;&lt;passiveCheck 1 `[&quot;emp&quot;,setup.DCKey[&quot;medium&quot;]]`&gt;&gt;&lt;&lt;/onceLink&gt;&gt;
 &lt;&lt;if hasVisited(&quot;0open: drank kaitos companion yestouch&quot;)&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[我该去那幅画那儿瞧瞧了。|0open: drank kaitos bye]]&gt;&gt;
+@@.next;[[我该去那幅画那儿瞧瞧了。|0open: drank kaitos bye]]@@
 &lt;&lt;else&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[那我就不打扰了，你忙吧。|0open: drank kaitos bye]]&gt;&gt;
+@@.next;[[那我就不打扰了，你忙吧。|0open: drank kaitos bye]]@@
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="176" name="0open: drank kaitos nothanks" tags="" position="725,1500" size="100,100">&lt;&lt;text&gt;&gt;
 最终，你决定还是别去打扰他为妙——他极可能不会欣赏你打断他……专注状态。
@@ -40092,7 +40097,7 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 
 &lt;&lt;choose&gt;&gt;
 [[内夫泰的那篇文章到底哪儿“荒唐”了？|0open: drank lucas vicky 2 explain]]
-&lt;&lt;special &quot;end&quot; [[“趁你还有机会，赶紧逃吧。” 祝你好运，如果你真能逃掉的话。|0open: drank lucas vicky 2 good luck]]&gt;&gt;
+@@.next;[[“趁你还有机会，赶紧逃吧。” 祝你好运，如果你真能逃掉的话。|0open: drank lucas vicky 2 good luck]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="181" name="0open: drank lucas vicky 2 explain" tags="" position="175,1550" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 为什么奈普提的专栏是“胡扯”？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak  &quot;vicky.indifferent&quot; &gt;&gt; @@.whisper;哦豁。来了来了。.@@ &lt;&lt;/speak&gt;&gt;
@@ -40170,7 +40175,7 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 [[外面的世界到底怎么回事，你真是一点儿都不懂。|0open: drank lucas vicky peninsula]] &gt;&gt;
 &lt;&lt;trait &quot;jester&quot; [[问也问了，答也答了，就这么回事吧。|0open: drank lucas vicky bye]]&gt;&gt;&lt;&lt;set $response to &quot;funny&quot;&gt;&gt;&lt;&lt;/trait&gt;&gt;
 
-&lt;&lt;special &quot;end&quot; [[我看我还是走吧。|0open: drank lucas vicky bye][$response to &quot;bye&quot;]]&gt;&gt;
+@@.next;[[我看我还是走吧。|0open: drank lucas vicky bye][$response = &quot;bye&quot;]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="185" name="0open: drank lucas vicky bye" tags="" position="100,2000" size="100,100">&lt;&lt;text&gt;&gt;
 卢卡斯脸色灰败，神情憔悴。然而他眉间紧锁，显见心中正酝酿着反驳之辞——这场争辩，他尚有话要说。你当机立断：趁还能抽身时速速退场；你悄然离席，退后几步。
 &lt;&lt;/text&gt;&gt;
@@ -40243,7 +40248,7 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 ``&lt;sup&gt;——严禁投喂。麦芽酒会令她生病。&lt;/sup&gt;
 &lt;&lt;/written&gt;&gt;
 
-&lt;&lt;speak  &quot;dangelo.silly&quot; &gt;&gt; 哎哟，你要去见见小爪爪吗？它可真是今晚派对上最最可爱的小家伙了？当然啦，除了我之外。&lt;&lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak  &quot;dangelo.silly&quot; &gt;&gt; 哎哟，你要去见见小爪爪吗？它可真是今晚派对上最最可爱的小家伙了？当然啦，除了我之外。&lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
 你哥哥一手各端着一杯麦芽酒经过，闻言停下脚步，含笑凝视着那只斯芬克斯猫。米茨（Mittens）正用粗糙的舌头在她臂弯下梳理毛发，那张似人非人的鼻子微微皱起。
@@ -40256,7 +40261,7 @@ D&#39;Angelo 所言不虚：你的怒火已烧得太过炽烈，根本不适合�
 
 &lt;&lt;case &quot;yes&quot;&gt;&gt;
 
-&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 没错。她照料得极好——这是一只经过精心配种的珍兽。她身上的玫瑰斑纹轮廓分明，皮毛光泽健康亮泽&lt;&lt;snout &quot;&quot; &quot;，皮肤光洁无瑕&gt;&gt;。&lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 没错。她照料得极好——这是一只经过精心配种的珍兽。她身上的玫瑰斑纹轮廓分明，皮毛光泽健康亮泽&lt;&lt;snout &quot;&quot; &quot;，皮肤光洁无瑕&quot;&gt;&gt;。&lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;qSpeak &quot;quincy.pleased&quot; &gt;&gt; 再瞧瞧这双爪子——粉嫩得如此鲜亮，显然她对自己的仪容极为讲究，引以为傲。 &lt;&lt;/qSpeak&gt;&gt;
 
@@ -40820,7 +40825,7 @@ delete State.variables.debChoice;
 &lt;&lt;qSpeak &quot;quincy.think&quot; &gt;&gt; “美貌与顺从”……“我见过最无用的一对特质——前者不过是转瞬即逝的幻影，终将随岁月流逝而消散；后者嘛，倒更适用于狗。” &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-卢卡斯脸色骤然惨白。他张了张嘴，又默默合上。王子陷入一片沉重的沉默，努力回想为何&lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;那位他最钟爱的政论小册子作者所撰写的文字&lt;&lt;else&gt;&gt;出自他本人之手&lt;&lt;&lt;/if&gt;&gt;，竟如此耳熟。
+卢卡斯脸色骤然惨白。他张了张嘴，又默默合上。王子陷入一片沉重的沉默，努力回想为何&lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;那位他最钟爱的政论小册子作者所撰写的文字&lt;&lt;else&gt;&gt;出自他本人之手&lt;&lt;/if&gt;&gt;，竟如此耳熟。
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;speak  &quot;lucas.tipsy.neutral&quot; &gt;&gt; 等等。你从哪儿读到这段话的？ &lt;&lt;/speak&gt;&gt;
@@ -40840,7 +40845,7 @@ delete State.variables.debChoice;
 &lt;&lt;speak  &quot;lucas.tipsy.flustered&quot; &gt;&gt; 这——这跟——我刚才说的是‘那匹马’！ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;他自己的藏书——他最钟爱的作者——&lt;&lt;else&gt;&gt;他自己的亲笔手稿&lt;&lt;&lt;/if&gt;&gt;竟被用来反戈一击，卢卡斯一时怔在原地，怒火中烧却又哑口无言。被称作“伪君子”，这种微妙的折磨，唯有你我彼此心知肚明。王子确是生气了，却只是被惊愕与愤懑攫住的、毫无威胁的恼怒。他张着嘴、目瞪口呆的模样，竟透出几分滑稽。刹那间，你终于明白——哥哥那连绵不绝的调侃，为何总带着一种令人沉醉的魔力。
+&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;他自己的藏书——他最钟爱的作者——&lt;&lt;else&gt;&gt;他自己的亲笔手稿&lt;&lt;/if&gt;&gt;竟被用来反戈一击，卢卡斯一时怔在原地，怒火中烧却又哑口无言。被称作“伪君子”，这种微妙的折磨，唯有你我彼此心知肚明。王子确是生气了，却只是被惊愕与愤懑攫住的、毫无威胁的恼怒。他张着嘴、目瞪口呆的模样，竟透出几分滑稽。刹那间，你终于明白——哥哥那连绵不绝的调侃，为何总带着一种令人沉醉的魔力。
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 一匹马，向来被称作&quot;she&quot;（她）。除却它具备“温顺妻子”的特质，你对独角兽，可还有半句褒扬之词？ &lt;&lt;/qSpeak&gt;&gt;
@@ -40994,13 +40999,10 @@ delete State.variables.debChoice;
 &lt;&lt;case &quot;m&quot;&gt;&gt;
 
 
-&lt;&lt;debatePrep `{pathos:[&quot;Argue that the beast&#39;s inability to write can be accomodated, so long as it is mentally capable.&quot;,&quot;0open: debate r1 m pathos start&quot;],logos:[&quot;Argue that manticore has the capacity to write through other means.&quot;,&quot;0open: debate r1 m logos start&quot;]}` &gt;&gt;
+&lt;&lt;debatePrep `{pathos:[&quot;论证怪兽无法书写是可以被包容的，只要它具备足够的智力。&quot;,&quot;0open: debate r1 m pathos start&quot;],logos:[&quot;论证曼提柯尔可以通过其他方式具备书写能力。&quot;,&quot;0open: debate r1 m logos start&quot;]}` &gt;&gt;
 &lt;&lt;case &quot;u&quot;&gt;&gt;
 
-
-
-&lt;&lt;debatePrep `{pathos:[&quot;Argue that the beast&#39;s inability to write is irrelevant, so long as it is sound of judgment.&quot;,&quot;0open: debate r1 u pathos start&quot;],logos:[&quot;Argue that the unicorn has the capacity to write through other means.&quot;,&quot;0open: debate r1 u logos start&quot;]}` &gt;&gt;
-
+&lt;&lt;debatePrep `{pathos:[&quot;论证怪兽无法书写无关紧要，只要它具备健全的判断力。&quot;,&quot;0open: debate r1 u pathos start&quot;],logos:[&quot;论证独角兽可以通过其他方式具备书写能力。&quot;,&quot;0open: debate r1 u logos start&quot;]}` &gt;&gt;
 &lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="204" name="AFFINITY REPUTE COMMANDS" tags="widget" position="200,175" size="100,100">&lt;!---------------- tone change -----------------------------&gt;
 &lt;&lt;widget &#39;tone&#39;&gt;&gt;
 
@@ -42694,48 +42696,6 @@ _contents
 &lt;&lt;widget &#39;gambitButton&#39; container&gt;&gt;
 &lt;&lt;switch $args[0]&gt;&gt;
 &lt;&lt;case &quot;pathos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.emp,&quot;Pathos&quot;,&quot;emotional ploy&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;logos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.etiq,&quot;Logos&quot;,&quot;debate rationale&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;kairos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.dec,&quot;Kairos&quot;,&quot;tempt ego&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;ethos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.phys,&quot;Ethos&quot;,&quot;invoke reputation&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;greed&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.g,&quot;Greed&quot;,&quot;tempt avarice&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;lie&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.dec,&quot;Lie&quot;,&quot;spin falsehood&quot;]&gt;&gt;
-
-&lt;&lt;default&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.hare,&quot;???&quot;,&quot;non sequitur&quot;]&gt;&gt;
-&lt;&lt;/switch&gt;&gt;
-&lt;&lt;if $args[1] != undefined&gt;&gt;
-&lt;&lt;set _tempBtnInfo[2] to $args[1]&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _tempBtnInfo to &quot;&lt;span class=&#39;icon-holder gambit&#39;&gt;&lt;span class=&#39;gambit-dice&#39;&gt;&quot;+setup.icon.dice+&quot;&lt;/span&gt;&lt;span class=&#39;icon&#39;&gt;&quot;+_tempBtnInfo[0]+&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;title subtitle&#39;&gt;&quot;+setup.icon.decorL+&quot; Gambit &quot;+setup.icon.decorR+&quot;&lt;/span&gt;&lt;span class=&#39;title&#39;&gt;&quot;+_tempBtnInfo[1]+&quot;&lt;/span&gt;&lt;span class=&#39;subtitle&#39;&gt;RISK: &quot;+_tempBtnInfo[2]+&quot;&lt;/span&gt;&quot;&gt;&gt;
-
-&lt;&lt;if $args[0] == &quot;lie&quot; || $args[0] == &quot;greed&quot;&gt;&gt;
-&lt;span class=&#39;gambit lie act-holder&#39;&gt;
-&lt;&lt;button _tempBtnInfo&gt;&gt;
-_contents
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;else&gt;&gt;
-&lt;span class=&#39;gambit act-holder&#39;&gt;
-&lt;&lt;button _tempBtnInfo&gt;&gt;
-_contents
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;widget &#39;gambitButton&#39; container&gt;&gt;
-&lt;&lt;switch $args[0]&gt;&gt;
-&lt;&lt;case &quot;pathos&quot;&gt;&gt;
 &lt;&lt;set _tempBtnInfo to [setup.icon.emp,&quot;感性&quot;,&quot;情感诱导&quot;]&gt;&gt;
 
 &lt;&lt;case &quot;logos&quot;&gt;&gt;
@@ -42776,50 +42736,6 @@ _contents
 &lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;/widget&gt;&gt;&lt;&lt;widget &#39;gambitButton&#39; container&gt;&gt;
-&lt;&lt;switch $args[0]&gt;&gt;
-&lt;&lt;case &quot;pathos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.emp,&quot;感性&quot;,&quot;情感诱导&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;logos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.etiq,&quot;理性&quot;,&quot;逻辑推演&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;kairos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.dec,&quot;时机&quot;,&quot;利用弱点&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;ethos&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.phys,&quot;人格&quot;,&quot;诉诸信誉&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;greed&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.g,&quot;贪婪&quot;,&quot;利诱&quot;]&gt;&gt;
-
-&lt;&lt;case &quot;lie&quot;&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.dec,&quot;谎言&quot;,&quot;编织伪证&quot;]&gt;&gt;
-
-&lt;&lt;default&gt;&gt;
-&lt;&lt;set _tempBtnInfo to [setup.icon.hare,&quot;???&quot;,&quot;离题万里&quot;]&gt;&gt;
-&lt;&lt;/switch&gt;&gt;
-&lt;&lt;if $args[1] != undefined&gt;&gt;
-&lt;&lt;set _tempBtnInfo[2] to $args[1]&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;set _tempBtnInfo to &quot;&lt;span class=&#39;icon-holder gambit&#39;&gt;&lt;span class=&#39;gambit-dice&#39;&gt;&quot;+setup.icon.dice+&quot;&lt;/span&gt;&lt;span class=&#39;icon&#39;&gt;&quot;+_tempBtnInfo[0]+&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;title subtitle&#39;&gt;&quot;+setup.icon.decorL+&quot; 险策 &quot;+setup.icon.decorR+&quot;&lt;/span&gt;&lt;span class=&#39;title&#39;&gt;&quot;+_tempBtnInfo[1]+&quot;&lt;/span&gt;&lt;span class=&#39;subtitle&#39;&gt;风险：&quot;+_tempBtnInfo[2]+&quot;&lt;/span&gt;&quot;&gt;&gt;
-
-&lt;&lt;if $args[0] == &quot;lie&quot; || $args[0] == &quot;greed&quot;&gt;&gt;
-&lt;span class=&#39;gambit lie act-holder&#39;&gt;
-&lt;&lt;button _tempBtnInfo&gt;&gt;
-_contents
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;else&gt;&gt;
-&lt;span class=&#39;gambit act-holder&#39;&gt;
-&lt;&lt;button _tempBtnInfo&gt;&gt;
-_contents
-&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/widget&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 
 
@@ -46247,7 +46163,7 @@ _notPMember
 &lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 我们是百年来首支车队。旧日遗存，早已所剩无几。这感觉就像——*你顿了顿，努力搜寻合适的措辞；谈论那些无形之物，向来不是你的强项。* 就好像我们必须重新唤起……车队的“理念”。所谓“薪火相传”，可如今这火炬，几乎已燃至灯芯尽头。所以我们该……再添些油。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-&lt;&lt;if $tempQ.haredeath &gt;= 1&gt;&gt;或许你死时头部遭受的重击，已悄然损毁了你的神智。&lt;&lt;endif&gt;&gt;  
+&lt;&lt;if $tempQ.haredeath &gt;= 1&gt;&gt;或许你死时头部遭受的重击，已悄然损毁了你的神智。&lt;&lt;/if&gt;&gt;  
 这场谢幕实在可悲——蜡烛甚至未以油脂点燃。然而，你竟敢亲自涉足隐喻的疆域，这份新奇感竟足以点燃卢卡斯骨子里的戏剧天赋，令他一时忘却了那处令人咋舌的严重失实。
 &lt;&lt;/text&gt;&gt;
 
@@ -46338,8 +46254,12 @@ _notPMember
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;choose&gt;&gt;
-[[阿斯纳特，拿出点用处来。|PREP: basement R1 fail 2] [ $response to &quot;mean&quot; ]]
-[[能帮我搬一下这些板条箱吗？拜托了。|PREP: basement R1 fail 2] [ $response to &quot;nice&quot; ]]
+&lt;&lt;link &quot;@@.talk-action;阿斯纳特，拿出点用处来。@@&quot; &quot;PREP: basement R1 fail 2&quot;&gt;&gt;
+&lt;&lt;set $response to &quot;mean&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;@@.talk-action;能帮我搬一下这些板条箱吗？拜托了。@@&quot; &quot;PREP: basement R1 fail 2&quot;&gt;&gt;
+&lt;&lt;set $response to &quot;nice&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="352" name="PREP: Basement RepChoose Bottleneck" tags="" position="700,1075" size="100,100">&lt;&lt;if hasVisited(&quot;PREP: Choose Indie&quot;)&gt;&gt;
 &lt;&lt;speak  &quot;kaitos.casual.look&quot; &gt;&gt; 我的意思是……呃……“第二支商队”可真够金光闪闪的。 &lt;&lt;/speak&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -46490,69 +46410,68 @@ validSize = true;
 
 
 if (validSize &amp;&amp; validPlace &amp;&amp; validBox){
-var dir = &quot;to the left&quot;;
-switch(otherStacks[j]){
-case &quot;m&quot;:
-dir = &quot;onto the wardrobe&quot;;
-break;
-case &quot;r&quot;:
-dir = &quot;to the right&quot;;
-break;
+    var dir = &quot;向左移动&quot;;
+    switch(otherStacks[j]){
+        case &quot;m&quot;:
+            dir = &quot;放到衣橱上&quot;;
+            break;
+        case &quot;r&quot;:
+            dir = &quot;向右移动&quot;;
+            break;
+    }
+
+    var sizeDesc = &quot;箱子&quot;;
+    switch(top){
+        case &quot;large&quot;:
+            sizeDesc = &quot;沉重的箱子&quot;;
+            break;
+        case &quot;med&quot;:
+            sizeDesc = &quot;板条箱&quot;;
+            break;
+    }
+
+    var currentPile = &quot;左侧&quot;;
+    switch(stacks[i]){
+        case &quot;m&quot;:
+            currentPile = &quot;衣橱&quot;;
+            break;
+        case &quot;r&quot;:
+            currentPile = &quot;右侧&quot;;
+            break;
+    }
+
+    State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;link \&quot;@@.talk-action;将&quot;+sizeDesc+&quot;从&quot;+currentPile+dir+&quot;。@@\&quot; \&quot;PREP: Basement Wardrobe Puzzle\&quot;&gt;&gt;&lt;&quot;+&quot;&lt;set $response to \&quot;抬起&quot;+sizeDesc+&quot;并把它&quot;+dir+&quot;\&quot;&gt;&gt;&quot;;
+    State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;run $tempQ.crates.&quot;+otherStacks[j]+&quot;.push(\&quot;&quot;+top+&quot;\&quot;)&gt;&gt;&quot;;
+    State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;run $tempQ.crates.&quot;+stacks[i]+&quot;.pop()&gt;&gt;&quot;;
+    State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;/link&gt;&gt;&quot;;
+
 }
 
+for (let j = 0; j &lt; stackData[stacks[i]].length; j++){
 
-var sizeDesc = &quot;box&quot;;
-switch(top){
-case &quot;large&quot;:
-sizeDesc = &quot;heavy chest&quot;;
-break;
-case &quot;med&quot;:
-sizeDesc = &quot;crate&quot;;
-break;
-}
+    var crate = stackData[stacks[i]][j];
+    var sizeDesc = &quot;箱子&quot;;
 
-var currentPile = &quot;left&quot;;
-switch(stacks[i]){
-case &quot;m&quot;:
-currentPile = &quot;wardrobe&quot;;
-break;
-case &quot;r&quot;:
-currentPile = &quot;right&quot;;
-break;
-}
+    switch (crate){
+        case &quot;large&quot;:
+            State.temporary.boxLayers += setup.imgLayer(1,&quot;box_large_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
+            sizeDesc = &quot;沉重的箱子&quot;;
+            break;
+        case &quot;med&quot;:
+            State.temporary.boxLayers += setup.imgLayer(1,&quot;box_med_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
+            sizeDesc = &quot;板条箱&quot;;
+            break;
+        default:
+            State.temporary.boxLayers += setup.imgLayer(1,&quot;box_small_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
+    }
 
-State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;link \&quot;@@.talk-action;Move the &quot;+sizeDesc+&quot; from the &quot;+currentPile+&quot; &quot;+dir+&quot;.@@\&quot; \&quot;PREP: Basement Wardrobe Puzzle\&quot;&gt;&gt;&lt;&quot;+&quot;&lt;set $response to \&quot;lift the &quot;+sizeDesc+&quot; and place it &quot;+dir+&quot;\&quot;&gt;&gt;&quot;;
-State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;run $tempQ.crates.&quot;+otherStacks[j]+&quot;.push(\&quot;&quot;+top+&quot;\&quot;)&gt;&gt;&quot;;
-State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;run $tempQ.crates.&quot;+stacks[i]+&quot;.pop()&gt;&gt;&quot;;
-State.temporary.boxOptions[stacks[i]] += &quot;&lt;&quot;+&quot;&lt;/link&gt;&gt;&quot;;
-
-}
-}
-
-for (let j = 0; j &lt; stackData[stacks[i]].length;j++){
-
-var crate = stackData[stacks[i]][j];
-var sizeDesc = &quot;box&quot;;
-
-switch (crate){
-case &quot;large&quot;:
-State.temporary.boxLayers += setup.imgLayer(1,&quot;box_large_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
-sizeDesc = &quot;heavy chest&quot;;
-break;
-case &quot;med&quot;:
-State.temporary.boxLayers += setup.imgLayer(1,&quot;box_med_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
-sizeDesc = &quot;crate&quot;;
-break;
-default:
-State.temporary.boxLayers += setup.imgLayer(1,&quot;box_small_&quot;+stacks[i]+&quot;-&quot;+j+&quot;.png&quot;, false);
-}
-
-if (j &gt; 0 &amp;&amp; j == (stackData[stacks[i]].length - 1)){
-State.temporary.boxDesc[stacks[i]] += &quot; and &quot;;
-}
-State.temporary.boxDesc[stacks[i]] += &quot;a &quot;+sizeDesc;
-if (stackData[stacks[i]].length &gt; 1 &amp;&amp; j != (stackData[stacks[i]].length - 1)){
-State.temporary.boxDesc[stacks[i]] += &quot;, &quot;;
+    if (j &gt; 0 &amp;&amp; j == (stackData[stacks[i]].length - 1)){
+        State.temporary.boxDesc[stacks[i]] += &quot;和&quot;;
+    }
+    State.temporary.boxDesc[stacks[i]] += &quot;一个&quot;+sizeDesc;
+    if (stackData[stacks[i]].length &gt; 1 &amp;&amp; j != (stackData[stacks[i]].length - 1)){
+        State.temporary.boxDesc[stacks[i]] += &quot;、&quot;;
+    }
 }
 
 
@@ -46594,11 +46513,11 @@ State.temporary.boxDesc[stacks[i]] += &quot;, &quot;;
 
 &lt;&lt;/text&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
+&lt;&lt;link &quot;【跳关】直接跳过&quot; &quot;PREP: Basement Wardrobe Puzzle Win&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;choose&gt;&gt;
 
 &lt;&lt;if $tempQ.crates.m.length == 0&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*打开衣柜。*|PREP: Basement Wardrobe Puzzle Win]]&gt;&gt;
+@@.next;[[*打开衣柜。*|PREP: Basement Wardrobe Puzzle Win]]@@
 
  &lt;&lt;else&gt;&gt;
 
@@ -46630,7 +46549,7 @@ State.temporary.boxDesc[stacks[i]] += &quot;, &quot;;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-&lt;&lt;if hasVisited(&quot;PREP: Basement Fits&quot;)&gt;&gt;你这才意识到自己一直死死攥着扶手，指节发白。其实毫无必要——&lt;&lt;else&gt;&gt;你长舒一口气。&lt;&lt;else&gt;&gt;衣柜如今已重获自由&lt;&lt;if hasVisited(&quot;PREP: Basement Fits&quot;)&gt;&gt;——过程中也无人丧命&lt;&lt;/if&gt;&gt;。你们三人围拢过去，满心焦灼，急欲揭开它所藏匿的秘密。双开门上陈旧的漆皮，早已被 atop 它的箱笼与酒桶反复碾压、刮蹭，所剩无几；门板本身亦向内凹陷扭曲，仿佛被岁月与废墟的重压永久地烙下了伤痕。
+&lt;&lt;if hasVisited(&quot;PREP: Basement Fits&quot;)&gt;&gt;你这才意识到自己一直死死攥着扶手，指节发白。其实毫无必要——&lt;&lt;else&gt;&gt;你长舒一口气。衣柜如今已重获自由&lt;&lt;/if&gt;&gt;&lt;&lt;if hasVisited(&quot;PREP: Basement Fits&quot;)&gt;&gt;——过程中也无人丧命&lt;&lt;/if&gt;&gt;。你们三人围拢过去，满心焦灼，急欲揭开它所藏匿的秘密。双开门上陈旧的漆皮，早已被 atop 它的箱笼与酒桶反复碾压、刮蹭，所剩无几；门板本身亦向内凹陷扭曲，仿佛被岁月与废墟的重压永久地烙下了伤痕。
 
 ``凯托斯猛地拉开门扉——一股浓黑尘雾喷涌而出，你猝不及防，再度陷入一阵撕心裂肺的呛咳。
 &lt;&lt;/text&gt;&gt;
@@ -47795,7 +47714,7 @@ State.variables.tempQ.blessing.actions = State.variables.tempQ.blessing.actions.
 &lt;&lt;img 1 &quot;ceremony_mural.png&quot; &quot;一幅描绘建筑师的壁画，画面中有一群鸽子。两只曼提科尔正在吞噬一只独角兽。&quot;&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-传说中，圣徒阿利斯泰尔乃首位统治中陆的安迪梅尔人，尽管学者们并无任何文献能证实此人确曾存在。关于这位王座先祖的记载，全然来自 cerostianism 神话的口耳相传：他英勇、守礼，活在“一个动荡纷争的年代”。至于具体是哪一个动荡年代，无人知晓，亦无人在意——对这则传说而言，那根本无关紧要。唯一被强调的重点是：中陆当时已濒临崩溃，而这位虔诚、却存疑的男子，仅凭一祷便力挽狂澜。
+传说中，圣徒阿利斯泰尔乃首位统治中陆的安迪梅尔人，尽管学者们并无任何文献能证实此人确曾存在。关于这位王座先祖的记载，全然来自塞罗斯提安主义神话的口耳相传：他英勇、守礼，活在“一个动荡纷争的年代”。至于具体是哪一个动荡年代，无人知晓，亦无人在意——对这则传说而言，那根本无关紧要。唯一被强调的重点是：中陆当时已濒临崩溃，而这位虔诚、却存疑的男子，仅凭一祷便力挽狂澜。
 
 ``一个竟敢宣称你是“蒙福者”的教义，竟以如此荒诞为根基，倒也恰如其分。
 &lt;&lt;/text&gt;&gt;
@@ -48101,28 +48020,30 @@ die2:false,
 &lt;&lt;if $tempQ.blessing.round &gt; 0&gt;&gt;
 
 &lt;&lt;if !$tempQ.blessing.actions.includes(&quot;cleanOils&quot;) &amp;&amp; !$tempQ.blessing.actions.includes(&quot;bigOils&quot;)&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*尝试与D&#39;Angelo讲道理。*|PREP: Blessing Prep NotDone]]&gt;&gt;
+    @@.next;[[*尝试与丹吉洛讲道理。*|PREP: Blessing Prep NotDone]]@@
 &lt;&lt;else&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*向D&#39;Angelo证明你已做好充分准备，然后前往仪式现场。*|PREP: Blessing Prep Done]]&gt;&gt;
+    @@.next;[[*向丹吉洛证明你的仪容得体，然后前往仪式。*|PREP: Blessing Prep Done]]@@
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
 
-&lt;&lt;if $tempQ.blessing.dangelo.talk == true&gt;&gt;
+    &lt;&lt;if $tempQ.blessing.dangelo.talk == true&gt;&gt;
 
-&lt;&lt;if $tempQ.blessing.actions.includes(&quot;cleanOils&quot;) || $tempQ.blessing.actions.includes(&quot;bigOils&quot;)&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*向D&#39;Angelo证明你打扮得足够得体。*|PREP: Blessing Prep FirstDangelPass]]&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*尝试与D&#39;Angelo讲道理。*|PREP: Blessing Prep NotDone]]&gt;&gt;
+        &lt;&lt;if $tempQ.blessing.actions.includes(&quot;cleanOils&quot;) || $tempQ.blessing.actions.includes(&quot;bigOils&quot;)&gt;&gt;
+            @@.next;[[*向丹吉洛证明你的仪容得体。*|PREP: Blessing Prep FirstDangelPass]]@@
+        &lt;&lt;else&gt;&gt;
+            @@.next;[[*尝试与丹吉洛讲道理。*|PREP: Blessing Prep NotDone]]@@
+        &lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;else&gt;&gt;
+        @@.next;[[*前往仪式。*|PREP: Blessing Prep NotDone First]]@@
+    &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;else&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*前往仪式现场。*|PREP: Blessing Prep NotDone First]]&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
 
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="416" name="PREP: Blessing Review" tags="" position="500,1250" size="100,100">&lt;&lt;if !$tempQ.blessing.actions.includes(&quot;script&quot;)&gt;&gt;
+@@.next;[[*前往仪式现场。*|PREP: Blessing Prep NotDone First]]@@</tw-passagedata><tw-passagedata pid="416" name="PREP: Blessing Review" tags="" position="500,1250" size="100,100">&lt;&lt;if !$tempQ.blessing.actions.includes(&quot;script&quot;)&gt;&gt;
 &lt;&lt;run $tempQ.blessing.actions.push(&quot;script&quot;)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -48689,8 +48610,8 @@ die2:false,
 &lt;&lt;if $cFlags.dangelo.oponaQuestionWhen != setup.lastCampTopic() &amp;&amp; $cFlags.dangelo.oponaQuestion &lt;= 3&gt;&gt;
 [[你在奥波纳的时光……|PREP: Camp DAngelo - Opona][$cFlags.dangelo.oponaQuestion++]]
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="443" name="PREP: Camp Elijah" tags="" position="600,1725" size="100,100">&lt;&lt;text&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="443" name="PREP: Camp Elijah" tags="" position="600,1725" size="100,100">&lt;&lt;text&gt;&gt;
 你走近时，伊莱jah微微颔首，神情肃穆而敬重。
 &lt;&lt;/text&gt;&gt;
 
@@ -48803,8 +48724,8 @@ die2:false,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[聊聊别的吧。|PREP: Camp Elijah - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="449" name="PREP: Camp Elijah - About Nephtheis" tags="" position="975,1975" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 那么……你说涅芙赛女士是你的姨母？ &lt;&lt;/qSpeak&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="449" name="PREP: Camp Elijah - About Nephtheis" tags="" position="975,1975" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 那么……你说涅芙赛女士是你的姨母？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;elijah.think&quot;&gt;&gt; 严格来说，是我父亲的表妹。但……她对我父亲而言，情同手足；于我而言，更如第二位母亲。若称她为&quot;远房表亲&quot;之类，反倒显得生分又失礼。戴尔奈西女摄政大人亦是如此。 &lt;&lt;/speak&gt;&gt;
 
@@ -49654,8 +49575,8 @@ die2:false,
 [[之后发生了什么？|PREP: Camp Kaitos - After]]
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[关于事发当天的疑问，我暂时只有这些。|PREP: Day Done]]&gt;&gt;
 &lt;&lt;/choose&gt;&gt;
+@@.next;[[关于事发当天的疑问，我暂时只有这些。|PREP: Day Done]]&gt;&gt;@@
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $response to &quot;done&quot;&gt;&gt;
 &lt;&lt;include &quot;PREP: Day Done&quot;&gt;&gt;
@@ -50125,8 +50046,8 @@ die2:false,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[我们讨论点别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
 &lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="488" name="PREP: Camp Kaitos - Naktoga NotGuilty" tags="" position="1225,2225" size="100,100">&lt;&lt;if $cFlags.kaitos.guilty&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.lookaway&quot;&gt;&gt; 不。起初我确实怀疑你——没错，我确实这么想过；但了解得越多，我就越觉得，你卷入此事，不过是一场……倒霉的巧合罢了。  &lt;&lt;/qSpeak&gt;&gt;
@@ -50422,7 +50343,7 @@ die2:false,
 [[他是个怎样的人？|PREP: Camp Kaitos - Oscar Like][$response to &quot;first&quot;]]
 &gt;&gt;
 [[不必介怀|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="499" name="PREP: Camp Kaitos - Oscar How" tags="" position="350,2475" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; &lt;&lt;if $response == &quot;first&quot;&gt;&gt;这到底是怎么发生的……？&lt;&lt;elseif $response == &quot;nvmd&quot;&gt;&gt;算了。你们俩究竟是怎么成为朋友的？&lt;&lt;else&gt;&gt;你们俩究竟是怎么成为朋友的……？&lt;&lt;/if&gt;&gt; &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
@@ -50531,8 +50452,8 @@ die2:false,
 [[他是个怎样的人？|PREP: Camp Kaitos - Oscar Like]]
 &gt;&gt;
 [[我们聊点别的吧|PREP: Camp Kaitos - nvmd][$response to &quot;else&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="501" name="PREP: Camp Kaitos - Oscar Like" tags="" position="600,2475" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 那么，奥斯卡王子究竟是个怎样的人？我从未有机会与他深谈过。 &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="501" name="PREP: Camp Kaitos - Oscar Like" tags="" position="600,2475" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 那么，奥斯卡王子究竟是个怎样的人？我从未有机会与他深谈过。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;kaitos.casual.look&quot;&gt;&gt; 呃……他就像——黄金。 &lt;&lt;/speak&gt;&gt;
 
@@ -50589,8 +50510,9 @@ die2:false,
 [[你们是怎么成为朋友的？|PREP: Camp Kaitos - Oscar How][$response to &quot;how&quot;]]
 &gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;else&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
+&lt;&lt;/switch&gt;&gt;
 
 &lt;&lt;case &quot;do&quot;&gt;&gt;
 &lt;&lt;toneLoss &quot;kaitos&quot;&gt;&gt;
@@ -50609,8 +50531,8 @@ die2:false,
 [[算了。你是怎么认识奥斯卡的？|PREP: Camp Kaitos - Oscar How][$response to &quot;nvmd&quot;]]
 &gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
 
 &lt;&lt;case &quot;syc&quot;&gt;&gt;
 &lt;&lt;toneLoss &quot;kaitos&quot;&gt;&gt;
@@ -50630,8 +50552,8 @@ die2:false,
 [[你们究竟是怎么成为“朋友”的？|PREP: Camp Kaitos - Oscar How][$response to &quot;nvmd&quot;]]
 &gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;else&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
 
 &lt;&lt;case &quot;nomean&quot;&gt;&gt;
 &lt;&lt;toneLoss &quot;kaitos&quot; &quot;insight&quot;&gt;&gt;
@@ -50649,8 +50571,8 @@ die2:false,
 [[你们是怎么成为朋友的？|PREP: Camp Kaitos - Oscar How][$response to &quot;how&quot;]]
 &gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;else&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@
 
 &lt;&lt;case &quot;check&quot;&gt;&gt;
 &lt;&lt;once&gt;&gt;
@@ -50699,9 +50621,8 @@ die2:false,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;else&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;
-&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="504" name="PREP: Camp Kaitos - Oscar Like4" tags="" position="975,2475" size="100,100">&lt;&lt;toneLoss &quot;kaitos&quot;&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="504" name="PREP: Camp Kaitos - Oscar Like4" tags="" position="975,2475" size="100,100">&lt;&lt;toneLoss &quot;kaitos&quot;&gt;&gt;
 &lt;&lt;toneLoss &quot;kaitos&quot;&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
@@ -50731,8 +50652,8 @@ die2:false,
 [[算了。你是怎么认识奥斯卡的？|PREP: Camp Kaitos - Oscar How][$response to &quot;nvmd&quot;]]
 &gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="505" name="PREP: Camp Kaitos - OtherFam" tags="" position="225,2475" size="100,100">&lt;&lt;set _kaitosReact to &quot;kaitos.casual.idle&quot;&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="505" name="PREP: Camp Kaitos - OtherFam" tags="" position="225,2475" size="100,100">&lt;&lt;set _kaitosReact to &quot;kaitos.casual.idle&quot;&gt;&gt;
 
 &lt;&lt;if hasVisited(&quot;PREP: Camp Kaitos - Naktoga Guilty&quot;)&gt;&gt;
 &lt;&lt;set _kaitosReact to &quot;kaitos.casual.stare&quot;&gt;&gt;
@@ -50797,8 +50718,8 @@ die2:false,
 [[你对赤手会成员的印象……|PREP: Camp Kaitos - Barehanders]]
 &gt;&gt;
 [[我们聊点别的吧|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="510" name="PREP: Camp Kaitos - Uncle Good" tags="" position="1100,2350" size="100,100">&lt;&lt;set _kaitosReact to &quot;kaitos.casual.look&quot;&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="510" name="PREP: Camp Kaitos - Uncle Good" tags="" position="1100,2350" size="100,100">&lt;&lt;set _kaitosReact to &quot;kaitos.casual.look&quot;&gt;&gt;
 &lt;&lt;set _kaitosReact2 to &quot;kaitos.casual.neutralserious&quot;&gt;&gt;
 &lt;&lt;if hasVisited(&quot;PREP: Camp Kaitos - Naktoga Guilty&quot;)&gt;&gt;
 &lt;&lt;set _kaitosReact to &quot;kaitos.casual.stare&quot;&gt;&gt;
@@ -50835,8 +50756,8 @@ die2:false,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[来聊点别的吧|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="511" name="PREP: Camp Kaitos - Uncle Noble" tags="" position="1225,2350" size="100,100">&lt;&lt;text&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="511" name="PREP: Camp Kaitos - Uncle Noble" tags="" position="1225,2350" size="100,100">&lt;&lt;text&gt;&gt;
 在维斯特诸王国中，南方子民最不拘泥于阶级壁垒，婚嫁常跨阶层而行。因此，你必须确认：
 &lt;&lt;/text&gt;&gt;
 
@@ -50882,8 +50803,8 @@ die2:false,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[聊聊别的吧。|PREP: Camp Kaitos - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="512" name="PREP: Camp Kaitos - Unusual" tags="" position="100,2350" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 你叔叔……没说过什么，也没做过什么特别的事？ &lt;&lt;/qSpeak&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="512" name="PREP: Camp Kaitos - Unusual" tags="" position="100,2350" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 你叔叔……没说过什么，也没做过什么特别的事？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;kaitos.casual.glance&quot;&gt;&gt; 倒也没有——至少，对他而言并不算特别。那人向来爱赌，欠了一屁股债，树敌不少。所以……东张西望、喃喃自语、低声咒骂……这些对他来说再正常不过，压根儿不值得怀疑——这不就是卡拉斯叔叔的日常么？  &lt;&lt;/speak&gt;&gt;
 
@@ -50965,8 +50886,8 @@ die2:false,
 [[您与Oscar王子的友谊...|PREP: Camp Kaitos - Oscar]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;present &quot;hairlock&quot; [[你知道我找到的这把锁有什么来历吗？|PREP: Camp Kaitos - Hair]]&gt;&gt;&lt;&lt;/present&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="516" name="PREP: Camp Logic" tags="" position="1100,1475" size="100,100">&lt;&lt;set _campPassageMap to
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="516" name="PREP: Camp Logic" tags="" position="1100,1475" size="100,100">&lt;&lt;set _campPassageMap to
 {
 
 lucas:{
@@ -51107,8 +51028,8 @@ gun:&quot;PREP: Camp Elijah - Gun&quot;,
 &gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[这就是我想知道的全部。|PREP: Camp Lucas - Assassination nvmd]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="520" name="PREP: Camp Lucas - Assassination Marriage" tags="" position="475,2975" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 说到婚姻……你觉着，奥斯卡今年舞季会成婚吗？ &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="520" name="PREP: Camp Lucas - Assassination Marriage" tags="" position="475,2975" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 说到婚姻……你觉着，奥斯卡今年舞季会成婚吗？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak  &quot;lucas.glance&quot; &gt;&gt; 啧。除非他又能耍花招脱身，否则休想。 &lt;&lt;/speak&gt;&gt;
 
@@ -51118,7 +51039,7 @@ gun:&quot;PREP: Camp Elijah - Gun&quot;,
 
 &lt;&lt;set $response to &quot;hunch&quot;&gt;&gt;
 &lt;&lt;choose&gt;&gt;
-&lt;&lt;special &quot;hunch&quot; [[那么...你打算在二十五岁前结婚？|PREP: Camp Lucas - Assassination Marriage2]]&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;那么...你打算在二十五岁前结婚？&lt;/span&gt;&quot; &quot;PREP: Camp Lucas - Assassination Marriage2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 [[或许他与死神擦肩而过的经历会让他清醒一些。|PREP: Camp Lucas - Assassination Marriage2][$response to &quot;sense&quot;]]
 [[我不怪他选择不婚|PREP: Camp Lucas - Assassination Marriage2][$response to &quot;dontblame&quot;]]
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="521" name="PREP: Camp Lucas - Assassination Marriage2" tags="" position="600,2975" size="100,100">&lt;&lt;switch $response&gt;&gt;
@@ -51282,7 +51203,7 @@ gun:&quot;PREP: Camp Elijah - Gun&quot;,
 
 &lt;&lt;choose&gt;&gt;
 [[关于你对白“谬尔”的恐惧……|PREP: Camp Lucas - Elijah3][$response to _tempResponse]]
-&lt;&lt;special &quot;end&quot; [[我就不打扰你了。|PREP: Camp]]&gt;&gt;
+@@.next;[[我就不打扰你了。|PREP: Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="528" name="PREP: Camp Lucas - Elijah3" tags="" position="475,2725" size="100,100">&lt;&lt;if $response == &quot;mean&quot;&gt;&gt;
 &lt;&lt;toneLoss &quot;lucas&quot;&gt;&gt;
 
@@ -51770,8 +51691,8 @@ gun:&quot;PREP: Camp Elijah - Gun&quot;,
 &lt;&lt;/onceLink&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;special &quot;end&quot; [[*结束对话。*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="542" name="PREP: Camp Lucas Prometheus" tags="" position="850,2850" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 你可曾听说过那位小册子作者“普罗米修斯”？ &lt;&lt;/qSpeak&gt;&gt;
+&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="542" name="PREP: Camp Lucas Prometheus" tags="" position="850,2850" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 你可曾听说过那位小册子作者“普罗米修斯”？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
 这问题实在多余——他当然听说过。&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;他书架上堆满了普罗米修斯的著作。&lt;&lt;/if&gt;&gt;不过，这番提问不过是个引子，借此切入正题罢了。一听&lt;&lt;if setup.hasRep(&quot;dense&quot;)&gt;&gt;自己最推崇的作者之名&lt;&lt;else&gt;&gt;他自己的化名&lt;&lt;/if&gt;&gt;，卢卡斯顿时精神一振，目光灼灼，全神贯注起来。
@@ -52017,10 +51938,10 @@ gun:&quot;PREP: Camp Elijah - Gun&quot;,
 &lt;&lt;/link&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 [[聊点别的吧|PREP: Camp Vicky - nvmd][$response to &quot;nvmd&quot;]]
-&lt;&lt;special &quot;end&quot; [[*结束对话*|PREP: Camp]]&gt;&gt;
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="548" name="PREP: Camp Vicky - About Opona" tags="" position="975,3225" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 你在奥波纳服役过。 &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;/choose&gt;&gt;
+@@.next;[[*结束对话*|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="548" name="PREP: Camp Vicky - About Opona" tags="" position="975,3225" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 你在奥波纳服役过。 &lt;&lt;/qSpeak&gt;&gt;
 
-&lt;&lt;speak &quot;vicky.indifferent&quot;&gt;&gt; 是的。你话里藏着什么问题吗？*她姿态骤然绷紧&lt;&lt;snout &quot;&quot; &quot;，毛发也微微竖起&gt;&gt;——虽只是一瞬，却足以被察觉。* &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;vicky.indifferent&quot;&gt;&gt; 是的。你话里藏着什么问题吗？*她姿态骤然绷紧&lt;&lt;snout &quot;&quot; &quot;，毛发也微微竖起&gt;&gt;——虽只是一瞬，却足以被察觉。* &quot;&lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.tilt&quot;&gt;&gt; 并无具体所指。丹杰洛几乎一言不发，而……我想，我只是好奇罢了。仅此而已。 &lt;&lt;/qSpeak&gt;&gt;
@@ -52551,7 +52472,7 @@ Pff。我思考得可不少。但我也清楚，那些念头该锁在脑袋里�
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;else&gt;&gt;
-&lt;&lt;speak &quot;vicky.cackle&quot;&gt;&gt; @@.lilt;&lt;&lt;if $VQname == &quot;Gracie&quot;&gt;&gt;格蕾西，你这老色鬼！&lt;&lt;else&gt;&gt;你这戴着手套的老色鬼！&lt;&lt;endif&gt;&gt;@@  
+&lt;&lt;speak &quot;vicky.cackle&quot;&gt;&gt; @@.lilt;&lt;&lt;if $VQname == &quot;Gracie&quot;&gt;&gt;格蕾西，你这老色鬼！&lt;&lt;else&gt;&gt;你这戴着手套的老色鬼！&lt;&lt;/if&gt;&gt;@@  
 ``你真敢当着北境大妇的面，辱骂她那头母狮？ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;if setup.hasTrait(&quot;shameless&quot;)&gt;&gt;
@@ -52763,13 +52684,13 @@ Pff。我思考得可不少。但我也清楚，那些念头该锁在脑袋里�
 
 &lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 多谢。 &lt;&lt;/qSpeak&gt;&gt;
 
-@@.next;[[继续|PREP: Blessing Prep Done][ $tempQ.blessing.permaConvince to true]]@@
+@@.next;[[继续|PREP: Blessing Prep Done][$tempQ.blessing.permaConvince to true]]@@
 &lt;&lt;else&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.lookaway&quot;&gt;&gt; 再说，就算我喷了香水，也没人闻得着我。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;skillCheck&gt;&gt;
 
-&lt;&lt;speak &quot;dangelo.eyeroll&quot;&gt;&gt; 呵，那可说不准——你压根儿没喷&lt;&lt;if $tempQ.blessing.actions.includes(&quot;oils&quot;)&gt;&gt;够量&lt;&lt;else&gt;&gt;任何&gt;&gt;香水。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;dangelo.eyeroll&quot;&gt;&gt; 呵，那可说不准——你压根儿没喷&lt;&lt;if $tempQ.blessing.actions.includes(&quot;oils&quot;)&gt;&gt;够量&lt;&lt;else&gt;&gt;任何&lt;&lt;/if&gt;&gt;香水。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;qSpeak &quot;quincy.lookaway&quot;&gt;&gt; 我不是这个意思。我的意思是，倘若我真喷了香水—— &lt;&lt;/qSpeak&gt;&gt;
 
@@ -53668,7 +53589,7 @@ coffee:{link:&quot;PREP: Scribe Search Loc&quot;,img:&quot;newspaper-teaset&quot
 这桩荒诞的谜团，暂且留待日后深究吧。您将那缕头发悄悄揣入衣袋。
 &lt;&lt;/text&gt;&gt;
 
-&lt;&lt;itemAdd &quot;茂密的头发&quot;&gt;&gt;
+&lt;&lt;itemAdd &quot;hairlock&quot;&gt;&gt;
 &lt;&lt;once&gt;&gt;
 &lt;&lt;set $cFlags.quincy.klepto++&gt;&gt;
 &lt;&lt;/once&gt;&gt;
@@ -55991,7 +55912,7 @@ _firstP
 &lt;&lt;/link&gt;&gt;
 @@</tw-passagedata><tw-passagedata pid="691" name="PREP: Party Phase 2 Q4" tags="party party-south" position="725,2650" size="100,100">&lt;&lt;print setup.drawPartygoer(&quot;midasparty&quot;,&quot;partygoer_jewels.png&quot;,&quot;南方贵妇身上闪耀的珠宝。&quot;)&gt;&gt;
 &lt;&lt;text&gt;&gt;
-&lt;&lt;if $tempQ.LHparty.rounds &gt; 0&gt;&gt;就在这令人宽慰的一分钟里，公爵夫人被一名侍从打断——那人正欲请她指点舞台装饰的取舍。这简直是天赐良机，你暗自思忖。可惜，你刚落单，一位珠光宝气的女士便悄然贴近，主动搭起话来。&lt;&lt;else&gt;&gt;一位珠光宝气的女士悄然贴近你。&lt;&lt;endif&gt;&gt;她目光游移，假装托腮浅笑；那刻意扬起的弧度，将脸上层层脂粉都揉出了细密褶痕，连那&lt;&lt;snout &quot;面庞&quot; &quot;毛皮&quot;&gt;&gt;都跟着微微颤动。
+&lt;&lt;if $tempQ.LHparty.rounds &gt; 0&gt;&gt;就在这令人宽慰的一分钟里，公爵夫人被一名侍从打断——那人正欲请她指点舞台装饰的取舍。这简直是天赐良机，你暗自思忖。可惜，你刚落单，一位珠光宝气的女士便悄然贴近，主动搭起话来。&lt;&lt;else&gt;&gt;一位珠光宝气的女士悄然贴近你。&lt;&lt;/if&gt;&gt;她目光游移，假装托腮浅笑；那刻意扬起的弧度，将脸上层层脂粉都揉出了细密褶痕，连那&lt;&lt;snout &quot;面庞&quot; &quot;毛皮&quot;&gt;&gt;都跟着微微颤动。
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;speak &quot;party.bejeweledLady&quot; &quot;璀璨佳人&quot;&gt;&gt; 日复一日，她愈发像个女人了。 &lt;&lt;/speak&gt;&gt;
@@ -59242,7 +59163,7 @@ Elijah从D&#39;Angelo肩头探头望去，神情愈发凝重。
 &lt;&lt;include &quot;PREP: Vicky Arrest Stub&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="799" name="PREP: Vicky Search Barracks" tags="" position="150,675" size="100,100">&lt;&lt;displayTask &quot;11-convoy&quot; &quot;vicky&quot;&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-&lt;&lt;if $camp.includes(&quot;kaitos&quot;)&gt;&gt;即便凯托斯已肩负左膀之职，&lt;&lt;else&gt;&gt;如今&lt;&lt;endif&gt;&gt;  
+&lt;&lt;if $camp.includes(&quot;kaitos&quot;)&gt;&gt;即便凯托斯已肩负左膀之职，&lt;&lt;else&gt;&gt;如今&lt;&lt;/if&gt;&gt;  
 亟待完成、方能使第五支商队真正成为一支切实可行的队伍，其清单之长，仿佛永无尽头。  
 方才费尽周折，总算说服了商队驯马师——$licorice所需的补给必须是最高品质——此事虽已尘埃落定，你却顿时陷入无所适从的境地。  
 一名城堡仆从告诉你，卢卡斯外出处理些关于睡毯的琐事；&lt;&lt;if $camp.includes(&quot;kaitos&quot;)&gt;&gt;而凯托斯则被安置在一间废弃的客厅里，正埋首于堆积如山的文件之中，无暇他顾&lt;&lt;/if&gt;&gt;。  
@@ -60710,29 +60631,51 @@ $licorice 还远在莫布雷呢，隔着好几英里远。
 &lt;&lt;speak &quot;lucas.smug&quot;&gt;&gt; 不仅如此！纳撒尼尔才是第三梯队的原初之人！ &lt;&lt;/speak&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;speak  &quot;lucas.smug&quot; &gt;&gt; &lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;请想象一下：那是第三梯队的时代。&lt;&lt;else&gt;&gt;且容我构想一番：&lt;&lt;else&gt;&gt;&lt;&lt;if&gt;&gt;  
-大地正遭逢大饥荒，生灵涂炭。在塞卢萨领地，路易王子正为饥肠辘辘的平民分发最新一船谷物，却骤然醒悟——他的子民，竟对他毫无信任可言！  
-*他轻嗤一声，笑意微讽。*  
-可又能怪谁？一个身披金缕、手戴丝缎的贵胄，又怎能真正理解他们的苦难？不，绝无可能。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.smug&quot;&gt;&gt;
+&lt;&lt;if setup.hasTrait(&quot;dense&quot;)&gt;&gt;
+请想象一下：那是第三梯队的时代。
+&lt;&lt;else&gt;&gt;
+且容我构想一番：
+&lt;&lt;/if&gt;&gt;
+大地正遭逢大饥荒，生灵涂炭。在塞卢萨领地，路易王子正为饥肠辘辘的平民分发最新一船谷物，却骤然醒悟——他的子民，竟对他毫无信任可言！
+*他轻嗤一声，笑意微讽。*
+可又能怪谁？一个身披金缕、手戴丝缎的贵胄，又怎能真正理解他们的苦难？不，绝无可能。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak &quot;lucas.glasses&quot;&gt;&gt; 但路易斯并非愚钝之辈，他心知肚明。此刻，他陷入两难之境：他无法援救自己的族人——他们太过多疑，根本不愿接受他的帮助；而他若想赢得他们的信任，又必须先赢得这份信任。  
-``整支车队陷入了僵局……就在此时，他遇见了纳撒尼尔。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.glasses&quot;&gt;&gt;
+但路易王子并非愚钝之辈，他心知肚明。此刻，他陷入两难之境：他无法援救自己的族人——他们太过多疑，根本不愿接受他的帮助；而他若想赢得他们的信任，又必须先赢得这份信任。
+整支车队陷入了僵局……就在此时，他遇见了纳撒尼尔。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak &quot;lucas.pleased&quot;&gt;&gt; 身为镇上的磨坊主，纳撒尼尔对第三梯队的配给制度颇有微词。然而，与同侪不同，他竟有胆量将这些抱怨直陈于王子面前。路易为这卑微平民的勇气与赤诚所动，竟将他的每一条批评都悉数采纳、一一落实。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.pleased&quot;&gt;&gt;
+身为镇上的磨坊主，纳撒尼尔对第三梯队的配给制度颇有微词。然而，与同侪不同，他竟有胆量将这些抱怨直陈于王子面前。路易为这卑微平民的勇气与赤诚所动，竟将他的每一条批评都悉数采纳、一一落实。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak &quot;lucas.smirk&quot;&gt;&gt; 此举自然难逃同僚眼目，很快，纳撒尼尔便成了镇上的代表。每当乡邻心有疑虑，总先向他倾诉；而他，则将这些诉求原原本本呈于王子案前。  
-``短短数日，第三梯队在塞卢萨乡野所成之事，竟胜过此前数月之功。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.smirk&quot;&gt;&gt;
+此举自然难逃同僚眼目，很快，纳撒尼尔便成了镇上的代表。每当乡邻心有疑虑，总先向他倾诉；而他，则将这些诉求原原本本呈于王子案前。
+短短数日，第三梯队在塞卢萨乡野所成之事，竟胜过此前数月之功。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak  &quot;lucas.glasses&quot; &gt;&gt; 路易足够明智，深知第三梯队既需一位王子，亦需他的双手，更需纳撒尼尔这样的声音。当一周将尽，他提笔致信父王：  
-``路易王子以近乎命令的口吻宣告——第三梯队必须接纳一位新成员：一位来自第三阶层之人，代表平民发声。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.glasses&quot;&gt;&gt;
+路易足够明智，深知第三梯队既需一位王子，亦需他的双手，更需纳撒尼尔这样的声音。当一周将尽，他提笔致信父王：
+路易王子以近乎命令的口吻宣告——第三梯队必须接纳一位新成员：一位来自第三阶层之人，代表平民发声。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak &quot;lucas.smug&quot;&gt;&gt; 而纳撒尼尔，也的确开口了。第三梯队对韦斯图尔法律体系的重塑，何止巨大——试想，在第三纪元之前，贵族几乎凌驾于法律之上！ &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.smug&quot;&gt;&gt;
+而纳撒尼尔，也的确开口了。第三梯队对韦斯图尔法律体系的重塑，何止巨大——试想，在第三纪元之前，贵族几乎凌驾于法律之上！
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak  &quot;lucas.pleased&quot; &gt;&gt; “囤积谷物的贵族，当与囤积谷物的农民同罪同罚。” 啊，公正女神，你以平允之手垂怜人间！当法律一视同仁，平民便显庄严；贵族那无端的特权，则如朝露遇日，烟消云散！ &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.pleased&quot;&gt;&gt;
+“囤积谷物的贵族，当与囤积谷物的农民同罪同罚。” 啊，公正女神，你以平允之手垂怜人间！当法律一视同仁，平民便显庄严；贵族那无端的特权，则如朝露遇日，烟消云散！
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak  &quot;kaitos.casual.stare&quot; &gt;&gt; ……天啊，老兄。 &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;kaitos.casual.stare&quot;&gt;&gt;
+……天啊，老兄。
+&lt;&lt;/speak&gt;&gt;
 
-&lt;&lt;speak  &quot;lucas.glasses&quot; &gt;&gt; 第三梯队凌驾于其余梯队之上。它坚守了三王国立国之初的誓言——贵族当服务于人民，而非相反。这枚印章，一次又一次，触及了凡俗世界最接近神性之物：正义。它是一件无与伦比的历史圣物！ &lt;&lt;/speak&gt;&gt;
+&lt;&lt;speak &quot;lucas.glasses&quot;&gt;&gt;
+第三梯队凌驾于其余梯队之上。它坚守了三王国立国之初的誓言——贵族当服务于人民，而非相反。这枚印章，一次又一次，触及了凡俗世界最接近神性之物：正义。它是一件无与伦比的历史圣物！
+&lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
 卢卡斯将那枚印章举到你眼前几英寸处晃了晃。在你眼中，它依旧像堆垃圾……但附着其上的故事分量，你岂会视而不见？见王子的解释令你点头认可，他这才满意地退开，你则重新俯身，继续挖掘。
@@ -61693,7 +61636,7 @@ $licorice 还远在莫布雷呢，隔着好几英里远。
 &lt;&lt;/once&gt;&gt;
 &lt;&lt;addCodex &quot;rabbit&quot;&gt;&gt;
 
-@@.next;[[Return to Diadem.|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="874" name="PREP: quincy gun name" tags="insert" position="1475,350" size="100,100">&lt;h1&gt;Name her.&lt;/h1&gt;
+@@.next;[[Return to Diadem.|PREP: Camp]]@@</tw-passagedata><tw-passagedata pid="874" name="PREP: quincy gun name" tags="insert" position="1475,350" size="100,100">&lt;h1&gt;为她取名.&lt;/h1&gt;
 &lt;&lt;img 1 &quot;duruger.png&quot; &quot;你的杜鲁格步枪。&quot; `[&quot;modeNeutral&quot;]`&gt;&gt;
 
 &lt;div class=&#39;gun-namer&#39;&gt;
@@ -61727,49 +61670,7 @@ $licorice 还远在莫布雷呢，隔着好几英里远。
 &lt;span id=&#39;gunError&#39; class=&#39;name-error&#39;&gt;&lt;/span&gt;
 &lt;/div&gt;
 
-@@.next;&lt;&lt;link &quot;Continue.&quot;&quot;&gt;&gt;
-&lt;&lt;script&gt;&gt;
-var okay = true;
-let strRegex = new RegExp(/^[a-z]+$/i);
-State.variables.gun = State.variables.gun.trim();
-var forbiddenChar = strRegex.test(State.variables.gun);
-if (State.variables.gun.contains(&quot;  &quot;)){
-State.variables.gun.replaceAll(&quot;  &quot;,&quot; &quot;);
-}
-var tooLong = false;
-
-if (State.variables.gun.length &gt;= 16){
-tooLong = true;
-}
-
-State.variables.gun = State.variables.gun.charAt(0).toUpperCase() + State.variables.gun.slice(1).toLowerCase();
-if (State.variables.gun.toLowerCase() == &quot;d&#39;angelo&quot;){
-State.variables.gun = &quot;D&#39;Angelo&quot;
-}
-
-var el = document.getElementById(&quot;gunError&quot;);
-
-
-if (forbiddenChar != true &amp;&amp; State.variables.gun.toLowerCase() != &quot;d&#39;angelo&quot;){
-el.innerHTML = &quot;(name contains a forbidden character...)&quot;;
-okay = false;
-}
-else if (tooLong == true){
-el.innerHTML = &quot;(that name feels too long...)&quot;;
-okay = false;
-} else {
-
-el.innerHTML = &quot;&quot;;
-}
-
-
-
-if (okay == true){
-Engine.play(&quot;PREP: quincy gun leave 1&quot;);
-}
-&lt;&lt;/script&gt;&gt;
-
-&lt;&lt;/link&gt;&gt;@@</tw-passagedata><tw-passagedata pid="875" name="PREP: quincy gun op 2" tags="area" position="1025,275" size="100,100">&lt;&lt;locationBoardSetup `[
+@@.next;[[继续|PREP: quincy gun leave 1]]@@</tw-passagedata><tw-passagedata pid="875" name="PREP: quincy gun op 2" tags="area" position="1025,275" size="100,100">&lt;&lt;locationBoardSetup `[
 {img:&quot;stone-stairwell.png&quot;,text:&quot;&quot;},
 {img:&quot;weapons.png&quot;,text:&quot;&quot;},
 {img:&quot;castle-basement2.png&quot;,text:&quot;&quot;}
@@ -61829,7 +61730,7 @@ Engine.play(&quot;PREP: quincy gun leave 1&quot;);
 &lt;&lt;speak  &quot;dangelo.neutral&quot; &gt;&gt; 好嘞！*他重重拍了下你的背，顺势把灯笼塞进你手里。* 那我就不打扰你了。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-好在他终于答应不再纠缠你&lt;&lt;if !setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;这一回&lt;&lt;&lt;/if&gt;&gt;，可你胃里仍沉甸甸地发紧——你依旧毫无头绪，究竟该寻些什么东西，才能让你觉得自己不那么无用，哪怕只是一丁点。 &lt;&lt;/text&gt;&gt;
+好在他终于答应不再纠缠你&lt;&lt;if !setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;这一回&lt;&lt;/if&gt;&gt;，可你胃里仍沉甸甸地发紧——你依旧毫无头绪，究竟该寻些什么东西，才能让你觉得自己不那么无用，哪怕只是一丁点。 &lt;&lt;/text&gt;&gt;
 
 
 &lt;&lt;speak  &quot;dangelo.neutral&quot; &gt;&gt;我摸黑回去就行，底下这地方我来过不少回了。你忙完就来食堂找我吧。 &lt;&lt;/speak&gt;&gt;
@@ -62121,7 +62022,7 @@ setup.printQuincySummary();
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; &lt;&lt;if setup.hasTrait(&quot;guilty&quot;)&gt;&gt;无论我的生命价值几何，皆拜&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;我的子民&lt;&lt;else&gt;&gt;我的王国&lt;&lt;else&gt;&gt;所赐——此恩此德，我永志不忘。&lt;&lt;else&gt;&gt;我始终负于&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;我的子民&lt;&lt;else&gt;&gt;我的王国&lt;&lt;else&gt;&gt;——此诺此誓，矢志不渝。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; &lt;&lt;if setup.hasTrait(&quot;guilty&quot;)&gt;&gt;无论我的生命价值几何，皆拜&lt;&lt;/if&gt;&gt;&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;我的子民&lt;&lt;else&gt;&gt;我的王国所赐——此恩此德，我永志不忘。我始终负于&lt;&lt;/if&gt;&gt;&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;我的子民&lt;&lt;else&gt;&gt;我的王国——此诺此誓，矢志不渝。&lt;&lt;/if&gt;&gt; &lt;&lt;/qSpeak&gt;&gt;
 
 
 
@@ -62672,11 +62573,11 @@ $licorice 要是由着她，她能跑到双腿几乎从身上掉下来为止。�
 
 &lt;&lt;choose&gt;&gt;
 &lt;&lt;if setup.checkPass(1)&gt;&gt;
-&lt;&lt;specialC &quot;hunch&quot; [[这顶帐篷不是你搭起来的。|S1E2: Camp Elijah First 2]]&gt;&gt;&lt;&lt;set $response to &quot;didnt&quot;&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;这顶帐篷不是你搭起来的。&lt;/span&gt;&quot; &quot;S1E2: Camp Elijah First 2&quot;&gt;&gt;&lt;&lt;set $response to &quot;didnt&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 [[这里没发现什么异常。|S1E2: Camp Elijah First 2][$response to &quot;na&quot;]]
 &lt;&lt;else&gt;&gt;
 [[这里没发现什么异常。|S1E2: Camp Elijah First 2][$response to &quot;na&quot;]]
-&lt;&lt;specialC &quot;hunch&quot; [[看起来……很可疑。|S1E2: Camp Elijah First 2]]&gt;&gt;&lt;&lt;set $response to &quot;sus&quot;&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;看起来……很可疑。&lt;/span&gt;&quot; &quot;S1E2: Camp Elijah First 2&quot;&gt;&gt;&lt;&lt;set $response to &quot;sus&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="906" name="S1E2: Camp Elijah First 2" tags="" position="775,675" size="100,100">&lt;&lt;switch $response&gt;&gt;
 &lt;&lt;case &quot;didnt&quot;&gt;&gt;
@@ -62887,7 +62788,7 @@ $licorice 要是由着她，她能跑到双腿几乎从身上掉下来为止。�
 [[你的坐骑那奇特的外表……|S1E2: Camp Elijah Horse]]
 [[你对前方旅途的所思所想...|S1E2: Camp Elijah Journey]]
 &gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="913" name="S1E2: Camp Elijah Imani" tags="" position="900,1200" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 我倒想听听您对“第三等级代表”康沃伊女士的看法。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;elijah.smile&quot;&gt;&gt; *他应声而答，微微颔首，手勢一扬，朗声宣布：*  
@@ -63465,7 +63366,7 @@ $licorice 要是由着她，她能跑到双腿几乎从身上掉下来为止。�
 &lt;&lt;else&gt;&gt;
 &lt;&lt;present &quot;hairlock&quot; [[你知道我找到的这把锁的来历吗？|S1E2: Camp Kaitos Hairlock]]&gt;&gt;&lt;&lt;/present&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="938" name="S1E2: Camp Kaitos Imani" tags="" position="325,1175" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 你觉得咱们这位“第三等级代表”如何？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;kaitos.neutral&quot;&gt;&gt; 我可说不准……一个男人，偏生这般雌雄莫辨，你不觉得吗？ &lt;&lt;/speak&gt;&gt;
@@ -63705,7 +63606,7 @@ $licorice 的舌头迅速缩回。她兄长缓缓转过身去，将耳朵从她�
 [[我和 Lucas 之间的事...|S1E2: Camp Licorice Lucas]]
 [[那些传闻……|S1E2: Camp Licorice Rumors]]
 &gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="947" name="S1E2: Camp Licorice Imani" tags="" position="975,15100" size="100,100">&lt;&lt;if $cFlags.imani.symbol &amp;&amp; setup.hasRep(&quot;rebel&quot;)&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.pleased&quot;&gt;&gt; 能再次见到Imani，感觉真好，不是吗？ &lt;&lt;/qSpeak&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -64288,7 +64189,7 @@ $salmiak 舔了舔自己的鼻子，然后转过身去。不过，他的耳朵�
 &lt;&lt;speak &quot;vicky.wink&quot;&gt;&gt; *她耸了耸肩。* 嘿，若开一枪能编出段精彩故事，我可不怕它。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-$licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海。 你&lt;&lt;if setup.hasTrait(&quot;shameless&quot;)&gt;&gt;的脸颊因护短之怒而滚烫，可下一瞬，一股刺骨寒意却自心底翻涌而上&lt;&lt;else&gt;&gt;喉咙骤然收紧，惊惧如冰水灌顶，血液在&lt;&lt;snout &quot;skin&quot; &quot;fur&quot;&gt;&gt;下冻结成霜&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt;。
+$licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海。 你&lt;&lt;if setup.hasTrait(&quot;shameless&quot;)&gt;&gt;的脸颊因护短之怒而滚烫，可下一瞬，一股刺骨寒意却自心底翻涌而上,喉咙骤然收紧，惊惧如冰水灌顶，血液在&lt;&lt;snout &quot;skin&quot; &quot;fur&quot;&gt;&gt;下冻结成霜&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt;。
 
 ``这是一场既浓烈又即刻的情绪反应。
 &lt;&lt;/text&gt;&gt;
@@ -64429,7 +64330,7 @@ $licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海�
 [[你不怕兔子……|S1E2: Camp Vicky Hares]]
 &gt;&gt;
 &lt;&lt;present &quot;fruitJar&quot; [[*归还她那些已经过期很久的糖果。*|S1E2: Camp Vicky Fruit]]&gt;&gt;&lt;&lt;/present&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话.*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话.*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="976" name="S1E2: Camp Vicky Imani" tags="" position="1600,1050" size="100,100">&lt;&lt;qSpeak &quot;quincy.think&quot;&gt;&gt; 我倒挺好奇的——你对我们这位“第三等级之人”怎么看？ &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;if hasVisited(&quot;PREP: Camp Vicky - Barehand&quot;)&gt;&gt;
@@ -64621,7 +64522,9 @@ $licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海�
 [[恐怕理想上的分歧难以化解……|S1E2: Camp Vicky Journey Ideals]]
 [[我担心永远不会有人尊重我的权威...|S1E2: Camp Vicky Journey Authority]]
 &gt;&gt;
-&lt;&lt;if passage() != &quot;S1E2: Camp Vicky Journey 2&quot;&gt;&gt;&lt;&lt;special &quot;end&quot; [[...而这就是困扰我的地方。|S1E2: Camp Vicky JourneyQ End]]&gt;&gt;&lt;&lt;else&gt;&gt;
+&lt;&lt;if passage() != &quot;S1E2: Camp Vicky Journey 2&quot;&gt;&gt;
+@@.next;[[...而这就是困扰我的地方。|S1E2: Camp Vicky JourneyQ End]]@@
+&lt;&lt;else&gt;&gt;
 [[我不想谈这个。|S1E2: Camp Vicky JourneyQ End][$response to &quot;dont&quot;]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="988" name="S1E2: Camp Vicky JourneyQ End" tags="" position="1825,1625" size="100,100">&lt;&lt;if $response == &quot;dont&quot;&gt;&gt;
 &lt;&lt;toneGain &quot;vicky&quot;&gt;&gt;
@@ -65179,10 +65082,9 @@ $licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海�
 &lt;&lt;link &quot;@@.talk-action;（保持沉默。）@@&quot; &quot;S1E2: Dadtalk Allies&quot;&gt;&gt;&lt;&lt;set $response to &quot;silent&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 [[那些人是我们的盟友，父亲。|S1E2: Dadtalk Allies][$response to &quot;allies&quot;]]
 [[看来，我们现在只能依靠自己了。|S1E2: Dadtalk Allies][$response to &quot;ours&quot;]]
-&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="999" name="S1E2: Dinner Titlecard" tags="insert party party-north" position="1575,1300" size="100,100">&lt;&lt;set $dinner to {score:5,active:true,title:&quot;Tunsukh; held in Welcome&quot;}&gt;&gt;
+&lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="999" name="S1E2: Dinner Titlecard" tags="insert party party-north" position="1575,1300" size="100,100">&lt;&lt;set $dinner to {score:5,active:true,title:&quot;屯苏克；欢迎宴会&quot;}&gt;&gt;
 
-&lt;&lt;print setup.partyTitleCard([&quot;The Barghur Estate&quot;, &quot;Morbre&quot;, &quot;Barghur Sovereignty&quot;],&quot;Tunsukh&lt;br&gt;&lt;small&gt;&lt;sup&gt;-held in welcome-&lt;/sup&gt;&lt;/small&gt;&quot;,&quot;the Northern royal family&quot;,[&quot;party_title_frame_north_top.svg&quot;,&quot;party_title_frame_north_bottom.svg&quot;])&gt;&gt;
-
+&lt;&lt;print setup.partyTitleCard([&quot;巴古尔庄园&quot;, &quot;莫布雷&quot;, &quot;巴古尔主权国&quot;],&quot;屯苏克&lt;br&gt;&lt;small&gt;&lt;sup&gt;-欢迎宴会-&lt;/sup&gt;&lt;/small&gt;&quot;,&quot;北方王室&quot;,[&quot;party_title_frame_north_top.svg&quot;,&quot;party_title_frame_north_bottom.svg&quot;])&gt;&gt;
 
 @@.next;[[继续|S1E2: Tunsukh Start]]@@</tw-passagedata><tw-passagedata pid="1000" name="S1E2: E2 Dadtalk" tags="area" position="950,1600" size="100,100">&lt;&lt;locationBoardSetup `[
 {img:&quot;barghur-crest.png&quot;,text:&quot;&quot;},
@@ -65192,14 +65094,14 @@ $licorice的身影，赫然映在步枪准星之中，倏然掠过你的脑海�
 &lt;&lt;location &quot;barghur&quot; `[&quot;Barghur Estate&quot;, &quot;Morbre&quot;]`&gt;&gt;
 &lt;&lt;set $tempQ.open.dadMad to 0&gt;&gt;
 
-&lt;&lt;speak &quot;deion.bigmad&quot;&gt;&gt; @@.yell;&lt;&lt;if $rumor.calypso&gt;&gt;裙裾津贴者？&lt;&lt;else&gt;&gt;与极北诸部争抢补给线？&lt;&lt;if $rumor.faith&gt;&gt;北方圣殿骑士？&lt;&lt;else&gt;&gt;亵渎者？&lt;&lt;if $rumor.shoe&gt;&gt;鞋扣党？@@  
+&lt;&lt;speak &quot;deion.bigmad&quot;&gt;&gt; @@.yell;&lt;&lt;if $rumor.calypso&gt;&gt;裙裾津贴者？&lt;&lt;else&gt;&gt;与极北诸部争抢补给线？&lt;&lt;/if&gt;&gt;&lt;&lt;if $rumor.faith&gt;&gt;北方圣殿骑士？&lt;&lt;else&gt;&gt;亵渎者？&lt;&lt;/if&gt;&gt;&lt;&lt;if $rumor.shoe&gt;&gt;鞋扣党？&lt;&lt;/if&gt;&gt;@@  
 ``  
 @@.yell-loud;右手？王子的护送队？&lt;span class=&#39;intense&#39;&gt;是你？&lt;/span&gt;@@ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
 你离家期间，父亲从未寄来过一只信鸽。你心底某个不讲理的角落曾天真地期盼：他或许只是尚不知晓你已获新职，以及随之而来的种种失策——他永远不会知道——但更诚实的那一部分你早已明白，这般怒火唯有当面爆发才可消解。他咬紧雪茄，仿佛要连烟卷一并嚼碎吞下。
 
-&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;你咬紧牙关，斩钉截铁地答道：&lt;&lt;else&gt;&gt;你被逼至墙角，只得承认：&lt;&lt;end&gt;&gt;
+&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;你咬紧牙关，斩钉截铁地答道：&lt;&lt;else&gt;&gt;你被逼至墙角，只得承认：&lt;&lt;/if&gt;&gt;
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;
@@ -65303,7 +65205,7 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;speak &quot;elijah.frown&quot;&gt;&gt; 啧。这毫无意义的毁坏…… &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-车厢内陷入一阵不安的沉默。你沿着塌陷地面的边缘谨慎前行，迪安杰洛却猛地从车窗收回脸，面色阴沉&lt;&lt;snout &quot;&quot; &quot;，鬃毛倒竖&gt;&gt;。
+车厢内陷入一阵不安的沉默。你沿着塌陷地面的边缘谨慎前行，迪安杰洛却猛地从车窗收回脸，面色阴沉&lt;&lt;snout &quot;&quot; &quot;，鬃毛倒竖&quot;&gt;&gt;。
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;speak &quot;dangelo.neutralserious&quot;&gt;&gt; 我们绝不能再让此类惨剧重演。 &lt;&lt;/speak&gt;&gt;
@@ -65412,10 +65314,8 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 {img:&quot;forest2.png&quot;},
 {img:&quot;camp-generic.png&quot;},
 {img:&quot;land/taiga3.png&quot;}
-
 ]`&gt;&gt;
 &lt;&lt;location &quot;kagthur&quot; `[&quot;Camp&quot;,&quot;Demons&#39; Grove&quot;]`&gt;&gt;
-
 
 &lt;&lt;once&gt;&gt;
 &lt;&lt;set $tempQ.campDinner to false&gt;&gt;
@@ -65423,10 +65323,35 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;set $campTopics to [&quot;start&quot;]&gt;&gt;
 &lt;&lt;set _campPassageMap to
 {
-
-
-
-
+lucas:{
+start:[&quot;S1E2: Camp Lucas First&quot;,&quot;lucas.weary&quot;],
+default:[&quot;S1E2: Camp Lucas Hungry&quot;,&quot;lucas.weary&quot;]
+},
+dangelo:{
+start:{passData:[&quot;S1E2: Camp Dangelo First&quot;,&quot;dangelo.neutral&quot;,true],priority:true},
+default:&quot;S1E2: Camp Dangelo&quot;
+},
+kaitos:{
+start:[&quot;S1E2: Camp Kaitos First&quot;,&quot;kaitos.glance&quot;],
+default:&quot;S1E2: Camp Kaitos&quot;,
+},
+elijah:{
+start:&quot;S1E2: Camp Elijah First&quot;,
+default:&quot;S1E2: Camp Elijah&quot;,
+},
+vicky:{
+start:[&quot;S1E2: Camp Vicky First&quot;,&quot;vicky.smirk&quot;],
+default:&quot;S1E2: Camp Vicky&quot;
+},
+imani:{
+start:[&quot;S1E2: Camp Imani First&quot;,&quot;imani.tilt&quot;],
+default:&quot;S1E2: Camp Imani&quot;
+},
+licorice:{
+start:&quot;S1E2: Camp Licorice First&quot;,
+default:&quot;S1E2: Camp Licorice&quot;
+}
+}&gt;&gt;
 
 &lt;&lt;if hasVisited(&quot;S1E2: Camp Dangelo First&quot;) &amp;&amp; $tempQ.campDinner != true&gt;&gt;
 &lt;&lt;set _campPassageMap.lucas.start to [&quot;S1E2: Camp Lucas First&quot;,&quot;lucas.weary&quot;,true]&gt;&gt;
@@ -65434,7 +65359,6 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $tempQ.campDinner&gt;&gt;
 &lt;&lt;set _campPassageMap.lucas.default to &quot;S1E2: Camp Lucas ToldDinner&quot;&gt;&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;run setup.setCampTopics(_campPassageMap)&gt;&gt;
@@ -65457,8 +65381,6 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;set _camp.elijah to false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
 &lt;&lt;getMail 2&gt;&gt;
 
 &lt;&lt;drawCamp _camp _guests&gt;&gt;&lt;&lt;text&gt;&gt;
@@ -65468,9 +65390,9 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;if $tempQ.campDinner&gt;&gt;
 @@.next;[[等晚饭。|S1E2: First Camp End]]@@
 &lt;&lt;elseif hasVisited(&quot;S1E2: Camp Dangelo First&quot;)&gt;&gt;
-@@.next;Inform Lucas when you will eat.@@
+@@.next;告诉Lucus什么时候吃饭@@
 &lt;&lt;else&gt;&gt;
-@@.next;Learn of supper.@@
+@@.next;了解胡椒.@@
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;passiveCheck 1 `[&quot;dec&quot;,setup.DCKey[&quot;medium&quot;]]`&gt;&gt;</tw-passagedata><tw-passagedata pid="1012" name="S1E2: First Camp End" tags="insert autosave" position="100,15850" size="100,100">&lt;&lt;addCodex &quot;kagthur&quot;&gt;&gt;
 &lt;&lt;addCodex &quot;demonsgrove&quot;&gt;&gt;
@@ -65509,7 +65431,7 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;text&gt;&gt;
 你立身之处望不见太阳，但天光渐次黯淡，你心知——它已悄然沉落于西方群山之后。  
 
-``王子的车队已行进整整十小时。你虽疲惫，但作为巡检官，&lt;&lt;if setup.hasTrait(&quot;cleithro&quot;)&gt;&gt;麻木&lt;&lt;else&gt;&gt;早已习惯&lt;&lt;/else&gt;&gt;了这种沉闷冗长的旅途，因此并未感到格外沉重。可可怜的$licorice……怕是正承受着你清晨疾奔的余波——她的耳朵，比平日垂得更低了。
+``王子的车队已行进整整十小时。你虽疲惫，但作为巡检官，&lt;&lt;if setup.hasTrait(&quot;cleithro&quot;)&gt;&gt;麻木&lt;&lt;else&gt;&gt;早已习惯了这种沉闷冗长的旅途，因此并未感到格外沉重。可可怜的$licorice……怕是正承受着你清晨疾奔的余波——她的耳朵，比平日垂得更低了。&lt;&lt;/if&gt;&gt;
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;speak &quot;licorice.closedEye&quot;&gt;&gt; . . . &lt;&lt;/speak&gt;&gt;
@@ -65659,7 +65581,7 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-他身形佝偻，&lt;&lt;snout &quot;&quot; &quot; 尾巴无力垂落&gt;&gt;，双唇干裂。你推断，在这段旅程中，他并未好好照顾自己。&lt;&lt;if setup.flag(14)&gt;&gt;果真不适合赶路。&lt;&lt;else&gt;&gt;他尚未培养出相应的耐力与意志。&lt;&lt;else&gt;&gt;
+他身形佝偻，&lt;&lt;snout &quot;&quot; &quot; 尾巴无力垂落&quot;&gt;&gt;，双唇干裂。你推断，在这段旅程中，他并未好好照顾自己。&lt;&lt;if setup.flag(14)&gt;&gt;果真不适合赶路。&lt;&lt;else&gt;&gt;他尚未培养出相应的耐力与意志。&lt;&lt;else&gt;&gt;
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;qSpeak &quot;quincy.lookaway&quot;&gt;&gt; 等我们吃过饭，你会感觉好些。 &lt;&lt;/qSpeak&gt;&gt;
@@ -65787,7 +65709,7 @@ coach另一端传来一阵颤抖的嗓音，细若游丝。
 &lt;&lt;ideal &quot;apathy&quot; [[我不知道你在说什么。这简直是一场灾难。|S1E2: Imani Talk2]]&gt;&gt;&lt;&lt;set $response to &quot;survive&quot;&gt;&gt;&lt;&lt;/ideal&gt;&gt;
 [[你啥意思?|S1E2: Imani Talk2][$response to &quot;how&quot;]]
 &lt;&lt;if !setup.checkPass()&gt;&gt;
-&lt;&lt;special &quot;hunch&quot; [[别对我撒谎。|S1E2: Imani Talk2]]&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;别对我撒谎。&lt;/span&gt;&quot; &quot;S1E2: Imani Talk2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1021" name="S1E2: Imani Talk 3" tags="" position="725,2475" size="100,100">&lt;&lt;flag 120&gt;&gt;
 &lt;&lt;switch $response&gt;&gt;
@@ -66204,16 +66126,16 @@ go:{link:&quot;S1E2: Out Dangelo 1&quot;,img:&quot;grass3&quot;,text:&quot;继�
 }&gt;&gt;
 
 &lt;&lt;print setup.drawMapStub(&quot;start&quot;,`[&quot;go&quot;]`)&gt;&gt;</tw-passagedata><tw-passagedata pid="1029" name="S1E2: Pre Setting Out" tags="insert" position="300,425" size="100,100">&lt;&lt;text&gt;&gt;
-你们的对话就此中断。然而，&lt;&lt;if $cFlags.imani.symbol&gt;&gt;&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;那股决意&lt;&lt;elseif $cFlags.imani.symbol == null&gt;&gt;犹疑不定&lt;&lt;else&gt;&gt;怅然若失&lt;&lt;else&gt;&gt; tension unresolved&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;的情绪，却如影随形。
+你们的对话就此中断。然而，&lt;&lt;if $cFlags.imani.symbol&gt;&gt;&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;那股决意&lt;&lt;elseif $cFlags.imani.symbol == null&gt;&gt;犹疑不定&lt;&lt;else&gt;&gt;怅然若失 tension unresolved&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;的情绪，却如影随形。
 
-``&lt;&lt;if $cFlags.imani.symbol&gt;&gt;当你的猎犬——并肩疾驰，晨光在它们皮毛上熠熠生辉——飞奔回莫布雷时，那股情绪早已抢先一步抵达。尽管脚下被$licorice和$salmiak踏熟的路径早已熟悉如掌纹，你却挥之不去一种奇异的预感：你们正开辟的，是一条前所未有的新路。
+``&lt;&lt;if $cFlags.imani.symbol&gt;&gt;当你的猎犬——并肩疾驰，晨光在它们皮毛上熠熠生辉——飞奔回莫布雷时，那股情绪早已抢先一步抵达。尽管脚下被$licorice和$salmiak踏熟的路径早已熟悉如掌纹，你却挥之不去一种奇异的预感：你们正开辟的，是一条前所未有的新路。&lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;诗兴忽至。你并非奔向莫布雷，而是驰向一片全然未知的未来——一个迥异于过往所有时代的纪元：&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;第五支商队的纪元&lt;&lt;else&gt;&gt;一段惊心动魄的迷途&lt;&lt;else&gt;&gt;一个令人心悸的不确定时代&lt;&lt;/if&gt;&gt;。&lt;/p&gt;
+&lt;p&gt;诗兴忽至。你并非奔向莫布雷，而是驰向一片全然未知的未来——一个迥异于过往所有时代的纪元：&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;第五支商队的纪元,一段惊心动魄的迷途&lt;&lt;else&gt;&gt;一个令人心悸的不确定时代&lt;&lt;/if&gt;&gt;。&lt;/p&gt;
 
-&lt;&lt;else&gt;&gt;那情绪始终与你疾奔回莫布雷的猎犬并驾齐驱——仿佛第三位骑手悄然尾随，沉默而执拗地，将你们之间隔开一段距离。&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;这令人窒息的距离虽苦涩，却早已熟悉；于是你任它存在。&lt;&lt;else&gt;&gt;而这份新生的距离，却如无形之手，狠狠攥住了你的心口。&lt;&lt;/if&gt;&gt;
+那情绪始终与你疾奔回莫布雷的猎犬并驾齐驱——仿佛第三位骑手悄然尾随，沉默而执拗地，将你们之间隔开一段距离。&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;这令人窒息的距离虽苦涩，却早已熟悉；于是你任它存在。&lt;&lt;else&gt;&gt;而这份新生的距离，却如无形之手，狠狠攥住了你的心口。&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;你心志如一。&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;既然如此，这还不够吗？&lt;&lt;else&gt;&gt;你向来如此。为何非要强求更多？&lt;&lt;else&gt;&gt;&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;或许终有一日，她会理解你的顾虑。&lt;&lt;else&gt;&gt;如今的你，已然不同。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;你心志如一。&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;既然如此，这还不够吗？&lt;&lt;else&gt;&gt;你向来如此。为何非要强求更多？&lt;&lt;if setup.hasTrait(&quot;packbonded&quot;)&gt;&gt;或许终有一日，她会理解你的顾虑。&lt;&lt;else&gt;&gt;如今的你，已然不同。&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;/p&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -66649,7 +66571,7 @@ go:{link:&quot;S1E2: Out Down 1&quot;,img:&quot;land/taiga3&quot;,text:&quot;向
 go:setup.addLocation(&quot;Your Route&quot;,&quot;barghur&quot;,[47.75,36],&quot;west&quot;,&quot;forest1&quot;)
 }&gt;&gt;
 &lt;&lt;set _travelLinks to {
-go:{link:&quot;S1E2: Setting Out Hills 1&quot;,img:&quot;hills4&quot;,text:&quot;Head West&quot;},
+go:{link:&quot;S1E2: Setting Out Hills 1&quot;,img:&quot;hills4&quot;,text:&quot;引领赴往西野&quot;},
 }&gt;&gt;
 
 &lt;&lt;print setup.drawMapStub(&quot;morbre&quot;,`[&quot;go&quot;]`)&gt;&gt;</tw-passagedata><tw-passagedata pid="1043" name="S1E2: Setting Out Road Start" tags="area" position="400,1100" size="100,100">&lt;&lt;locationBoardSetup `[
@@ -67109,7 +67031,7 @@ Imani 眉头微蹙，先向大公投去一瞥犹疑的目光，才以近乎拆�
 &lt;&lt;speak &quot;elijah.nervous&quot;&gt;&gt; @@.stutter;阁下，我可从未暗示过这种事！@@ *他语无伦次，笑容中满是恳求。* 这……这不过……解释了某些事罢了！ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;case &quot;friend&quot;&gt;&gt;
-&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 你不必担忧，伊曼尼。在我&lt;&lt;if setup.hasTrait(&quot;shameless&quot;)&gt;&gt;本性&lt;&lt;else&gt;&gt;诅咒&lt;&lt;&lt;/if&gt;&gt;的处境下，伊莱jah从未因此苛待过我。 &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;qSpeak &quot;quincy.neutral&quot;&gt;&gt; 你不必担忧，伊曼尼。在我&lt;&lt;if setup.hasTrait(&quot;shameless&quot;)&gt;&gt;本性&lt;&lt;else&gt;&gt;诅咒&lt;&lt;/if&gt;&gt;的处境下，伊莱jah从未因此苛待过我。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;imani.neutral&quot;&gt;&gt; ……既然这是你的亲身经历，我便信你所言。 &lt;&lt;/speak&gt;&gt;
 
@@ -67576,7 +67498,7 @@ Imani 眉头微蹙，先向大公投去一瞥犹疑的目光，才以近乎拆�
 &lt;&lt;include &quot;S1E2: Tunsukh PR4 nextround&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="1065" name="S1E2: Tunsukh PR4 nextround" tags="" position="1575,3800" size="100,100">&lt;&lt;speak &quot;imani.bow&quot;&gt;&gt; 抱歉，先生。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-她&lt;&lt;if $response == &quot;imani2&quot;&gt;&gt;&quot;所作的努力&quot;&lt;&lt;else&gt;&gt;“努力”&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $tempQ.dinner.dadPolite&gt;&gt;仅换来父亲一声局促的咕哝：一串难以辨识的喉音，几乎听来像句道歉。&lt;&lt;else&gt;&gt;勉强平息他的怒火——若真能平息的话。他鼻翼翕张，故意慢条斯理地重新系好围巾，随即强作镇定地命令上新一轮酒水。对仆人们而言，此刻离席是种解脱，而重返厅堂，则是场煎熬。&lt;&lt;/if&gt;&gt;
+她&lt;&lt;if $response == &quot;imani2&quot;&gt;&gt;&quot;所作的努力&quot;&lt;&lt;else&gt;&gt;“努力”&lt;&lt;/if&gt;&gt; &lt;&lt;if $tempQ.dinner.dadPolite&gt;&gt;仅换来父亲一声局促的咕哝：一串难以辨识的喉音，几乎听来像句道歉。&lt;&lt;else&gt;&gt;勉强平息他的怒火——若真能平息的话。他鼻翼翕张，故意慢条斯理地重新系好围巾，随即强作镇定地命令上新一轮酒水。对仆人们而言，此刻离席是种解脱，而重返厅堂，则是场煎熬。&lt;&lt;/if&gt;&gt;
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;if $tempQ.dinner.dadPolite&gt;&gt;
@@ -68411,7 +68333,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 
 
 @@.next;[[继续|S1E2: ending transition]]@@</tw-passagedata><tw-passagedata pid="1106" name="S1E2: bond ending lucas" tags="insert" position="1100,1875" size="100,100">&lt;&lt;text&gt;&gt;
-&lt;&lt;if setup.flag(14)&gt;&gt;&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;他在你最需倚靠之时辜负了你……可与此同时，他也赠予你一个你连想象都未曾敢及的机会。&lt;&lt;else&gt;&gt;他在你最需倚靠之时辜负了你。他将你弃于默默无闻的角落，又在某日心血来潮，将你从那安逸中强行拽出。可……&lt;&lt;else&gt;&gt;或许，回头再看，这本是个愚蠢的问题。&lt;&lt;/if&gt;&gt;
+&lt;&lt;if setup.flag(14)&gt;&gt;&lt;&lt;if setup.hasRep(&quot;ambition&quot;)&gt;&gt;他在你最需倚靠之时辜负了你……可与此同时，他也赠予你一个你连想象都未曾敢及的机会。&lt;&lt;else&gt;&gt;他在你最需倚靠之时辜负了你。他将你弃于默默无闻的角落，又在某日心血来潮，将你从那安逸中强行拽出。可……或许，回头再看，这本是个愚蠢的问题。&lt;&lt;/if&gt;&gt;
 
 ``&#39;&#39;王子是您最亲爱的朋友。&#39;&#39;
 &lt;&lt;/text&gt;&gt;
@@ -68435,7 +68357,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;bondImg&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-这并非意味着你对他们漠不关心——当然不是。你深知，他们的陪伴对你而言意义非凡。然而此刻——肩负着王子的生命与伊曼妮的期许——你却感到前路漫漫，孤身一人。若你同时背负着他们二人，那么理所当然，他们 neither 立于你身侧。
+这并非意味着你对他们漠不关心——当然不是。你深知，他们的陪伴对你而言意义非凡。然而此刻——肩负着王子的生命与伊曼妮的期许——你却感到前路漫漫，孤身一人。若你同时背负着他们二人，那么理所当然，他们也都立于你身侧。
 
 ``或许，是时候另寻知音了。
 &lt;&lt;/text&gt;&gt;
@@ -68706,7 +68628,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak &quot;dangelo.silly&quot;&gt;&gt; 天啊，妮妮，你才刚到这儿，就开始指手画脚、发号施令了？ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
-他的语气带着几分戏谑，可那微微扬起的声调&lt;&lt;snout &quot;&quot; &quot; 以及尾巴紧张地左右摆动&gt;&gt;却泄露了他深藏的忧虑。谈话戛然而止，众人纷纷转过头来。
+他的语气带着几分戏谑，可那微微扬起的声调&lt;&lt;snout &quot;&quot; &quot; 以及尾巴紧张地左右摆动&quot;&gt;&gt;却泄露了他深藏的忧虑。谈话戛然而止，众人纷纷转过头来。
 &lt;&lt;/text&gt;&gt;
 
 &lt;&lt;speak &quot;dangelo.eyeroll&quot;&gt;&gt; 您不觉得这越俎代庖了吗？这类事本该由王子殿下与他的“手足”们操持，而非第三等级之人。 &lt;&lt;/speak&gt;&gt;
@@ -68835,7 +68757,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 [[Victoria. 你对这些地区有了解吗？|S1E2: convoy meeting vicky]]
 &gt;&gt;
 &lt;&lt;if !hasVisited(&quot;S1E2: convoy meeting map&quot;)&gt;&gt;&lt;&lt;link &quot;@@.talk-action;检查路线。@@&quot; &quot;S1E2: convoy meeting map&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*复制路线以供自己参考，然后离开。*|S1E2: convoy meeting 6]]&gt;&gt;
+@@.next;[[*复制路线以供自己参考，然后离开。*|S1E2: convoy meeting 6]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1117" name="S1E2: convoy meeting 6" tags="" position="975,1075" size="100,100">&lt;&lt;text&gt;&gt;
 当你伸手去取外套里的旅行图册时，才恍然发觉——自启程前往米德兰后，它便一直安卧于你胸前口袋，未曾离身。身为矿务巡查官时，你日日翻阅它；如今竟已月余未曾开启，实在令人唏嘘。
 
@@ -69214,7 +69136,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 [[关于父亲和Vicky的事……|S1E2: dangel camp vicky]]
 &gt;&gt;
 &lt;&lt;present &quot;fruitJar&quot; [[*把蜜饯水果递给他。*|S1E2: dangel camp fruit]]&gt;&gt;&lt;&lt;passiveCheck 1 `[&quot;phys&quot;,setup.DCKey[&quot;hard&quot;]]`&gt;&gt;&lt;&lt;/present&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1134" name="S1E2: dangel camp imani" tags="" position="400,1025" size="100,100">&lt;&lt;if setup.hasRep(&quot;rebel&quot;)&gt;&gt;
 &lt;&lt;qSpeak &quot;quincy.think&quot; &gt;&gt; 我实在难以置信——伊曼尼竟被选为第三等级的“男子代表”。  &lt;&lt;/qSpeak&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -69477,8 +69399,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak  &quot;dangelo.smilenervous&quot; &gt;&gt; ……啧。真怪。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;include &quot;S1E2: dangel camp hub&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="1145" name="S1E2: ending transition" tags="insert autosave" position="1100,2025" size="100,100">&lt;&lt;appendixAdd &quot;joseph&quot;&gt;&gt;
-&lt;&lt;alert  `[“小插曲”，“您已解锁 @@.accent;小插曲@@ 菜单。小插曲讲述的是昆西视角之外的小故事。”]` &quot;quill&quot;&gt;&gt;
-
+&lt;&lt;alert `[&quot;小插曲&quot;,&quot;您已解锁 @@.accent;小插曲@@ 菜单。小插曲讲述的是昆西视角之外的小故事。&quot;]` &quot;quill&quot;&gt;&gt;
 @@.next;[[继续|S1E2: End Episode]]@@</tw-passagedata><tw-passagedata pid="1146" name="S1E2: hunty bunny" tags="" position="1150,800" size="100,100">&lt;&lt;text&gt;&gt;
 你将$gun斜倚在膝头，微风轻拂面颊，只能静静凝望。三点钟方向，Imani手持自己的步枪伫立不动，身影早已隐没于灌木丛中，无迹可寻。
 
@@ -69851,7 +69772,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 [[ 你已经长得很高了。|S1E2: hunty first convo tall]]
 [[这还是我们以前用的那个杜鲁格吗？|S1E2: hunty first convo Duruger]]
 &gt;&gt;
-&lt;&lt;special &quot;end&quot; [[我们该选定目标了。|S1E2: hunty start 2]]&gt;&gt;
+@@.next;[[我们该选定目标了。|S1E2: hunty start 2]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1153" name="S1E2: hunty first convo tall" tags="" position="1300,575" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 你长高了不少。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
@@ -70398,7 +70319,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 
 &lt;&lt;case &quot;redeem&quot;&gt;&gt;
 &lt;&lt;set $cFlags.imani.pledge to &quot;r&quot;&gt;&gt;
-&lt;&lt;qSpeak &quot;quincy.tilt&quot;&gt;&gt; 我想……我是打算赎清&lt;&lt;if setup.hasTrait(&quot;guilty&quot;)&gt;&gt;自己的罪孽&lt;&lt;else&gt;&gt;自己的清白&lt;&lt;else&gt;&gt;的吧&lt;&lt;if&gt;&gt;。若真有此可能的话。 &lt;&lt;/qSpeak&gt;&gt;
+&lt;&lt;qSpeak &quot;quincy.tilt&quot;&gt;&gt; 我想……我是打算赎清&lt;&lt;if setup.hasTrait(&quot;guilty&quot;)&gt;&gt;自己的罪孽&lt;&lt;else&gt;&gt;自己的清白的吧&lt;&lt;/if&gt;&gt;。若真有此可能的话。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;speak &quot;imani.think&quot;&gt;&gt; 一个崇高的志向。*她低语道，声音轻柔而平稳。* &lt;&lt;/speak&gt;&gt;
 
@@ -70675,7 +70596,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 [[我们的车队同伴们……|S1E2: imani camp convoy]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $tempQ.imaniCounter &gt;=3&gt;&gt;&lt;&lt;actions[[你在回避我的问题吗？|S1E2: imani camp avoid]]&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;special &quot;end&quot; [[*结束对话*|S1E2: First Camp]]&gt;&gt;
+@@.next;[[*结束对话*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1174" name="S1E2: imani camp intro 2" tags="" position="800,650" size="100,100">&lt;&lt;set $tempQ.imaniCounter to 0&gt;&gt;
 
 &lt;&lt;switch $response&gt;&gt;
@@ -71089,15 +71010,13 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak &quot;argent.neutral&quot;&gt;&gt; *那畜生晃了晃脑袋，一时晕头转向。* &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;include &quot;S1E2: lucas camp hub&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="1185" name="S1E2: lucas camp hub" tags="" position="1675,825" size="100,100">&lt;&lt;choose&gt;&gt;
-/* 询问 Lucas 的具体近况与看法 */
 &lt;&lt;actions 
 [[关于你的水分补充情况……|S1E2: lucas camp drink]]
 [[你对伊马尼的看法……|S1E2: lucas camp imani]]
 [[关于你兄弟送的那个“礼物”……|S1E2: lucas camp horse]]
 [[你对前方旅程的想法……|S1E2: lucas camp journey]]
-&gt;&gt;
-/* 结束当前对话，返回营地主界面 */
-&lt;&lt;special &quot;end&quot; [[*结束交谈。*|S1E2: First Camp]]&gt;&gt;
+&gt;&gt;]
+@@.next;[[*结束交谈。*|S1E2: First Camp]]@@
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1186" name="S1E2: lucas camp imani" tags="" position="1850,950" size="100,100">&lt;&lt;qSpeak &quot;quincy.neutral&quot; &gt;&gt; 看来，咱们这位第三等级的“贵人”，已在你心中留下了极佳印象。 &lt;&lt;/qSpeak&gt;&gt;
 
 &lt;&lt;text&gt;&gt;
@@ -71490,7 +71409,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak  &quot;lucas.surprised&quot; &gt;&gt; *&lt;&lt;snout &quot;他猛地整个头颅旋了过来。&quot; &quot;他的耳朵倏地竖起，化作一对挺立的三角形。&quot;&gt;&gt;* 什么？ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;choose&gt;&gt;
-&lt;&lt;specialC &quot;hunch&quot; [[有我在身边时，你总能睡得更安稳。|S1E2: onebed mate end]]&gt;&gt;&lt;&lt;set $response to &quot;easier&quot;&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;有我在身边时，你总能睡得更安稳。&lt;/span&gt;&quot; &quot;S1E2: onebed mate end&quot;&gt;&gt;&lt;&lt;set $response to &quot;easier&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 [[比起我那个亲兄弟，我更愿意和朋友分享床位。|S1E2: onebed mate end][$response to &quot;friend&quot;]]
 [[离得近点，我也更方便履行职责。|S1E2: onebed mate end][$response to &quot;protect&quot;]]
 &lt;&lt;/choose&gt;&gt;</tw-passagedata><tw-passagedata pid="1200" name="S1E2: onebed mate end" tags="" position="1250,875" size="100,100">&lt;&lt;switch $response&gt;&gt;
@@ -71765,7 +71684,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak  &quot;lucas.neutral&quot; &gt;&gt; 我是说，你烦心此事，跟我烦心的原因，不正是一样的吗？ &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;choose&gt;&gt;
-&lt;&lt;specialC &quot;hunch&quot; [[*这一次，你不再觉得需要解释什么。* 是的。|S1E2: onebed nolike 2]]&gt;&gt;&lt;&lt;set $response to &quot;yes&quot;&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;*这一次，你不再觉得需要解释什么。* 是的。&lt;/span&gt;&quot; &quot;S1E2: onebed nolike 2&quot;&gt;&gt;&lt;&lt;set $response to &quot;yes&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 [[我更喜欢私人宿舍。|S1E2: onebed nolike 2][$response to &quot;private&quot;]]
 &lt;&lt;link &quot;@@.talk-action;指了指地上的狼藉。@@&quot; &quot;S1E2: onebed nolike 2&quot;&gt;&gt;&lt;&lt;set $response to &quot;mess&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;if setup.flag(14)&gt;&gt;
@@ -71865,7 +71784,7 @@ Kenan 不愿被阉割。他拼尽全力拔腿狂奔，跑出了此生最快的�
 &lt;&lt;speak  &quot;lucas.eyeroll&quot; &gt;&gt; 寸步难行、毫无隐私可言——这绝非实用二字所能涵盖。 &lt;&lt;/speak&gt;&gt;
 
 &lt;&lt;choose&gt;&gt;
-&lt;&lt;specialC &quot;hunch&quot; [[若不得不共处一室，最好是与可信赖之人。|S1E2: onebed practical end]]&gt;&gt;&lt;&lt;set $response to &quot;pleasant&quot;&gt;&gt;&lt;&lt;/specialC&gt;&gt;
+&lt;span class=&#39;special-link&#39;&gt;&lt;&lt;link &quot;&lt;span class=&#39;act-holder&#39; title=&#39;直觉&#39;&gt;&lt;span class=&#39;icon-holder&#39;&gt;&lt;span class=&#39;icon&#39;&gt;&lt;&lt;icon &#39;hunch&#39;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#39;text&#39;&gt;&lt;span class=&#39;action-label&#39;&gt;直觉&lt;/span&gt;若不得不共处一室，最好是与可信赖之人。&lt;/span&gt;&quot; &quot;S1E2: onebed practical end&quot;&gt;&gt;&lt;&lt;set $response to &quot;pleasant&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt;
 
 [[我有任务在身，卢卡斯。我是你的守护者。|S1E2: onebed practical end][$response to &quot;protect&quot;]]
 
